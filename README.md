@@ -63,14 +63,20 @@ I'm interested in building useful software, learning how things work, and improv
 > And somehow end up designing the README, architecture, license, statistics dashboard, and **37 different sections** for it. 😂
 
 ---
-
 ## 🛠️ Languages & Tools
 
 <p align="center">
+
+  <!-- Programming Languages -->
   <a href="https://www.python.org/">
     <img src="https://skillicons.dev/icons?i=python" alt="Python" width="50" height="50"/>
   </a>
 
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+    <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" width="50" height="50"/>
+  </a>
+
+  <!-- Web Development -->
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
     <img src="https://skillicons.dev/icons?i=html" alt="HTML5" width="50" height="50"/>
   </a>
@@ -79,10 +85,21 @@ I'm interested in building useful software, learning how things work, and improv
     <img src="https://skillicons.dev/icons?i=css" alt="CSS3" width="50" height="50"/>
   </a>
 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-    <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" width="50" height="50"/>
+  <!-- Desktop / GUI -->
+  <a href="https://customtkinter.tomschimansky.com/">
+    <img src="https://skillicons.dev/icons?i=python" alt="CustomTkinter / Python" width="50" height="50"/>
   </a>
 
+  <!-- Data -->
+  <a href="https://www.sqlite.org/">
+    <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.json.org/">
+    <img src="https://skillicons.dev/icons?i=json" alt="JSON" width="50" height="50"/>
+  </a>
+
+  <!-- Version Control -->
   <a href="https://git-scm.com/">
     <img src="https://skillicons.dev/icons?i=git" alt="Git" width="50" height="50"/>
   </a>
@@ -91,13 +108,15 @@ I'm interested in building useful software, learning how things work, and improv
     <img src="https://skillicons.dev/icons?i=github" alt="GitHub" width="50" height="50"/>
   </a>
 
-  <a href="https://www.sqlite.org/">
-    <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" width="50" height="50"/>
+  <!-- Development Environment -->
+  <a href="https://code.visualstudio.com/">
+    <img src="https://skillicons.dev/icons?i=vscode" alt="Visual Studio Code" width="50" height="50"/>
   </a>
 
-  <a href="https://www.java.com/">
-    <img src="https://skillicons.dev/icons?i=java" alt="Java" width="50" height="50"/>
+  <a href="https://www.microsoft.com/windows/windows-11">
+    <img src="https://skillicons.dev/icons?i=windows" alt="Windows" width="50" height="50"/>
   </a>
+
 </p>
 
 ---
