@@ -588,15 +588,24 @@ I'm interested in creating useful projects, understanding how software works, im
 
 ---
 
-## 📌 Contribution Snake
+## 🐍 GitHub Contribution Snake
 
 <p align="center">
-  <img
-    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/output/github-contribution-grid-snake.svg"
-    alt="GitHub Contribution Snake"
-  />
+  <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/output/github-contribution-grid-snake-dark.svg"
+    />
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/output/github-contribution-grid-snake.svg"
+    />
+    <img
+      src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/output/github-contribution-grid-snake.svg"
+      alt="GitHub Contribution Snake"
+    />
+  </picture>
 </p>
-
 ---
 
 # 🚀 Featured Projects
