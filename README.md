@@ -1,3 +1,13 @@
+# 📊 GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.shion.dev/api?username=parsaesmaili038&theme=github_dark&hide_border=false&include_all_commits=true&count_private=false" />
+</p>
+
+<p align="center">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=github_dark" />
+</p>
+
 # 💻 Tech Stack
 
 ![Python](https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white)
