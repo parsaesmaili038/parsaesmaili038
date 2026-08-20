@@ -65,9 +65,9 @@ I'm interested in building useful software, learning how things work, and improv
 ---
 ## 🛠️ Languages & Tools
 
-<p align="center">
+### 💻 Programming
 
-  <!-- Programming Languages -->
+<p align="center">
   <a href="https://www.python.org/">
     <img src="https://skillicons.dev/icons?i=python" alt="Python" width="50" height="50"/>
   </a>
@@ -75,8 +75,11 @@ I'm interested in building useful software, learning how things work, and improv
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
     <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" width="50" height="50"/>
   </a>
+</p>
 
-  <!-- Web Development -->
+### 🌐 Web Development
+
+<p align="center">
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
     <img src="https://skillicons.dev/icons?i=html" alt="HTML5" width="50" height="50"/>
   </a>
@@ -85,21 +88,32 @@ I'm interested in building useful software, learning how things work, and improv
     <img src="https://skillicons.dev/icons?i=css" alt="CSS3" width="50" height="50"/>
   </a>
 
-  <!-- Desktop / GUI -->
-  <a href="https://customtkinter.tomschimansky.com/">
-    <img src="https://skillicons.dev/icons?i=python" alt="CustomTkinter / Python" width="50" height="50"/>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+    <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" width="50" height="50"/>
   </a>
+</p>
 
-  <!-- Data -->
+### 🖥️ Desktop Development
+
+<p align="center">
+  <a href="https://customtkinter.tomschimansky.com/">
+    <img src="https://skillicons.dev/icons?i=python" alt="Python / CustomTkinter" width="50" height="50"/>
+  </a>
+</p>
+
+### 🗄️ Data & Storage
+
+<p align="center">
   <a href="https://www.sqlite.org/">
     <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" width="50" height="50"/>
   </a>
 
-  <a href="https://www.json.org/">
-    <img src="https://skillicons.dev/icons?i=json" alt="JSON" width="50" height="50"/>
-  </a>
+  <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
+</p>
 
-  <!-- Version Control -->
+### 🔧 Development Tools
+
+<p align="center">
   <a href="https://git-scm.com/">
     <img src="https://skillicons.dev/icons?i=git" alt="Git" width="50" height="50"/>
   </a>
@@ -108,17 +122,14 @@ I'm interested in building useful software, learning how things work, and improv
     <img src="https://skillicons.dev/icons?i=github" alt="GitHub" width="50" height="50"/>
   </a>
 
-  <!-- Development Environment -->
   <a href="https://code.visualstudio.com/">
     <img src="https://skillicons.dev/icons?i=vscode" alt="Visual Studio Code" width="50" height="50"/>
   </a>
 
   <a href="https://www.microsoft.com/windows/windows-11">
-    <img src="https://skillicons.dev/icons?i=windows" alt="Windows" width="50" height="50"/>
+    <img src="https://skillicons.dev/icons?i=windows" alt="Windows 11" width="50" height="50"/>
   </a>
-
 </p>
-
 ---
 
 ## 📊 GitHub Statistics
