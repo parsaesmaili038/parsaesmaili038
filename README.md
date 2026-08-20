@@ -64,8 +64,9 @@ I'm interested in building useful software, learning how things work, and improv
 
 ---
 ## 🛠️ Languages & Tools
+## 🛠️ Languages & Tools
 
-### 💻 Programming
+### 💻 Programming Languages
 
 <p align="center">
   <a href="https://www.python.org/">
@@ -75,7 +76,21 @@ I'm interested in building useful software, learning how things work, and improv
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
     <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" width="50" height="50"/>
   </a>
+
+  <a href="https://www.java.com/">
+    <img src="https://skillicons.dev/icons?i=java" alt="Java" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.php.net/">
+    <img src="https://skillicons.dev/icons?i=php" alt="PHP" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.gnu.org/software/bash/">
+    <img src="https://skillicons.dev/icons?i=bash" alt="Bash" width="50" height="50"/>
+  </a>
 </p>
+
+---
 
 ### 🌐 Web Development
 
@@ -91,27 +106,87 @@ I'm interested in building useful software, learning how things work, and improv
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
     <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" width="50" height="50"/>
   </a>
+
+  <a href="https://react.dev/">
+    <img src="https://skillicons.dev/icons?i=react" alt="React" width="50" height="50"/>
+  </a>
+
+  <a href="https://nextjs.org/">
+    <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" width="50" height="50"/>
+  </a>
+
+  <a href="https://tailwindcss.com/">
+    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" width="50" height="50"/>
+  </a>
+
+  <a href="https://getbootstrap.com/">
+    <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" width="50" height="50"/>
+  </a>
 </p>
+
+---
+
+### 🐍 Python Ecosystem
+
+<p align="center">
+  <a href="https://www.python.org/">
+    <img src="https://skillicons.dev/icons?i=python" alt="Python" width="50" height="50"/>
+  </a>
+
+  <a href="https://customtkinter.tomschimansky.com/">
+    <img src="https://skillicons.dev/icons?i=python" alt="CustomTkinter" width="50" height="50"/>
+  </a>
+
+  <a href="https://flask.palletsprojects.com/">
+    <img src="https://skillicons.dev/icons?i=flask" alt="Flask" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.djangoproject.com/">
+    <img src="https://skillicons.dev/icons?i=django" alt="Django" width="50" height="50"/>
+  </a>
+</p>
+
+---
 
 ### 🖥️ Desktop Development
 
 <p align="center">
   <a href="https://customtkinter.tomschimansky.com/">
-    <img src="https://skillicons.dev/icons?i=python" alt="Python / CustomTkinter" width="50" height="50"/>
+    <img src="https://skillicons.dev/icons?i=python" alt="Python GUI" width="50" height="50"/>
   </a>
+
+  <img src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white" alt="CustomTkinter"/>
+
+  <img src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Tkinter"/>
 </p>
 
-### 🗄️ Data & Storage
+---
+
+### 🗄️ Databases & Storage
 
 <p align="center">
   <a href="https://www.sqlite.org/">
     <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" width="50" height="50"/>
   </a>
 
+  <a href="https://www.mysql.com/">
+    <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.postgresql.org/">
+    <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.microsoft.com/sql-server">
+    <img src="https://skillicons.dev/icons?i=mssql" alt="Microsoft SQL Server" width="50" height="50"/>
+  </a>
+
   <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
 </p>
 
-### 🔧 Development Tools
+---
+
+### 🔧 Version Control & Collaboration
 
 <p align="center">
   <a href="https://git-scm.com/">
@@ -122,37 +197,201 @@ I'm interested in building useful software, learning how things work, and improv
     <img src="https://skillicons.dev/icons?i=github" alt="GitHub" width="50" height="50"/>
   </a>
 
+  <a href="https://github.com/features/actions">
+    <img src="https://skillicons.dev/icons?i=githubactions" alt="GitHub Actions" width="50" height="50"/>
+  </a>
+</p>
+
+---
+
+### 🧰 Development Tools
+
+<p align="center">
   <a href="https://code.visualstudio.com/">
     <img src="https://skillicons.dev/icons?i=vscode" alt="Visual Studio Code" width="50" height="50"/>
   </a>
 
+  <a href="https://visualstudio.microsoft.com/">
+    <img src="https://skillicons.dev/icons?i=visualstudio" alt="Visual Studio" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.postman.com/">
+    <img src="https://skillicons.dev/icons?i=postman" alt="Postman" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.npmjs.com/">
+    <img src="https://skillicons.dev/icons?i=npm" alt="NPM" width="50" height="50"/>
+  </a>
+</p>
+
+---
+
+### 🐳 DevOps & Infrastructure
+
+<p align="center">
+  <a href="https://www.docker.com/">
+    <img src="https://skillicons.dev/icons?i=docker" alt="Docker" width="50" height="50"/>
+  </a>
+
+  <a href="https://nginx.org/">
+    <img src="https://skillicons.dev/icons?i=nginx" alt="Nginx" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.linux.org/">
+    <img src="https://skillicons.dev/icons?i=linux" alt="Linux" width="50" height="50"/>
+  </a>
+
+  <a href="https://ubuntu.com/">
+    <img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.gnu.org/software/bash/">
+    <img src="https://skillicons.dev/icons?i=bash" alt="Bash" width="50" height="50"/>
+  </a>
+</p>
+
+---
+
+### ☁️ Cloud & Hosting
+
+<p align="center">
+  <a href="https://vercel.com/">
+    <img src="https://skillicons.dev/icons?i=vercel" alt="Vercel" width="50" height="50"/>
+  </a>
+
+  <a href="https://pages.github.com/">
+    <img src="https://skillicons.dev/icons?i=github" alt="GitHub Pages" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.cloudflare.com/">
+    <img src="https://skillicons.dev/icons?i=cloudflare" alt="Cloudflare" width="50" height="50"/>
+  </a>
+</p>
+
+---
+
+### 🔌 APIs & Web Technologies
+
+<p align="center">
+  <img src="https://img.shields.io/badge/REST%20API-02569B?style=for-the-badge&logo=fastapi&logoColor=white" alt="REST API"/>
+
+  <img src="https://img.shields.io/badge/HTTP-005571?style=for-the-badge&logo=http&logoColor=white" alt="HTTP"/>
+
+  <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
+
+  <img src="https://img.shields.io/badge/API-FF6F00?style=for-the-badge&logo=api&logoColor=white" alt="API"/>
+</p>
+
+---
+
+### 🖥️ Operating Systems
+
+<p align="center">
   <a href="https://www.microsoft.com/windows/windows-11">
     <img src="https://skillicons.dev/icons?i=windows" alt="Windows 11" width="50" height="50"/>
   </a>
+
+  <a href="https://www.linux.org/">
+    <img src="https://skillicons.dev/icons?i=linux" alt="Linux" width="50" height="50"/>
+  </a>
+
+  <a href="https://ubuntu.com/">
+    <img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu" width="50" height="50"/>
+  </a>
 </p>
+
 ---
 
-## 📊 GitHub Statistics
+### 🎨 Frontend & UI
 
 <p align="center">
-  <img
-    src="https://github-readmeapp.vercel.app/api/top-langs/?username=parsaesmaili038&layout=compact&theme=transparent&hide_border=true&title_color=58A6FF&text_color=c9d1d9"
-    alt="Top Languages"
-  />
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+    <img src="https://skillicons.dev/icons?i=html" alt="HTML" width="50" height="50"/>
+  </a>
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+    <img src="https://skillicons.dev/icons?i=css" alt="CSS" width="50" height="50"/>
+  </a>
+
+  <a href="https://tailwindcss.com/">
+    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" width="50" height="50"/>
+  </a>
+
+  <a href="https://getbootstrap.com/">
+    <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" width="50" height="50"/>
+  </a>
+
+  <a href="https://react.dev/">
+    <img src="https://skillicons.dev/icons?i=react" alt="React" width="50" height="50"/>
+  </a>
 </p>
 
-<p align="center">
-  <img
-    src="https://github-readmeapp.vercel.app/api/top-langs/?username=parsaesmaili038&layout=donut&theme=transparent&hide_border=true&title_color=58A6FF&text_color=c9d1d9"
-    alt="Top Languages Donut"
-  />
-</p>
+---
+
+### 📦 Package Managers & Build Tools
 
 <p align="center">
-  <img
-    src="https://github-readmeapp.vercel.app/api?username=parsaesmaili038&show_icons=true&theme=transparent&hide_border=true&title_color=58A6FF&text_color=c9d1d9"
-    alt="GitHub Statistics"
-  />
+  <a href="https://www.npmjs.com/">
+    <img src="https://skillicons.dev/icons?i=npm" alt="NPM" width="50" height="50"/>
+  </a>
+
+  <a href="https://pypi.org/">
+    <img src="https://skillicons.dev/icons?i=python" alt="PyPI" width="50" height="50"/>
+  </a>
+</p>
+
+---
+
+### 🧪 Testing & Development
+
+<p align="center">
+  <a href="https://www.postman.com/">
+    <img src="https://skillicons.dev/icons?i=postman" alt="Postman" width="50" height="50"/>
+  </a>
+
+  <a href="https://docs.pytest.org/">
+    <img src="https://skillicons.dev/icons?i=python" alt="Pytest" width="50" height="50"/>
+  </a>
+</p>
+
+---
+
+### 🔐 Security & Networking
+
+<p align="center">
+  <img src="https://img.shields.io/badge/HTTPS-005C97?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="HTTPS"/>
+
+  <img src="https://img.shields.io/badge/SSL%2FTLS-721412?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="SSL TLS"/>
+
+  <img src="https://img.shields.io/badge/DNS-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="DNS"/>
+
+  <img src="https://img.shields.io/badge/Networking-00629B?style=for-the-badge&logo=cisco&logoColor=white" alt="Networking"/>
+</p>
+
+---
+
+### 📚 Documentation & Project Management
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown"/>
+
+  <img src="https://img.shields.io/badge/README-181717?style=for-the-badge&logo=readme&logoColor=white" alt="README"/>
+
+  <img src="https://img.shields.io/badge/Documentation-4285F4?style=for-the-badge&logo=googledocs&logoColor=white" alt="Documentation"/>
+</p>
+
+---
+
+### 🧠 Currently Exploring
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Docker-Exploring-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
+  
+  <img src="https://img.shields.io/badge/Linux-Exploring-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
+  
+  <img src="https://img.shields.io/badge/React-Exploring-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
+  
+  <img src="https://img.shields.io/badge/Cloud-Exploring-4285F4?style=for-the-badge&logo=icloud&logoColor=white" alt="Cloud"/>
 </p>
 
 ---
