@@ -259,7 +259,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 
  
----
+
 
 ### 🔌 APIs & Web Technologies
 
@@ -273,7 +273,7 @@ I'm interested in building useful software, learning how things work, and improv
   <img src="https://img.shields.io/badge/API-FF6F00?style=for-the-badge&logo=api&logoColor=white" alt="API"/>
 </p>
 
----
+
 
 ### 🖥️ Operating Systems
 
@@ -291,7 +291,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🎨 Frontend & UI
 
@@ -317,7 +317,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 📦 Package Managers & Build Tools
 
@@ -328,7 +328,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🧪 Testing & Development
 
@@ -338,7 +338,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🔐 Security & Networking
 
@@ -352,7 +352,7 @@ I'm interested in building useful software, learning how things work, and improv
   <img src="https://img.shields.io/badge/Networking-00629B?style=for-the-badge&logo=cisco&logoColor=white" alt="Networking"/>
 </p>
 
----
+
 
 ### 📚 Documentation & Project Management
 
@@ -364,7 +364,7 @@ I'm interested in building useful software, learning how things work, and improv
   <img src="https://img.shields.io/badge/Documentation-4285F4?style=for-the-badge&logo=googledocs&logoColor=white" alt="Documentation"/>
 </p>
 
----
+
 
 ### 🧠 Currently Exploring
 
