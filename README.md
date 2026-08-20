@@ -22,20 +22,20 @@
 ## 📊 GitHub Stats
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=ayu_mirage" alt="GitHub Profile Details">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="GitHub Profile Details">
 </p>
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parsaesmaili038&theme=ayu_mirage" alt="Repositories Per Language">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=ayu_mirage" alt="Most Commit Language">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="Repositories Per Language">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="Most Commit Language">
 </p>
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=ayu_mirage" alt="GitHub Statistics">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="GitHub Statistics">
 </p>
 
 <p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=ayu_mirage&utcOffset=0" alt="Productive Time">
+  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=ayu_mirage&animation=sequence&utcOffset=0" alt="Productive Time">
 </p>
 
 ---
