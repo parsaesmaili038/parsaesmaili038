@@ -1,12 +1,10 @@
 # 📊 GitHub Stats
 
-<p align="center">
-  <img src="https://github-readme-stats.shion.dev/api?username=parsaesmaili038&theme=github_dark&hide_border=false&include_all_commits=true&count_private=false" />
-</p>
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=github_dark" />
-</p>
+![](https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=ayu_mirage)
+![](https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parsaesmaili038&theme=ayu_mirage)
+![](https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=ayu_mirage)
+![](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=ayu_mirage)
+![](https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=ayu_mirage&utcOffset=0)
 
 # 💻 Tech Stack
 
