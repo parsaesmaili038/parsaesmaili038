@@ -64,7 +64,6 @@ I'm interested in building useful software, learning how things work, and improv
 
 ---
 ## 🛠️ Languages & Tools
-## 🛠️ Languages & Tools
 
 ### 💻 Programming Languages
 
@@ -90,7 +89,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🌐 Web Development
 
@@ -124,7 +123,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🐍 Python Ecosystem
 
@@ -146,7 +145,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🖥️ Desktop Development
 
@@ -160,7 +159,7 @@ I'm interested in building useful software, learning how things work, and improv
   <img src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Tkinter"/>
 </p>
 
----
+
 
 ### 🗄️ Databases & Storage
 
@@ -184,7 +183,7 @@ I'm interested in building useful software, learning how things work, and improv
   <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
 </p>
 
----
+
 
 ### 🔧 Version Control & Collaboration
 
@@ -202,7 +201,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🧰 Development Tools
 
@@ -224,7 +223,7 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### 🐳 DevOps & Infrastructure
 
@@ -250,24 +249,16 @@ I'm interested in building useful software, learning how things work, and improv
   </a>
 </p>
 
----
+
 
 ### ☁️ Cloud & Hosting
 
-<p align="center">
-  <a href="https://vercel.com/">
-    <img src="https://skillicons.dev/icons?i=vercel" alt="Vercel" width="50" height="50"/>
-  </a>
 
   <a href="https://pages.github.com/">
     <img src="https://skillicons.dev/icons?i=github" alt="GitHub Pages" width="50" height="50"/>
   </a>
 
-  <a href="https://www.cloudflare.com/">
-    <img src="https://skillicons.dev/icons?i=cloudflare" alt="Cloudflare" width="50" height="50"/>
-  </a>
-</p>
-
+ 
 ---
 
 ### 🔌 APIs & Web Technologies
@@ -330,10 +321,7 @@ I'm interested in building useful software, learning how things work, and improv
 
 ### 📦 Package Managers & Build Tools
 
-<p align="center">
-  <a href="https://www.npmjs.com/">
-    <img src="https://skillicons.dev/icons?i=npm" alt="NPM" width="50" height="50"/>
-  </a>
+
 
   <a href="https://pypi.org/">
     <img src="https://skillicons.dev/icons?i=python" alt="PyPI" width="50" height="50"/>
@@ -344,10 +332,6 @@ I'm interested in building useful software, learning how things work, and improv
 
 ### 🧪 Testing & Development
 
-<p align="center">
-  <a href="https://www.postman.com/">
-    <img src="https://skillicons.dev/icons?i=postman" alt="Postman" width="50" height="50"/>
-  </a>
 
   <a href="https://docs.pytest.org/">
     <img src="https://skillicons.dev/icons?i=python" alt="Pytest" width="50" height="50"/>
