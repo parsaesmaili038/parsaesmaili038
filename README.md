@@ -1,7 +1,7 @@
 # 👋 Hi, I'm Parsa Esmaili
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=24&duration=2500&pause=1000&color=58A6FF&center=true&vCenter=true&width=850&lines=Student+%26+Developer;Python+Enthusiast;Web+Developer;Building+things+and+learning+every+day" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=24&duration=2500&pause=1000&color=58A6FF&center=true&vCenter=true&width=850&lines=%26+Developer;Python+Enthusiast;Web+Developer;Building+things+and+learning+every+day" alt="Typing SVG" />
 </p>
 
 <p align="center">
@@ -12,7 +12,7 @@
 
 ## 🧑‍💻 About Me
 
-💻 **Student & Developer**
+💻 **Developer**
 
 🐍 Python enthusiast • 🌐 Web development • 🛠️ Desktop applications
 
