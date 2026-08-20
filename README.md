@@ -1,90 +1,184 @@
 # 👋 Hi, I'm Parsa Esmaili
 
 <p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=24&duration=2500&pause=1000&color=58A6FF&center=true&vCenter=true&width=850&lines=Student+%26+Developer;Python+Enthusiast;Web+Development;Building+Things+and+Learning+Every+Day" alt="Typing SVG" />
-  </a>
+  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=24&duration=2500&pause=1000&color=58A6FF&center=true&vCenter=true&width=850&lines=Student+%26+Developer;Python+Enthusiast;Web+Developer;Building+things+and+learning+every+day" alt="Typing SVG" />
 </p>
 
 <p align="center">
-  💻 <strong>Student & Developer</strong><br>
-  🐍 Python enthusiast • 🌐 Web development • 🛠️ Building things and learning every day
-</p>
-
-<p align="center">
-  <a href="https://github.com/parsaesmaili038">
-    <img src="https://img.shields.io/badge/GitHub-parsaesmaili038-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  </a>
-  <a href="https://parsaesmaili038.github.io">
-    <img src="https://img.shields.io/badge/Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio">
-  </a>
+  <img src="https://komarev.com/ghpvc/?username=parsaesmaili038&label=Profile%20views&color=0e75b6&style=flat" alt="Profile views" />
 </p>
 
 ---
 
 ## 🧑‍💻 About Me
 
+💻 **Student & Developer**
+
+🐍 Python enthusiast • 🌐 Web development • 🛠️ Desktop applications
+
+I'm interested in building useful software, learning how things work, and improving my programming skills one project at a time.
+
 | | |
 |:--|:--|
-| 🔭 **Working on** | Ticketing System GUI |
-| 🌱 **Learning** | Python & Web Development |
-| 🛠️ **Interested in** | Software Development & Application Architecture |
-| 💡 **Focus** | Learning, building, and improving |
-| ⚡ **Fun fact** | I enjoy turning ideas into working projects |
-
----
-
-## 💻 Tech Stack
-
-<p align="center">
-  <img src="https://skillicons.dev/icons?i=python,html,css,js,git,github,windows&perline=8" alt="Tech Stack">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/Python-3776AB.svg?style=for-the-badge&logo=python&logoColor=white" alt="Python">
-  <img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
-  <img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
-  <img src="https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git">
-  <img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
-  <img src="https://img.shields.io/badge/Windows_11-0078D4.svg?style=for-the-badge&logo=windows11&logoColor=white" alt="Windows 11">
-</p>
+| 🔭 **Currently working on** | Web projects and useful desktop applications |
+| 🌱 **Currently learning** | Python and software development |
+| 📍 **Based in** | Tehran, Iran |
+| 🎯 **Interests** | Python • Web Development • Desktop Applications • Open Source |
 
 ---
 
 ## 🚀 What I'm Working On
 
-- 🐍 Learning and building projects with Python
-- 🌐 Developing web projects with HTML, CSS, and JavaScript
-- 🛠️ Creating useful desktop applications
+- 🌐 Developing web projects with **HTML, CSS, and JavaScript**
+- 🛠️ Creating useful **desktop applications**
+- 🐍 Building projects with **Python**
 - 📚 Improving programming and problem-solving skills
 - 💡 Exploring new technologies and development tools
 
 ---
 
-## 🎫 Featured Project
+## 👯 I'm Looking to Collaborate On
 
-### Ticketing System - GUI
+**Interesting Python projects, desktop applications, web projects, and beginner-friendly open-source projects.**
+
+---
+
+## 🤝 I'm Looking for Help With
+
+**Writing cleaner and more maintainable code, improving software architecture, and learning how real-world developers build scalable applications.**
+
+---
+
+## 💬 Ask Me About
+
+**Python 🐍 • CustomTkinter 🖥️ • Git & GitHub 🐙 • HTML/CSS/JavaScript 🌐 • JSON 📦 • Desktop Applications ⚙️**
+
+---
+
+## ⚡ Fun Fact
+
+> I can start with a simple idea like  
+> **"Let's make a small app."**
+>
+> And somehow end up designing the README, architecture, license, statistics dashboard, and **37 different sections** for it. 😂
+
+---
+
+## 🛠️ Languages & Tools
+
+<p align="center">
+  <a href="https://www.python.org/">
+    <img src="https://skillicons.dev/icons?i=python" alt="Python" width="50" height="50"/>
+  </a>
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+    <img src="https://skillicons.dev/icons?i=html" alt="HTML5" width="50" height="50"/>
+  </a>
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+    <img src="https://skillicons.dev/icons?i=css" alt="CSS3" width="50" height="50"/>
+  </a>
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+    <img src="https://skillicons.dev/icons?i=js" alt="JavaScript" width="50" height="50"/>
+  </a>
+
+  <a href="https://git-scm.com/">
+    <img src="https://skillicons.dev/icons?i=git" alt="Git" width="50" height="50"/>
+  </a>
+
+  <a href="https://github.com/">
+    <img src="https://skillicons.dev/icons?i=github" alt="GitHub" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.sqlite.org/">
+    <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" width="50" height="50"/>
+  </a>
+
+  <a href="https://www.java.com/">
+    <img src="https://skillicons.dev/icons?i=java" alt="Java" width="50" height="50"/>
+  </a>
+</p>
+
+---
+
+## 📊 GitHub Statistics
+
+<p align="center">
+  <img
+    src="https://github-readmeapp.vercel.app/api/top-langs/?username=parsaesmaili038&layout=compact&theme=transparent&hide_border=true&title_color=58A6FF&text_color=c9d1d9"
+    alt="Top Languages"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-readmeapp.vercel.app/api/top-langs/?username=parsaesmaili038&layout=donut&theme=transparent&hide_border=true&title_color=58A6FF&text_color=c9d1d9"
+    alt="Top Languages Donut"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-readmeapp.vercel.app/api?username=parsaesmaili038&show_icons=true&theme=transparent&hide_border=true&title_color=58A6FF&text_color=c9d1d9"
+    alt="GitHub Statistics"
+  />
+</p>
+
+---
+
+## 🔥 GitHub Streak
+
+<p align="center">
+  <img
+    src="https://streak-stats.demolab.com?user=parsaesmaili038&theme=transparent&hide_border=true&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF"
+    width="55%"
+    alt="GitHub Streak"
+  />
+</p>
+
+---
+
+## 📈 GitHub Activity
+
+<p align="center">
+  <a href="https://github.com/parsaesmaili038">
+    <img
+      src="https://github-readme-activity-graph.vercel.app/graph?username=parsaesmaili038&custom_title=Parsa's%20GitHub%20Activity&bg_color=0d1117&color=58A6FF&line=7C3AED&point=FFFFFF&area=true&hide_border=true"
+      alt="GitHub Activity Graph"
+    />
+  </a>
+</p>
+
+---
+
+## 📌 Featured Projects
+
+### 🎫 Ticketing System
 
 A lightweight desktop ticket management application built with **Python** and **CustomTkinter**.
 
-### ✨ Features
+Features include:
 
-- 🎫 Create and manage tickets
-- 🔎 Real-time ticket search
-- ✏️ Edit existing tickets
-- 🗑️ Delete tickets
-- 📝 Add timestamped notes
+- 🎫 Ticket creation and management
+- 🔎 Real-time search
+- ✏️ Ticket editing
+- 🗑️ Ticket deletion
+- 📝 Ticket notes
 - 🏷️ Tags and priorities
-- 📊 Ticket status management
-- 👤 Ticket assignment
-- 💾 Local JSON-based storage
-- 🌙 Dark graphical interface
+- 📊 Ticket statuses
+- 💾 Local JSON data storage
+- 🌙 Dark GUI
 
-> ⚠️ **IMPORTANT:** This application is designed for **LOCAL, SINGLE-USER USE**.
-> It is **NOT designed as a MULTI-USER, NETWORK-BASED, or SERVER-BASED ticketing platform**.
+> ⚠️ Designed as a **LOCAL, SINGLE-USER** application and is **NOT intended as a multi-user or server-based ticketing platform**.
 
-[View Ticketing System →](https://github.com/parsaesmaili038/ticketing-v1)
+---
+
+### 🌐 Personal Website
+
+My personal website and project showcase:
+
+**[parsaesmaili038.github.io](https://parsaesmaili038.github.io/)**
 
 ---
 
@@ -93,8 +187,9 @@ A lightweight desktop ticket management application built with **Python** and **
 ```text
 Python
 ├── GUI Development
-├── Data Management
+├── CustomTkinter
 ├── JSON
+├── Data Management
 └── Application Architecture
 
 Web Development
@@ -107,60 +202,42 @@ Development Tools
 ├── GitHub
 └── Windows 11
 ```
-
 ---
-
-## 📊 GitHub Statistics
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="GitHub Profile Details">
-</p>
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="Repositories Per Language">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="Most Commit Language">
-</p>
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=ayu_mirage&animation=sequence" alt="GitHub Statistics">
-</p>
-
----
-
-## 🔥 GitHub Streak
-
-<p align="center">
-  <img src="https://streak-stats.demolab.com?user=parsaesmaili038&theme=transparent&hide_border=true&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF" width="55%" alt="GitHub Streak">
-</p>
-
----
-
-## 📈 GitHub Activity
+## Connect With Me
 
 <p align="center">
   <a href="https://github.com/parsaesmaili038">
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=parsaesmaili038&custom_title=Parsa%20Esmaili%20-%20GitHub%20Activity&bg_color=0d1117&color=58A6FF&line=7C3AED&point=FFFFFF&area=true&hide_border=true" alt="GitHub Activity Graph">
+    <img
+      src="https://img.shields.io/badge/GitHub-parsaesmaili038-181717?style=for-the-badge&logo=github&logoColor=white"
+      alt="GitHub"
+    />
+  </a>
+
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Portfolio"
+    />
   </a>
 </p>
 
 ---
 
-## 📌 GitHub Profile
-
-<p align="center">
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=ayu_mirage&animation=sequence&utcOffset=0" alt="Productive Time">
-</p>
-
----
-
-## 📫 Connect With Me
+## 📫 Find My Projects
 
 <p align="center">
   <a href="https://github.com/parsaesmaili038">
-    <img src="https://img.shields.io/badge/GitHub-parsaesmaili038-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
+    <img
+      src="https://img.shields.io/badge/All%20Projects-GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+      alt="GitHub Projects"
+    />
   </a>
-  <a href="https://parsaesmaili038.github.io">
-    <img src="https://img.shields.io/badge/Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio">
+
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/Website-Visit%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Portfolio"
+    />
   </a>
 </p>
 
@@ -174,10 +251,11 @@ Development Tools
   ⭐ Thanks for visiting my profile!
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=parsaesmaili038&style=flat-square&color=00FF41" alt="Profile Views">
-</p>
-
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer" width="100%" alt="Footer">
+  <img
+    src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=100&section=footer"
+    width="100%"
+    alt="Footer"
+  />
 </div>
+---
