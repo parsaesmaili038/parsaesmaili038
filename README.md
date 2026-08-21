@@ -524,6 +524,67 @@ I'm interested in creating useful projects, understanding how software works, im
 </p>
 
 ---
+# 📊 GitHub Analytics
+
+<p align="center">
+  <img
+    src="https://github-readme-activity-graph.vercel.app/graph?username=parsaesmaili038&custom_title=🚀%20Parsa's%20Contribution%20Activity&bg_color=0D1117&color=58A6FF&line=7C3AED&point=FFFFFF&area=true&hide_border=true&radius=16"
+    width="100%"
+    alt="GitHub Contribution Activity Graph"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-readme-streak-stats.herokuapp.com/?user=parsaesmaili038&theme=tokyonight&hide_border=true"
+    width="49%"
+    alt="GitHub Streak"
+  />
+
+  <img
+    src="https://github-readme-stats.vercel.app/api?username=parsaesmaili038&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true"
+    width="49%"
+    alt="GitHub Statistics"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-readme-stats.vercel.app/api/top-langs/?username=parsaesmaili038&layout=compact&theme=tokyonight&hide_border=true&langs_count=10"
+    width="49%"
+    alt="Top Languages"
+  />
+
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=tokyonight&utcOffset=4"
+    width="49%"
+    alt="Productive Time"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=tokyonight"
+    width="100%"
+    alt="Profile Details"
+  />
+</p>
+
+<p align="center">
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parsaesmaili038&theme=tokyonight"
+    width="49%"
+    alt="Repositories Per Language"
+  />
+
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=tokyonight"
+    width="49%"
+    alt="Most Commit Language"
+  />
+</p>
+
+---
 
 ## 📈 GitHub Activity
 
