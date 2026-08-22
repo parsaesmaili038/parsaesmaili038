@@ -182,7 +182,10 @@ I'm interested in creating useful projects, understanding how software works, im
   </a>
 
   <a href="https://customtkinter.tomschimansky.com/">
-    <img src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white" alt="CustomTkinter"/>
+    <img
+      src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white"
+      alt="CustomTkinter"
+    />
   </a>
 
   <a href="https://flask.palletsprojects.com/">
@@ -357,11 +360,6 @@ I'm interested in creating useful projects, understanding how software works, im
     alt="JSON"
   />
 
-  <img
-    src="https://img.shields.io/badge/API-FF6F00?style=for-the-badge&logo=api&logoColor=white"
-    alt="API"
-  />
-
 </p>
 
 ---
@@ -510,30 +508,20 @@ I'm interested in creating useful projects, understanding how software works, im
 </p>
 
 ---
+
 # 📊 GitHub Analytics
- <h2>📊 GitHub Analytics</h2>
 
 <p align="center">
   <img
     src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/overview.svg"
     width="100%"
-    alt="GitHub Analytics"
+    alt="GitHub Analytics Dashboard"
   />
 </p>
 
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/stats.svg"
-    width="49%"
-    alt="GitHub Statistics"
-  />
-
-  <img
-    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/streak.svg"
-    width="49%"
-    alt="GitHub Streak"
-  />
-</p>
+> ⚡ **Live GitHub Analytics**
+>
+> This dashboard is automatically generated and updated using **GitHub Actions**.
 
 ---
 
@@ -639,6 +627,8 @@ I'm interested in creating useful projects, understanding how software works, im
   </picture>
 </p>
 
+---
+
 # 🚀 Featured Projects
 
 ## 🎫 Ticketing System
@@ -694,28 +684,50 @@ Web Development
 Development Tools
 ├── Git
 ├── GitHub
+├── GitHub Actions
 ├── VS Code
 └── Windows
 ```
----
-# 📫 Connect With Me
+# Connect With Me
 
 <p align="center">
   <a href="https://github.com/parsaesmaili038">
-    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Profile"/>
+    <img
+      src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"
+      alt="GitHub Profile"
+    />
   </a>
+
   <a href="https://parsaesmaili038.github.io/">
-    <img src="https://img.shields.io/badge/Portfolio-Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Portfolio"/>
+    <img
+      src="https://img.shields.io/badge/Portfolio-Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Portfolio"
+    />
   </a>
+
   <a href="https://github.com/parsaesmaili038?tab=repositories">
-    <img src="https://img.shields.io/badge/GitHub-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white" alt="Repositories"/>
+    <img
+      src="https://img.shields.io/badge/GitHub-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
+      alt="Repositories"
+    />
   </a>
 </p>
 
 <p align="center">
-  <img src="https://komarev.com/ghpvc/?username=parsaesmaili038&label=Profile%20Views&color=58A6FF&style=for-the-badge" alt="Profile Views"/>
-  <img src="https://img.shields.io/github/followers/parsaesmaili038?label=Followers&style=for-the-badge&color=7C3AED" alt="Followers"/>
-  <img src="https://img.shields.io/github/stars/parsaesmaili038?label=Stars&style=for-the-badge&color=F7DF1E" alt="Stars"/>
+  <img
+    src="https://komarev.com/ghpvc/?username=parsaesmaili038&label=Profile%20Views&color=58A6FF&style=for-the-badge"
+    alt="Profile Views"
+  />
+
+  <img
+    src="https://img.shields.io/github/followers/parsaesmaili038?label=Followers&style=for-the-badge&color=7C3AED"
+    alt="Followers"
+  />
+
+  <img
+    src="https://img.shields.io/github/stars/parsaesmaili038?label=Stars&style=for-the-badge&color=F7DF1E"
+    alt="Stars"
+  />
 </p>
 
 ---
@@ -724,22 +736,40 @@ Development Tools
 
 <p align="center">
   <a href="https://github.com/parsaesmaili038">
-    <img src="https://img.shields.io/badge/👤%20Profile-GitHub-181717?style=for-the-badge" alt="Profile"/>
+    <img
+      src="https://img.shields.io/badge/👤%20Profile-GitHub-181717?style=for-the-badge"
+      alt="Profile"
+    />
   </a>
+
   <a href="https://github.com/parsaesmaili038?tab=repositories">
-    <img src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge" alt="Repositories"/>
+    <img
+      src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge"
+      alt="Repositories"
+    />
   </a>
+
   <a href="https://parsaesmaili038.github.io/">
-    <img src="https://img.shields.io/badge/🌐%20Website-Portfolio-7C3AED?style=for-the-badge" alt="Portfolio"/>
+    <img
+      src="https://img.shields.io/badge/🌐%20Website-Portfolio-7C3AED?style=for-the-badge"
+      alt="Portfolio"
+    />
   </a>
 </p>
 
 <p align="center">
   <a href="https://github.com/parsaesmaili038?tab=projects">
-    <img src="https://img.shields.io/badge/📋%20Projects-GitHub%20Projects-238636?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Projects"/>
+    <img
+      src="https://img.shields.io/badge/📋%20Projects-GitHub%20Projects-238636?style=for-the-badge&logo=github&logoColor=white"
+      alt="GitHub Projects"
+    />
   </a>
+
   <a href="https://github.com/parsaesmaili038?tab=stars">
-    <img src="https://img.shields.io/badge/⭐%20Stars-Starred%20Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black" alt="Starred Projects"/>
+    <img
+      src="https://img.shields.io/badge/⭐%20Stars-Starred%20Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
+      alt="Starred Projects"
+    />
   </a>
 </p>
 
@@ -749,7 +779,7 @@ Development Tools
 
 <p align="center">
   <img
-    src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=18&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=900&lines=Learn+%E2%86%92+Build+%E2%86%92+Break+%E2%86%92+Fix+%E2%86%92+Repeat;Small+ideas+can+become+real+projects;Code+%E2%80%A2+Experiment+%E2%80%A2+Improve;Build+something+useful+every+day;Keep+learning.+Keep+building.+Keep+improving."
+    src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=600&size=18&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=900&lines=Learn+%E2%86%92+Build+%E2%86%92+Break+%E2%86%92+Fix+%E2%86%92+Repeat;Small+ideas+can+become+real+projects;Code+%E2%80%A2+Experiment+%E2%80%A2+Improve;Build+something+useful+every+day;Keep+learning.+Keep+building.+Keep+improving"
     alt="Developer Mindset"
   />
 </p>
@@ -772,13 +802,24 @@ Development Tools
 
 <p align="center">
   <a href="https://github.com/parsaesmaili038">
-    <img src="https://img.shields.io/badge/Explore%20My-GitHub%20Profile-181717?style=for-the-badge&logo=github&logoColor=white" alt="Explore GitHub"/>
+    <img
+      src="https://img.shields.io/badge/Explore%20My-GitHub%20Profile-181717?style=for-the-badge&logo=github&logoColor=white"
+      alt="Explore GitHub"
+    />
   </a>
+
   <a href="https://github.com/parsaesmaili038?tab=repositories">
-    <img src="https://img.shields.io/badge/Browse-My%20Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white" alt="Browse Repositories"/>
+    <img
+      src="https://img.shields.io/badge/Browse-My%20Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white"
+      alt="Browse Repositories"
+    />
   </a>
+
   <a href="https://parsaesmaili038.github.io/">
-    <img src="https://img.shields.io/badge/Visit-My%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit Portfolio"/>
+    <img
+      src="https://img.shields.io/badge/Visit-My%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Visit Portfolio"
+    />
   </a>
 </p>
 
@@ -787,7 +828,8 @@ Development Tools
 ## 🚀 Let's Build Something
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=17&duration=2600&pause=1000&color=7C3AED&center=true&vCenter=true&width=850&lines=Python+%F0%9F%90%8D;Web+Development+%F0%9F%8C%90;Desktop+Applications+%F0%9F%96%A5%EF%B8%8F;Open+Source+%F0%9F%94%93;Ideas+%E2%86%92+Code+%E2%86%92+Projects"
+  <img
+    src="https://readme-typing-svg.demolab.com/?font=JetBrains+Mono&weight=500&size=17&duration=2600&pause=1000&color=7C3AED&center=true&vCenter=true&width=850&lines=Python+%F0%9F%90%8D;Web+Development+%F0%9F%8C%90;Desktop+Applications+%F0%9F%96%A5%EF%B8%8F;Open+Source+%F0%9F%94%93;Ideas+%E2%86%92+Code+%E2%86%92+Projects"
     alt="Let's Build Something"
   />
 </p>
@@ -810,10 +852,17 @@ Development Tools
 
 <p align="center">
   <a href="https://github.com/parsaesmaili038">
-    <img src="https://img.shields.io/badge/⭐%20Visit%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="Visit GitHub"/>
+    <img
+      src="https://img.shields.io/badge/⭐%20Visit%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+      alt="Visit GitHub"
+    />
   </a>
+
   <a href="https://parsaesmaili038.github.io/">
-    <img src="https://img.shields.io/badge/🌐%20Visit%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Visit Portfolio"/>
+    <img
+      src="https://img.shields.io/badge/🌐%20Visit%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Visit Portfolio"
+    />
   </a>
 </p>
 
@@ -824,4 +873,3 @@ Development Tools
     alt="Footer"
   />
 </div>
----
