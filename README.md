@@ -511,6 +511,15 @@ I'm interested in creating useful projects, understanding how software works, im
 
 ---
 # 📊 GitHub Analytics
+ <h2>📊 GitHub Analytics</h2>
+
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/overview.svg"
+    width="100%"
+    alt="GitHub Analytics"
+  />
+</p>
 
 <p align="center">
   <img
