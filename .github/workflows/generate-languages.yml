@@ -1,0 +1,52 @@
+name: Generate GitHub Languages
+
+on:
+  workflow_dispatch:
+
+  workflow_run:
+    workflows:
+      - Generate GitHub Overview
+    types:
+      - completed
+
+permissions:
+  contents: read
+
+jobs:
+  generate-languages:
+    name: Generate Languages SVG
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Generate languages
+        shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: parsaesmaili038
+        run: |
+          python scripts/github_languages.py
+
+      - name: Upload generated SVG
+        uses: actions/upload-artifact@v4
+        with:
+          name: github-languages
+          path: dist/github-stats/languages.svg
+          if-no-files-found: error
