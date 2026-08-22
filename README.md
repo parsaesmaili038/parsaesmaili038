@@ -510,57 +510,49 @@ I'm interested in creating useful projects, understanding how software works, im
 </p>
 
 ---
-
-# 📊 GitHub Statistics
-
-## 🔥 GitHub Streak
+# 📊 GitHub Analytics
 
 <p align="center">
   <img
-    src="https://streak-stats.demolab.com?user=parsaesmaili038&theme=transparent&hide_border=true&ring=58A6FF&fire=58A6FF&currStreakLabel=58A6FF"
-    width="65%"
+    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/stats.svg"
+    width="49%"
+    alt="GitHub Statistics"
+  />
+
+  <img
+    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/streak.svg"
+    width="49%"
     alt="GitHub Streak"
   />
 </p>
 
 ---
-# 📊 GitHub Analytics
+
+## 📈 GitHub Contribution Activity
 
 <p align="center">
   <img
     src="https://github-readme-activity-graph.vercel.app/graph?username=parsaesmaili038&custom_title=🚀%20Parsa's%20Contribution%20Activity&bg_color=0D1117&color=58A6FF&line=7C3AED&point=FFFFFF&area=true&hide_border=true&radius=16"
     width="100%"
-    alt="GitHub Contribution Activity"
+    alt="GitHub Contribution Activity Graph"
   />
 </p>
 
-<p align="center">
-  <img
-    src="https://github-readme-streak-stats.herokuapp.com/?user=parsaesmaili038&theme=tokyonight&hide_border=true"
-    width="49%"
-    alt="GitHub Streak"
-  />
+---
 
-  <img
-    src="https://github-readme-stats.vercel.app/api?username=parsaesmaili038&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=true&count_private=true"
-    width="49%"
-    alt="GitHub Statistics"
-  />
-</p>
+## 💻 Top Languages
 
 <p align="center">
   <img
-    src="https://github-readme-stats.vercel.app/api/top-langs/?username=parsaesmaili038&layout=compact&theme=tokyonight&hide_border=true&langs_count=10"
-    width="49%"
+    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/top-langs.svg"
+    width="100%"
     alt="Top Languages"
   />
-
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=tokyonight&utcOffset=4"
-    width="49%"
-    alt="Productive Time"
-  />
 </p>
+
+---
+
+## 📊 Profile Overview
 
 <p align="center">
   <img
@@ -586,53 +578,19 @@ I'm interested in creating useful projects, understanding how software works, im
 
 ---
 
-## 📈 GitHub Activity
-
-<p align="center">
-  <a href="https://github.com/parsaesmaili038">
-    <img
-      src="https://github-readme-activity-graph.vercel.app/graph?username=parsaesmaili038&custom_title=Parsa's%20GitHub%20Activity&bg_color=0d1117&color=58A6FF&line=7C3AED&point=FFFFFF&area=true&hide_border=true"
-      alt="GitHub Activity Graph"
-    />
-  </a>
-</p>
-
----
-
-## 📊 Profile Summary
+## ⏱️ Coding Activity
 
 <p align="center">
   <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=ayu_mirage&animation=sequence"
-    alt="GitHub Profile Details"
-  />
-</p>
-
-<p align="center">
-
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=parsaesmaili038&theme=ayu_mirage&animation=sequence"
-    alt="Repositories Per Language"
-  />
-
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=ayu_mirage&animation=sequence"
-    alt="Most Commit Language"
-  />
-
-</p>
-
-<p align="center">
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=ayu_mirage&animation=sequence"
-    alt="GitHub Statistics"
-  />
-</p>
-
-<p align="center">
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=ayu_mirage&animation=sequence&utcOffset=0"
+    src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=parsaesmaili038&theme=tokyonight&utcOffset=4"
+    width="49%"
     alt="Productive Time"
+  />
+
+  <img
+    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=tokyonight"
+    width="49%"
+    alt="GitHub Statistics Summary"
   />
 </p>
 
@@ -643,33 +601,34 @@ I'm interested in creating useful projects, understanding how software works, im
 <p align="center">
   <img
     src="https://github-profile-trophy.vercel.app/?username=parsaesmaili038&theme=algolia&no-frame=true&no-bg=true&margin-w=10&row=2"
+    width="100%"
     alt="GitHub Trophies"
   />
 </p>
 
 ---
 
-## 🐍 GitHub Contribution Snake
+## 🐍 Contribution Snake
 
 <p align="center">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://parsaesmaili038.github.io/github-contribution-grid-snake-dark.svg"
+      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake-dark.svg"
     />
+
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://parsaesmaili038.github.io/github-contribution-grid-snake.svg"
+      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake.svg"
     />
+
     <img
-      src="https://parsaesmaili038.github.io/github-contribution-grid-snake.svg"
-      alt="GitHub Contribution Snake"
+      src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake.svg"
       width="100%"
+      alt="GitHub Contribution Snake"
     />
   </picture>
 </p>
-
----
 
 # 🚀 Featured Projects
 
