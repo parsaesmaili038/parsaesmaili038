@@ -4,13 +4,21 @@ from datetime import datetime, timezone
 import requests
 
 
-USERNAME = os.getenv("GITHUB_USERNAME", "parsaesmaili038")
+USERNAME = os.getenv(
+    "GITHUB_USERNAME",
+    "parsaesmaili038",
+)
+
 TOKEN = os.getenv("GITHUB_TOKEN")
 
 API = "https://api.github.com"
 
+
 if not TOKEN:
-    raise RuntimeError("GITHUB_TOKEN is not available")
+    raise RuntimeError(
+        "GITHUB_TOKEN is not available"
+    )
+
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
@@ -28,6 +36,7 @@ def github_get(url, params=None):
     )
 
     response.raise_for_status()
+
     return response.json()
 
 
@@ -77,9 +86,18 @@ def calculate_stats(user, repositories):
 
     return {
         "stars": stars,
-        "repositories": user.get("public_repos", 0),
-        "followers": user.get("followers", 0),
-        "following": user.get("following", 0),
+        "repositories": user.get(
+            "public_repos",
+            0,
+        ),
+        "followers": user.get(
+            "followers",
+            0,
+        ),
+        "following": user.get(
+            "following",
+            0,
+        ),
         "forks": forks,
     }
 
@@ -99,17 +117,49 @@ def create_svg(stats):
     width = 1100
     height = 620
 
-    updated = datetime.now(timezone.utc).strftime(
+    updated = datetime.now(
+        timezone.utc
+    ).strftime(
         "%Y-%m-%d %H:%M UTC"
     )
 
     cards = [
-        ("⭐", "STARS", stats["stars"], "#58A6FF"),
-        ("📦", "REPOSITORIES", stats["repositories"], "#7C3AED"),
-        ("👥", "FOLLOWERS", stats["followers"], "#58A6FF"),
-        ("🔀", "FORKS", stats["forks"], "#7C3AED"),
-        ("👤", "FOLLOWING", stats["following"], "#58A6FF"),
-        ("⚡", "STATUS", "ACTIVE", "#7C3AED"),
+        (
+            "⭐",
+            "STARS",
+            stats["stars"],
+            "#58A6FF",
+        ),
+        (
+            "📦",
+            "REPOSITORIES",
+            stats["repositories"],
+            "#7C3AED",
+        ),
+        (
+            "👥",
+            "FOLLOWERS",
+            stats["followers"],
+            "#58A6FF",
+        ),
+        (
+            "🔀",
+            "FORKS",
+            stats["forks"],
+            "#7C3AED",
+        ),
+        (
+            "👤",
+            "FOLLOWING",
+            stats["following"],
+            "#58A6FF",
+        ),
+        (
+            "⚡",
+            "STATUS",
+            "ACTIVE",
+            "#7C3AED",
+        ),
     ]
 
     positions = [
@@ -139,9 +189,20 @@ def create_svg(stats):
         x2="1"
         y2="1"
     >
-        <stop offset="0%" stop-color="#0D1117"/>
-        <stop offset="55%" stop-color="#111827"/>
-        <stop offset="100%" stop-color="#17113A"/>
+        <stop
+            offset="0%"
+            stop-color="#0D1117"
+        />
+
+        <stop
+            offset="55%"
+            stop-color="#111827"
+        />
+
+        <stop
+            offset="100%"
+            stop-color="#17113A"
+        />
     </linearGradient>
 
     <linearGradient
@@ -151,8 +212,15 @@ def create_svg(stats):
         x2="1"
         y2="0"
     >
-        <stop offset="0%" stop-color="#58A6FF"/>
-        <stop offset="100%" stop-color="#7C3AED"/>
+        <stop
+            offset="0%"
+            stop-color="#58A6FF"
+        />
+
+        <stop
+            offset="100%"
+            stop-color="#7C3AED"
+        />
     </linearGradient>
 
     <filter id="glow">
@@ -224,10 +292,16 @@ def create_svg(stats):
 />
 """
 
-    for (icon, label, value, accent), (x, y) in zip(
-        cards,
-        positions,
-    ):
+    for (
+        icon,
+        label,
+        value,
+        accent,
+    ), (
+        x,
+        y,
+    ) in zip(cards, positions):
+
         svg += f"""
 
 <!-- {label} -->
@@ -252,7 +326,8 @@ def create_svg(stats):
     font-size="18"
     font-weight="700"
 >
-    {escape_xml(icon)} {escape_xml(label)}
+    {escape_xml(icon)}
+    {escape_xml(label)}
 </text>
 
 <text
@@ -304,6 +379,7 @@ def main():
     print("Fetching GitHub data...")
 
     user = get_user()
+
     repositories = get_repositories()
 
     stats = calculate_stats(
@@ -314,7 +390,10 @@ def main():
     print("Statistics:")
     print(stats)
 
-    output = "dist/github-stats/overview.svg"
+    output = (
+        "dist/github-stats/"
+        "overview.svg"
+    )
 
     os.makedirs(
         os.path.dirname(output),
@@ -330,7 +409,9 @@ def main():
     ) as file:
         file.write(svg)
 
-    print(f"Generated: {output}")
+    print(
+        f"Generated: {output}"
+    )
 
 
 if __name__ == "__main__":
