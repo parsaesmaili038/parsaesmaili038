@@ -1,0 +1,326 @@
+name: Finalize GitHub Dashboard
+
+on:
+  workflow_run:
+    workflows:
+      - Generate GitHub Overview
+      - Generate GitHub Languages
+    types:
+      - completed
+
+  workflow_dispatch:
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  finalize:
+    name: Collect and Publish Dashboard
+    runs-on: windows-latest
+
+    # workflow_run را فقط وقتی ادامه بده که اجرای بچه موفق بوده باشد.
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      github.event.workflow_run.conclusion == 'success'
+
+    steps:
+
+      # --------------------------------------------------
+      # 1. Checkout main
+      # --------------------------------------------------
+
+      - name: Checkout main branch
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+
+      # --------------------------------------------------
+      # 2. Prepare directories
+      # --------------------------------------------------
+
+      - name: Prepare dashboard directory
+        shell: pwsh
+        run: |
+          if (Test-Path "final-dashboard") {
+              Remove-Item "final-dashboard" -Recurse -Force
+          }
+
+          New-Item `
+            -ItemType Directory `
+            -Path "final-dashboard" `
+            -Force | Out-Null
+
+
+      # --------------------------------------------------
+      # 3. Download artifacts
+      # --------------------------------------------------
+
+      - name: Download workflow artifacts
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+
+            const runId =
+              context.eventName === 'workflow_run'
+                ? context.payload.workflow_run.id
+                : context.runId;
+
+            core.info(`Using workflow run: ${runId}`);
+
+            const artifacts =
+              await github.paginate(
+                github.rest.actions.listWorkflowRunArtifacts,
+                {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  run_id: runId,
+                  per_page: 100
+                }
+              );
+
+            if (artifacts.length === 0) {
+              core.setFailed(
+                'No artifacts were found for this workflow run.'
+              );
+              return;
+            }
+
+            core.info(
+              `Found ${artifacts.length} artifact(s).`
+            );
+
+            const outputDirectory =
+              path.join(
+                process.env.GITHUB_WORKSPACE,
+                'final-dashboard'
+              );
+
+            fs.mkdirSync(
+              outputDirectory,
+              { recursive: true }
+            );
+
+            for (const artifact of artifacts) {
+
+              core.info(
+                `Downloading artifact: ${artifact.name}`
+              );
+
+              const response =
+                await github.rest.actions.downloadArtifact({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  artifact_id: artifact.id,
+                  archive_format: 'zip'
+                });
+
+              const zipPath =
+                path.join(
+                  outputDirectory,
+                  `${artifact.name}.zip`
+                );
+
+              fs.writeFileSync(
+                zipPath,
+                Buffer.from(response.data)
+              );
+            }
+
+
+      # --------------------------------------------------
+      # 4. Extract artifacts
+      # --------------------------------------------------
+
+      - name: Extract artifacts
+        shell: pwsh
+        run: |
+          $zipFiles = Get-ChildItem `
+            -Path "final-dashboard" `
+            -Filter "*.zip"
+
+          if ($zipFiles.Count -eq 0) {
+              Write-Error "No artifact ZIP files found."
+              exit 1
+          }
+
+          foreach ($zip in $zipFiles) {
+
+              $destination = Join-Path `
+                "final-dashboard" `
+                $zip.BaseName
+
+              New-Item `
+                -ItemType Directory `
+                -Path $destination `
+                -Force | Out-Null
+
+              Expand-Archive `
+                -Path $zip.FullName `
+                -DestinationPath $destination `
+                -Force
+          }
+
+
+      # --------------------------------------------------
+      # 5. Validate every SVG
+      # --------------------------------------------------
+
+      - name: Validate dashboard files
+        shell: pwsh
+        run: |
+          $requiredFiles = @(
+              "overview.svg",
+              "languages.svg"
+          )
+
+          foreach ($file in $requiredFiles) {
+
+              $matches = Get-ChildItem `
+                -Path "final-dashboard" `
+                -Recurse `
+                -Filter $file
+
+              if ($matches.Count -eq 0) {
+
+                  Write-Error `
+                    "Required file '$file' was not found."
+
+                  exit 1
+              }
+
+              foreach ($match in $matches) {
+
+                  $size = $match.Length
+
+                  if ($size -le 100) {
+
+                      Write-Error `
+                        "File '$($match.FullName)' is suspiciously small."
+
+                      exit 1
+                  }
+
+                  Write-Host `
+                    "Validated: $($match.FullName) [$size bytes]"
+              }
+          }
+
+
+      # --------------------------------------------------
+      # 6. Prepare gh-pages
+      # --------------------------------------------------
+
+      - name: Checkout gh-pages
+        shell: pwsh
+        run: |
+          git fetch origin gh-pages
+
+          git checkout `
+            -B gh-pages `
+            origin/gh-pages
+
+
+      # --------------------------------------------------
+      # 7. Replace dashboard files
+      # --------------------------------------------------
+
+      - name: Publish dashboard files
+        shell: pwsh
+        run: |
+
+          $target = "github-stats"
+
+          if (Test-Path $target) {
+              Remove-Item `
+                $target `
+                -Recurse `
+                -Force
+          }
+
+          New-Item `
+            -ItemType Directory `
+            -Path $target `
+            -Force | Out-Null
+
+          $svgFiles = Get-ChildItem `
+            -Path "final-dashboard" `
+            -Recurse `
+            -Filter "*.svg"
+
+          if ($svgFiles.Count -eq 0) {
+
+              Write-Error `
+                "No SVG files were found."
+
+              exit 1
+          }
+
+          foreach ($svg in $svgFiles) {
+
+              Copy-Item `
+                $svg.FullName `
+                (Join-Path $target $svg.Name) `
+                -Force
+
+              Write-Host `
+                "Published: $($svg.Name)"
+          }
+
+
+      # --------------------------------------------------
+      # 8. Show final files
+      # --------------------------------------------------
+
+      - name: Verify gh-pages output
+        shell: pwsh
+        run: |
+          Write-Host ""
+          Write-Host "Final dashboard files:"
+          Write-Host ""
+
+          Get-ChildItem `
+            -Path "github-stats" `
+            -File |
+            ForEach-Object {
+                Write-Host `
+                  "$($_.Name) - $($_.Length) bytes"
+            }
+
+
+      # --------------------------------------------------
+      # 9. Commit and push
+      # --------------------------------------------------
+
+      - name: Commit dashboard
+        shell: pwsh
+        run: |
+
+          git config `
+            user.name `
+            "github-actions[bot]"
+
+          git config `
+            user.email `
+            "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add github-stats/
+
+          $changes = git status --porcelain
+
+          if (-not $changes) {
+
+              Write-Host `
+                "No dashboard changes detected."
+
+              exit 0
+          }
+
+          git commit `
+            -m "Update GitHub dashboard"
+
+          git push origin gh-pages
