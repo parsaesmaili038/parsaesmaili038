@@ -530,7 +530,7 @@ I'm interested in creating useful projects, understanding how software works, im
   <img
     src="https://github-readme-activity-graph.vercel.app/graph?username=parsaesmaili038&custom_title=🚀%20Parsa's%20Contribution%20Activity&bg_color=0D1117&color=58A6FF&line=7C3AED&point=FFFFFF&area=true&hide_border=true&radius=16"
     width="100%"
-    alt="GitHub Contribution Activity Graph"
+    alt="GitHub Contribution Activity"
   />
 </p>
 
@@ -566,7 +566,7 @@ I'm interested in creating useful projects, understanding how software works, im
   <img
     src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=parsaesmaili038&theme=tokyonight"
     width="100%"
-    alt="Profile Details"
+    alt="GitHub Profile Details"
   />
 </p>
 
@@ -655,14 +655,14 @@ I'm interested in creating useful projects, understanding how software works, im
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake-dark.svg"
+      srcset="https://parsaesmaili038.github.io/github-contribution-grid-snake-dark.svg"
     />
     <source
       media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake.svg"
+      srcset="https://parsaesmaili038.github.io/github-contribution-grid-snake.svg"
     />
     <img
-      src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake.svg"
+      src="https://parsaesmaili038.github.io/github-contribution-grid-snake.svg"
       alt="GitHub Contribution Snake"
       width="100%"
     />
