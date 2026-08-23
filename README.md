@@ -23,7 +23,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/parsaesmaili038">
+  <a href=".">
     <img
       src="https://img.shields.io/badge/GitHub-parsaesmaili038-181717?style=for-the-badge&logo=github&logoColor=white"
       alt="GitHub"
@@ -48,13 +48,13 @@
 
 I'm interested in creating useful projects, understanding how software works, improving my programming skills, and turning small ideas into real applications.
 
-| | |
-|:--|:--|
-| 🔭 **Currently working on** | Web projects and desktop applications |
-| 🌱 **Currently learning** | Python and software development |
-| 🎯 **Main interests** | Python • Web Development • Desktop Applications |
-| 🛠️ **Favorite tools** | Git • GitHub • VS Code |
-| 💡 **Interested in** | Open Source • Software Architecture • Problem Solving |
+|                             |                                                       |
+| :-------------------------- | :---------------------------------------------------- |
+| 🔭 **Currently working on** | Web projects and desktop applications                 |
+| 🌱 **Currently learning**   | Python and software development                       |
+| 🎯 **Main interests**       | Python • Web Development • Desktop Applications       |
+| 🛠️ **Favorite tools**      | Git • GitHub • VS Code                                |
+| 💡 **Interested in**        | Open Source • Software Architecture • Problem Solving |
 
 ---
 
@@ -71,12 +71,12 @@ I'm interested in creating useful projects, understanding how software works, im
 
 ## 🚀 What I'm Working On
 
-- 🌐 Developing web projects with **HTML, CSS, and JavaScript**
-- 🐍 Building applications with **Python**
-- 🖥️ Creating useful **desktop applications**
-- 📦 Working with **JSON and local data**
-- 📚 Improving programming and problem-solving skills
-- 💡 Exploring new technologies and development tools
+* 🌐 Developing web projects with **HTML, CSS, and JavaScript**
+* 🐍 Building applications with **Python**
+* 🖥️ Creating useful **desktop applications**
+* 📦 Working with **JSON and local data**
+* 📚 Improving programming and problem-solving skills
+* 💡 Exploring new technologies and development tools
 
 ---
 
@@ -100,7 +100,7 @@ I'm interested in creating useful projects, understanding how software works, im
 
 ## ⚡ Fun Fact
 
-> I can start with a simple idea like  
+> I can start with a simple idea like
 > **"Let's make a small app."**
 >
 > And somehow end up designing the README, architecture, license, statistics dashboard, and **37 different sections** for it. 😂
@@ -204,20 +204,20 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <img
-    src="https://img.shields.io/badge/Python%20GUI-3776AB?style=for-the-badge&logo=python&logoColor=white"
-    alt="Python GUI"
-  />
+<img
+ src="https://img.shields.io/badge/Python%20GUI-3776AB?style=for-the-badge&logo=python&logoColor=white"
+ alt="Python GUI"
+/>
 
-  <img
-    src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white"
-    alt="CustomTkinter"
-  />
+<img
+ src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white"
+ alt="CustomTkinter"
+/>
 
-  <img
-    src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white"
-    alt="Tkinter"
-  />
+<img
+ src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white"
+ alt="Tkinter"
+/>
 
 </p>
 
@@ -243,10 +243,10 @@ I'm interested in creating useful projects, understanding how software works, im
     <img src="https://skillicons.dev/icons?i=mssql" alt="Microsoft SQL Server" width="55" height="55"/>
   </a>
 
-  <img
-    src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white"
-    alt="JSON"
-  />
+<img
+ src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white"
+ alt="JSON"
+/>
 
 </p>
 
@@ -260,7 +260,7 @@ I'm interested in creating useful projects, understanding how software works, im
     <img src="https://skillicons.dev/icons?i=git" alt="Git" width="55" height="55"/>
   </a>
 
-  <a href="https://github.com/">
+  <a href=".">
     <img src="https://skillicons.dev/icons?i=github" alt="GitHub" width="55" height="55"/>
   </a>
 
@@ -332,10 +332,10 @@ I'm interested in creating useful projects, understanding how software works, im
     <img src="https://skillicons.dev/icons?i=github" alt="GitHub Pages" width="55" height="55"/>
   </a>
 
-  <img
-    src="https://img.shields.io/badge/GitHub%20Pages-100000?style=for-the-badge&logo=github&logoColor=white"
-    alt="GitHub Pages"
-  />
+<img
+ src="https://img.shields.io/badge/GitHub%20Pages-100000?style=for-the-badge&logo=github&logoColor=white"
+ alt="GitHub Pages"
+/>
 
 </p>
 
@@ -345,20 +345,20 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <img
-    src="https://img.shields.io/badge/REST%20API-02569B?style=for-the-badge&logo=fastapi&logoColor=white"
-    alt="REST API"
-  />
+<img
+ src="https://img.shields.io/badge/REST%20API-02569B?style=for-the-badge&logo=fastapi&logoColor=white"
+ alt="REST API"
+/>
 
-  <img
-    src="https://img.shields.io/badge/HTTP-005571?style=for-the-badge&logo=http&logoColor=white"
-    alt="HTTP"
-  />
+<img
+ src="https://img.shields.io/badge/HTTP-005571?style=for-the-badge&logo=http&logoColor=white"
+ alt="HTTP"
+/>
 
-  <img
-    src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white"
-    alt="JSON"
-  />
+<img
+ src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white"
+ alt="JSON"
+/>
 
 </p>
 
@@ -416,25 +416,25 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <img
-    src="https://img.shields.io/badge/HTTPS-005C97?style=for-the-badge&logo=letsencrypt&logoColor=white"
-    alt="HTTPS"
-  />
+<img
+ src="https://img.shields.io/badge/HTTPS-005C97?style=for-the-badge&logo=letsencrypt&logoColor=white"
+ alt="HTTPS"
+/>
 
-  <img
-    src="https://img.shields.io/badge/SSL%2FTLS-721412?style=for-the-badge&logo=letsencrypt&logoColor=white"
-    alt="SSL TLS"
-  />
+<img
+ src="https://img.shields.io/badge/SSL%2FTLS-721412?style=for-the-badge&logo=letsencrypt&logoColor=white"
+ alt="SSL TLS"
+/>
 
-  <img
-    src="https://img.shields.io/badge/DNS-4285F4?style=for-the-badge&logo=google&logoColor=white"
-    alt="DNS"
-  />
+<img
+ src="https://img.shields.io/badge/DNS-4285F4?style=for-the-badge&logo=google&logoColor=white"
+ alt="DNS"
+/>
 
-  <img
-    src="https://img.shields.io/badge/Networking-00629B?style=for-the-badge&logo=cisco&logoColor=white"
-    alt="Networking"
-  />
+<img
+ src="https://img.shields.io/badge/Networking-00629B?style=for-the-badge&logo=cisco&logoColor=white"
+ alt="Networking"
+/>
 
 </p>
 
@@ -444,20 +444,20 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <img
-    src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"
-    alt="Markdown"
-  />
+<img
+ src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"
+ alt="Markdown"
+/>
 
-  <img
-    src="https://img.shields.io/badge/README-181717?style=for-the-badge&logo=readme&logoColor=white"
-    alt="README"
-  />
+<img
+ src="https://img.shields.io/badge/README-181717?style=for-the-badge&logo=readme&logoColor=white"
+ alt="README"
+/>
 
-  <img
-    src="https://img.shields.io/badge/Documentation-4285F4?style=for-the-badge&logo=googledocs&logoColor=white"
-    alt="Documentation"
-  />
+<img
+ src="https://img.shields.io/badge/Documentation-4285F4?style=for-the-badge&logo=googledocs&logoColor=white"
+ alt="Documentation"
+/>
 
 </p>
 
@@ -467,15 +467,15 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <img
-    src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"
-    alt="Pytest"
-  />
+<img
+ src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"
+ alt="Pytest"
+/>
 
-  <img
-    src="https://img.shields.io/badge/Testing-555555?style=for-the-badge&logo=testinglibrary&logoColor=white"
-    alt="Testing"
-  />
+<img
+ src="https://img.shields.io/badge/Testing-555555?style=for-the-badge&logo=testinglibrary&logoColor=white"
+ alt="Testing"
+/>
 
 </p>
 
@@ -485,25 +485,25 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <img
-    src="https://img.shields.io/badge/Docker-Exploring-2496ED?style=for-the-badge&logo=docker&logoColor=white"
-    alt="Docker"
-  />
+<img
+ src="https://img.shields.io/badge/Docker-Exploring-2496ED?style=for-the-badge&logo=docker&logoColor=white"
+ alt="Docker"
+/>
 
-  <img
-    src="https://img.shields.io/badge/Linux-Exploring-FCC624?style=for-the-badge&logo=linux&logoColor=black"
-    alt="Linux"
-  />
+<img
+ src="https://img.shields.io/badge/Linux-Exploring-FCC624?style=for-the-badge&logo=linux&logoColor=black"
+ alt="Linux"
+/>
 
-  <img
-    src="https://img.shields.io/badge/React-Exploring-61DAFB?style=for-the-badge&logo=react&logoColor=black"
-    alt="React"
-  />
+<img
+ src="https://img.shields.io/badge/React-Exploring-61DAFB?style=for-the-badge&logo=react&logoColor=black"
+ alt="React"
+/>
 
-  <img
-    src="https://img.shields.io/badge/Cloud-Exploring-4285F4?style=for-the-badge&logo=icloud&logoColor=white"
-    alt="Cloud"
-  />
+<img
+ src="https://img.shields.io/badge/Cloud-Exploring-4285F4?style=for-the-badge&logo=icloud&logoColor=white"
+ alt="Cloud"
+/>
 
 </p>
 
@@ -513,7 +513,7 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/overview.svg"
+    src="https://parsaesmaili038.github.io/github-stats/overview.svg"
     width="100%"
     alt="GitHub Analytics Dashboard"
   />
@@ -541,7 +541,7 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
   <img
-    src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-stats/top-langs.svg"
+    src="https://parsaesmaili038.github.io/github-stats/languages.svg"
     width="100%"
     alt="Top Languages"
   />
@@ -566,11 +566,12 @@ I'm interested in creating useful projects, understanding how software works, im
     alt="Repositories Per Language"
   />
 
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=tokyonight"
-    width="49%"
-    alt="Most Commit Language"
-  />
+<img
+ src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=parsaesmaili038&theme=tokyonight"
+ width="49%"
+ alt="Most Commit Language"
+/>
+
 </p>
 
 ---
@@ -584,11 +585,12 @@ I'm interested in creating useful projects, understanding how software works, im
     alt="Productive Time"
   />
 
-  <img
-    src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=tokyonight"
-    width="49%"
-    alt="GitHub Statistics Summary"
-  />
+<img
+ src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=parsaesmaili038&theme=tokyonight"
+ width="49%"
+ alt="GitHub Statistics Summary"
+/>
+
 </p>
 
 ---
@@ -611,19 +613,22 @@ I'm interested in creating useful projects, understanding how software works, im
   <picture>
     <source
       media="(prefers-color-scheme: dark)"
-      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake-dark.svg"
+      srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake-dark.svg"
     />
 
-    <source
-      media="(prefers-color-scheme: light)"
-      srcset="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake.svg"
-    />
+```
+<source
+  media="(prefers-color-scheme: light)"
+  srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake.svg"
+/>
 
-    <img
-      src="https://raw.githubusercontent.com/parsaesmaili038/parsaesmaili038/gh-pages/github-contribution-grid-snake.svg"
-      width="100%"
-      alt="GitHub Contribution Snake"
-    />
+<img
+  src="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake.svg"
+  width="100%"
+  alt="GitHub Contribution Snake"
+/>
+```
+
   </picture>
 </p>
 
@@ -637,15 +642,15 @@ A lightweight desktop ticket management application built with **Python** and **
 
 ### ✨ Features
 
-- 🎫 Ticket creation and management
-- 🔎 Real-time search
-- ✏️ Ticket editing
-- 🗑️ Ticket deletion
-- 📝 Ticket notes
-- 🏷️ Tags and priorities
-- 📊 Ticket statuses
-- 💾 Local JSON data storage
-- 🌙 Dark GUI
+* 🎫 Ticket creation and management
+* 🔎 Real-time search
+* ✏️ Ticket editing
+* 🗑️ Ticket deletion
+* 📝 Ticket notes
+* 🏷️ Tags and priorities
+* 📊 Ticket statuses
+* 💾 Local JSON data storage
+* 🌙 Dark GUI
 
 > ⚠️ Designed as a **LOCAL, SINGLE-USER** application and is **NOT intended as a multi-user or server-based ticketing platform**.
 
@@ -688,10 +693,11 @@ Development Tools
 ├── VS Code
 └── Windows
 ```
+
 # Connect With Me
 
 <p align="center">
-  <a href="https://github.com/parsaesmaili038">
+  <a href=".">
     <img
       src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"
       alt="GitHub Profile"
@@ -705,7 +711,7 @@ Development Tools
     />
   </a>
 
-  <a href="https://github.com/parsaesmaili038?tab=repositories">
+  <a href="./?tab=repositories">
     <img
       src="https://img.shields.io/badge/GitHub-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
       alt="Repositories"
@@ -719,15 +725,16 @@ Development Tools
     alt="Profile Views"
   />
 
-  <img
-    src="https://img.shields.io/github/followers/parsaesmaili038?label=Followers&style=for-the-badge&color=7C3AED"
-    alt="Followers"
-  />
+<img
+ src="https://img.shields.io/github/followers/parsaesmaili038?label=Followers&style=for-the-badge&color=7C3AED"
+ alt="Followers"
+/>
 
-  <img
-    src="https://img.shields.io/github/stars/parsaesmaili038?label=Stars&style=for-the-badge&color=F7DF1E"
-    alt="Stars"
-  />
+<img
+ src="https://img.shields.io/github/stars/parsaesmaili038?label=Stars&style=for-the-badge&color=F7DF1E"
+ alt="Stars"
+/>
+
 </p>
 
 ---
@@ -735,14 +742,14 @@ Development Tools
 ## 🔗 Quick Navigation
 
 <p align="center">
-  <a href="https://github.com/parsaesmaili038">
+  <a href=".">
     <img
       src="https://img.shields.io/badge/👤%20Profile-GitHub-181717?style=for-the-badge"
       alt="Profile"
     />
   </a>
 
-  <a href="https://github.com/parsaesmaili038?tab=repositories">
+  <a href="./?tab=repositories">
     <img
       src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge"
       alt="Repositories"
@@ -758,14 +765,14 @@ Development Tools
 </p>
 
 <p align="center">
-  <a href="https://github.com/parsaesmaili038?tab=projects">
+  <a href="./?tab=projects">
     <img
       src="https://img.shields.io/badge/📋%20Projects-GitHub%20Projects-238636?style=for-the-badge&logo=github&logoColor=white"
       alt="GitHub Projects"
     />
   </a>
 
-  <a href="https://github.com/parsaesmaili038?tab=stars">
+  <a href="./?tab=stars">
     <img
       src="https://img.shields.io/badge/⭐%20Stars-Starred%20Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
       alt="Starred Projects"
@@ -801,14 +808,14 @@ Development Tools
 ## 📡 Find My Work
 
 <p align="center">
-  <a href="https://github.com/parsaesmaili038">
+  <a href=".">
     <img
       src="https://img.shields.io/badge/Explore%20My-GitHub%20Profile-181717?style=for-the-badge&logo=github&logoColor=white"
       alt="Explore GitHub"
     />
   </a>
 
-  <a href="https://github.com/parsaesmaili038?tab=repositories">
+  <a href="./?tab=repositories">
     <img
       src="https://img.shields.io/badge/Browse-My%20Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white"
       alt="Browse Repositories"
@@ -851,7 +858,7 @@ Development Tools
 </p>
 
 <p align="center">
-  <a href="https://github.com/parsaesmaili038">
+  <a href=".">
     <img
       src="https://img.shields.io/badge/⭐%20Visit%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
       alt="Visit GitHub"
