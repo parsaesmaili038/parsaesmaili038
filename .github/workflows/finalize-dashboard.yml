@@ -1,4 +1,4 @@
-name : Finalize GitHub Dashboard
+name: Finalize GitHub Dashboard
 
 on:
   workflow_run:
@@ -6,7 +6,7 @@ on:
       - Generate GitHub Overview
       - Generate GitHub Languages
       - Generate GitHub Activity
-      - Generate GitHub Contributions
+      - Generate GitHub Repositories
     types:
       - completed
 
@@ -20,11 +20,6 @@ jobs:
   finalize:
     name: Collect and Publish Dashboard
     runs-on: windows-latest
-
-    # --------------------------------------------------
-    # Finalizer فقط با موفقیت اجرا شدن workflow آغازگر
-    # ادامه پیدا می‌کند.
-    # --------------------------------------------------
 
     if: >
       github.event_name == 'workflow_dispatch' ||
@@ -61,7 +56,7 @@ jobs:
 
 
       # --------------------------------------------------
-      # 3. Find latest successful runs
+      # 3. Find latest successful runs and artifacts
       # --------------------------------------------------
 
       - name: Find artifact-producing workflow runs
@@ -71,7 +66,7 @@ jobs:
           OVERVIEW_WORKFLOW: "Generate GitHub Overview"
           LANGUAGES_WORKFLOW: "Generate GitHub Languages"
           ACTIVITY_WORKFLOW: "Generate GitHub Activity"
-          CONTRIBUTIONS_WORKFLOW: "Generate GitHub Contributions"
+          REPOSITORIES_WORKFLOW: "Generate GitHub Repositories"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -89,8 +84,8 @@ jobs:
                 artifact: "github-activity"
               },
               {
-                name: process.env.CONTRIBUTIONS_WORKFLOW,
-                artifact: "github-contributions"
+                name: process.env.REPOSITORIES_WORKFLOW,
+                artifact: "github-repositories"
               }
             ];
 
@@ -101,9 +96,7 @@ jobs:
 
             for (const item of workflows) {
 
-              core.info(
-                `Searching workflow: ${item.name}`
-              );
+              core.info(`Searching workflow: ${item.name}`);
 
               const workflowList =
                 await github.paginate(
@@ -126,6 +119,10 @@ jobs:
                 );
                 return;
               }
+
+              core.info(
+                `Found workflow: ${item.name} (ID: ${workflow.id})`
+              );
 
               const runs =
                 await github.paginate(
@@ -167,6 +164,7 @@ jobs:
                   );
 
                 if (artifact) {
+
                   selectedRun = {
                     runId: run.id,
                     artifactName: artifact.name,
@@ -178,9 +176,11 @@ jobs:
               }
 
               if (!selectedRun) {
+
                 core.setFailed(
                   `No successful run with artifact '${item.artifact}' was found for workflow '${item.name}'.`
                 );
+
                 return;
               }
 
@@ -197,7 +197,7 @@ jobs:
             );
 
             core.info(
-              `Selected runs: ${JSON.stringify(result, null, 2)}`
+              `Selected runs:\n${JSON.stringify(result, null, 2)}`
             );
 
 
@@ -244,17 +244,17 @@ jobs:
 
 
       # --------------------------------------------------
-      # 7. Download Contributions
+      # 7. Download Repositories
       # --------------------------------------------------
 
-      - name: Download contributions artifact
+      - name: Download repositories artifact
         uses: actions/download-artifact@v5
         with:
-          name: github-contributions
-          path: final-dashboard/contributions
+          name: github-repositories
+          path: final-dashboard/repositories
           github-token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
-          run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-contributions'].runId }}
+          run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-repositories'].runId }}
 
 
       # --------------------------------------------------
@@ -269,7 +269,7 @@ jobs:
               "overview.svg",
               "languages.svg",
               "activity.svg",
-              "contributions.svg"
+              "repositories.svg"
           )
 
           foreach ($file in $requiredFiles) {
@@ -341,13 +341,18 @@ jobs:
         shell: pwsh
         run: |
 
-          if (-not (Test-Path "github-stats")) {
+          if (Test-Path "github-stats") {
 
-              New-Item `
-                -ItemType Directory `
-                -Path "github-stats" `
-                -Force | Out-Null
+              Remove-Item `
+                "github-stats" `
+                -Recurse `
+                -Force
           }
+
+          New-Item `
+            -ItemType Directory `
+            -Path "github-stats" `
+            -Force | Out-Null
 
 
       # --------------------------------------------------
@@ -362,7 +367,7 @@ jobs:
               "overview.svg",
               "languages.svg",
               "activity.svg",
-              "contributions.svg"
+              "repositories.svg"
           )
 
           foreach ($file in $files) {
@@ -404,7 +409,7 @@ jobs:
               "overview.svg",
               "languages.svg",
               "activity.svg",
-              "contributions.svg"
+              "repositories.svg"
           )
 
           foreach ($file in $requiredFiles) {
@@ -442,7 +447,7 @@ jobs:
 
 
       # --------------------------------------------------
-      # 13. Commit only if something actually changed
+      # 13. Commit only if something changed
       # --------------------------------------------------
 
       - name: Commit dashboard
@@ -478,4 +483,3 @@ jobs:
             -m "Update GitHub dashboard"
 
           git push origin gh-pages
-
