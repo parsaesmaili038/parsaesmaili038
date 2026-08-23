@@ -16,20 +16,9 @@
         x2="1"
         y2="1"
     >
-        <stop
-            offset="0%"
-            stop-color="#0D1117"
-        />
-
-        <stop
-            offset="55%"
-            stop-color="#111827"
-        />
-
-        <stop
-            offset="100%"
-            stop-color="#17113A"
-        />
+        <stop offset="0%" stop-color="#0D1117"/>
+        <stop offset="55%" stop-color="#111827"/>
+        <stop offset="100%" stop-color="#17113A"/>
     </linearGradient>
 
     <linearGradient
@@ -39,35 +28,12 @@
         x2="1"
         y2="0"
     >
-        <stop
-            offset="0%"
-            stop-color="#58A6FF"
-        />
-
-        <stop
-            offset="100%"
-            stop-color="#7C3AED"
-        />
+        <stop offset="0%" stop-color="#58A6FF"/>
+        <stop offset="100%" stop-color="#7C3AED"/>
     </linearGradient>
-
-    <filter id="glow">
-
-        <feGaussianBlur
-            stdDeviation="5"
-            result="blur"
-        />
-
-        <feMerge>
-            <feMergeNode in="blur"/>
-            <feMergeNode in="SourceGraphic"/>
-        </feMerge>
-
-    </filter>
 
 </defs>
 
-
-<!-- Background -->
 
 <rect
     x="0"
@@ -78,8 +44,6 @@
     fill="url(#background)"
 />
 
-
-<!-- Border -->
 
 <rect
     x="2"
@@ -93,18 +57,16 @@
 />
 
 
-<!-- Header -->
-
 <text
     x="550"
-    y="70"
+    y="68"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
     font-size="28"
     font-weight="700"
 >
-    🚀 PARSA ESMAILI — GITHUB ANALYTICS
+    📦 PARSA ESMAILI — REPOSITORY ANALYTICS
 </text>
 
 
@@ -115,15 +77,12 @@
     height="3"
     rx="2"
     fill="url(#accent)"
-    filter="url(#glow)"
 />
 
 
-<!-- STARS -->
-
 <rect
     x="60"
-    y="140"
+    y="145"
     width="300"
     height="145"
     rx="20"
@@ -132,22 +91,23 @@
     stroke-width="1"
 />
 
+
 <text
     x="210"
-    y="180"
+    y="187"
     text-anchor="middle"
     fill="#58A6FF"
     font-family="Arial, Helvetica, sans-serif"
     font-size="18"
     font-weight="700"
 >
-    ⭐
-    STARS
+    📦 REPOSITORIES
 </text>
+
 
 <text
     x="210"
-    y="240"
+    y="248"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
@@ -157,12 +117,10 @@
     8
 </text>
 
-
-<!-- REPOSITORIES -->
 
 <rect
     x="400"
-    y="140"
+    y="145"
     width="300"
     height="145"
     rx="20"
@@ -171,22 +129,23 @@
     stroke-width="1"
 />
 
+
 <text
     x="550"
-    y="180"
+    y="187"
     text-anchor="middle"
-    fill="#7C3AED"
+    fill="#F7DF1E"
     font-family="Arial, Helvetica, sans-serif"
     font-size="18"
     font-weight="700"
 >
-    📦
-    REPOSITORIES
+    ⭐ TOTAL STARS
 </text>
+
 
 <text
     x="550"
-    y="240"
+    y="248"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
@@ -197,11 +156,9 @@
 </text>
 
 
-<!-- FOLLOWERS -->
-
 <rect
     x="740"
-    y="140"
+    y="145"
     width="300"
     height="145"
     rx="20"
@@ -210,61 +167,23 @@
     stroke-width="1"
 />
 
-<text
-    x="890"
-    y="180"
-    text-anchor="middle"
-    fill="#58A6FF"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
-    font-weight="700"
->
-    👥
-    FOLLOWERS
-</text>
 
 <text
     x="890"
-    y="240"
-    text-anchor="middle"
-    fill="#FFFFFF"
-    font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
-    font-weight="700"
->
-    3
-</text>
-
-
-<!-- FORKS -->
-
-<rect
-    x="60"
-    y="315"
-    width="300"
-    height="145"
-    rx="20"
-    fill="#161B22"
-    stroke="#30363D"
-    stroke-width="1"
-/>
-
-<text
-    x="210"
-    y="355"
+    y="187"
     text-anchor="middle"
     fill="#7C3AED"
     font-family="Arial, Helvetica, sans-serif"
     font-size="18"
     font-weight="700"
 >
-    🔀
-    FORKS
+    🔀 TOTAL FORKS
 </text>
 
+
 <text
-    x="210"
-    y="415"
+    x="890"
+    y="248"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
@@ -275,11 +194,9 @@
 </text>
 
 
-<!-- FOLLOWING -->
-
 <rect
-    x="400"
-    y="315"
+    x="60"
+    y="330"
     width="300"
     height="145"
     rx="20"
@@ -288,37 +205,36 @@
     stroke-width="1"
 />
 
+
 <text
-    x="550"
-    y="355"
+    x="210"
+    y="372"
     text-anchor="middle"
     fill="#58A6FF"
     font-family="Arial, Helvetica, sans-serif"
     font-size="18"
     font-weight="700"
 >
-    👤
-    FOLLOWING
+    💻 LANGUAGES
 </text>
 
+
 <text
-    x="550"
-    y="415"
+    x="210"
+    y="433"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
     font-size="42"
     font-weight="700"
 >
-    10
+    2
 </text>
 
 
-<!-- STATUS -->
-
 <rect
-    x="740"
-    y="315"
+    x="400"
+    y="330"
     width="300"
     height="145"
     rx="20"
@@ -327,54 +243,92 @@
     stroke-width="1"
 />
 
+
 <text
-    x="890"
-    y="355"
+    x="550"
+    y="372"
     text-anchor="middle"
     fill="#7C3AED"
     font-family="Arial, Helvetica, sans-serif"
     font-size="18"
     font-weight="700"
 >
-    ⚡
-    STATUS
+    🧩 ORIGINAL
 </text>
 
+
 <text
-    x="890"
-    y="415"
+    x="550"
+    y="433"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
     font-size="42"
     font-weight="700"
 >
-    ACTIVE
+    4
 </text>
 
 
-<!-- Footer -->
+<rect
+    x="740"
+    y="330"
+    width="300"
+    height="145"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
 
 <text
-    x="550"
-    y="520"
+    x="890"
+    y="372"
     text-anchor="middle"
     fill="#8B949E"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="15"
+    font-size="18"
+    font-weight="700"
+>
+    📁 ARCHIVED
+</text>
+
+
+<text
+    x="890"
+    y="433"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="42"
+    font-weight="700"
+>
+    1
+</text>
+
+
+<text
+    x="550"
+    y="535"
+    text-anchor="middle"
+    fill="#8B949E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="14"
 >
     LIVE DATA • GENERATED AUTOMATICALLY
 </text>
 
+
 <text
     x="550"
-    y="555"
+    y="570"
     text-anchor="middle"
     fill="#58A6FF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="15"
+    font-size="14"
 >
-    LAST UPDATED: 2026-08-23 02:10 UTC
+    LAST UPDATED: 2026-08-23 UTC
 </text>
 
 </svg>

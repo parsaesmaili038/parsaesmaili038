@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="1100"
+    height="620"
+    viewBox="0 0 1100 620"
+>
+
+<defs>
+
+    <linearGradient
+        id="background"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="1"
+    >
+        <stop offset="0%" stop-color="#0D1117"/>
+        <stop offset="55%" stop-color="#111827"/>
+        <stop offset="100%" stop-color="#17113A"/>
+    </linearGradient>
+
+    <linearGradient
+        id="accent"
+        x1="0"
+        y1="0"
+        x2="1"
+        y2="0"
+    >
+        <stop offset="0%" stop-color="#58A6FF"/>
+        <stop offset="100%" stop-color="#7C3AED"/>
+    </linearGradient>
+
+</defs>
+
+
+<rect
+    x="0"
+    y="0"
+    width="1100"
+    height="620"
+    rx="28"
+    fill="url(#background)"
+/>
+
+
+<rect
+    x="2"
+    y="2"
+    width="1096"
+    height="616"
+    rx="28"
+    fill="none"
+    stroke="#30363D"
+    stroke-width="2"
+/>
+
+
+<text
+    x="550"
+    y="70"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="28"
+    font-weight="700"
+>
+    💻 PARSA ESMAILI — LANGUAGE ANALYTICS
+</text>
+
+
+<rect
+    x="180"
+    y="92"
+    width="740"
+    height="3"
+    rx="2"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="550"
+    y="135"
+    text-anchor="middle"
+    fill="#8B949E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="14"
+>
+    Programming languages used across public repositories
+</text>
+
+
+<text
+    x="90"
+    y="175"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    Python
+</text>
+
+
+<rect
+    x="230"
+    y="159"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="159"
+    width="680.97"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="175"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    94.6%
+</text>
+
+
+<text
+    x="90"
+    y="217"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    HTML
+</text>
+
+
+<rect
+    x="230"
+    y="201"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="201"
+    width="25.48"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="217"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    3.5%
+</text>
+
+
+<text
+    x="90"
+    y="259"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    JavaScript
+</text>
+
+
+<rect
+    x="230"
+    y="243"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="243"
+    width="5.54"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="259"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    0.8%
+</text>
+
+
+<text
+    x="90"
+    y="301"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    CSS
+</text>
+
+
+<rect
+    x="230"
+    y="285"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="285"
+    width="5.00"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="301"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    0.6%
+</text>
+
+
+<text
+    x="90"
+    y="343"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    PowerShell
+</text>
+
+
+<rect
+    x="230"
+    y="327"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="327"
+    width="5.00"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="343"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    0.4%
+</text>
+
+
+<text
+    x="90"
+    y="385"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    C
+</text>
+
+
+<rect
+    x="230"
+    y="369"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="369"
+    width="5.00"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="385"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    0.1%
+</text>
+
+
+<text
+    x="90"
+    y="427"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    Shell
+</text>
+
+
+<rect
+    x="230"
+    y="411"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="411"
+    width="5.00"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="427"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    0.0%
+</text>
+
+
+<text
+    x="90"
+    y="469"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="16"
+    font-weight="700"
+>
+    Batchfile
+</text>
+
+
+<rect
+    x="230"
+    y="453"
+    width="720"
+    height="20"
+    rx="10"
+    fill="#21262D"
+/>
+
+
+<rect
+    x="230"
+    y="453"
+    width="5.00"
+    height="20"
+    rx="10"
+    fill="url(#accent)"
+/>
+
+
+<text
+    x="975"
+    y="469"
+    text-anchor="end"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="15"
+    font-weight="700"
+>
+    0.0%
+</text>
+
+
+<text
+    x="550"
+    y="560"
+    text-anchor="middle"
+    fill="#8B949E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="14"
+>
+    LIVE DATA • GENERATED AUTOMATICALLY
+</text>
+
+
+<text
+    x="550"
+    y="590"
+    text-anchor="middle"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="14"
+>
+    LAST UPDATED: 2026-08-23 UTC
+</text>
+
+</svg>
