@@ -8,64 +8,44 @@
 </p>
 
 <p align="center">
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/🌐%20My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Personal Website"
+    />
+  </a>
+
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/Portfolio-Website-58A6FF?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Portfolio"
+    />
+  </a>
+
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/Projects-Explore-238636?style=for-the-badge&logo=github&logoColor=white"
+      alt="Projects"
+    />
+  </a>
+</p>
+
+<p align="center">
   <img
     src="https://komarev.com/ghpvc/?username=parsaesmaili038&label=Profile%20Views&color=0e75b6&style=flat"
     alt="Profile Views"
   />
-  <img
-    src="https://img.shields.io/github/followers/parsaesmaili038?label=Followers&style=flat&color=58A6FF"
-    alt="GitHub Followers"
-  />
-  <img
-    src="https://img.shields.io/github/stars/parsaesmaili038?label=Stars&style=flat&color=7C3AED"
-    alt="GitHub Stars"
-  />
-</p>
 
-<p align="center">
-  <a href=".">
-    <img
-      src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"
-      alt="GitHub Profile"
-    />
-  </a>
+<img
+ src="https://img.shields.io/github/followers/parsaesmaili038?label=Followers&style=flat&color=58A6FF"
+ alt="GitHub Followers"
+/>
 
-  <a href="./?tab=repositories">
-    <img
-      src="https://img.shields.io/badge/Repositories-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
-      alt="Repositories"
-    />
-  </a>
+<img
+ src="https://img.shields.io/github/stars/parsaesmaili038?label=Stars&style=flat&color=7C3AED"
+ alt="GitHub Stars"
+/>
 
-  <a href="https://parsaesmaili038.github.io/">
-    <img
-      src="https://img.shields.io/badge/Portfolio-Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-      alt="Portfolio Website"
-    />
-  </a>
-</p>
-
-<p align="center">
-  <a href="./?tab=projects">
-    <img
-      src="https://img.shields.io/badge/Projects-GitHub-238636?style=for-the-badge&logo=github&logoColor=white"
-      alt="GitHub Projects"
-    />
-  </a>
-
-  <a href="./?tab=stars">
-    <img
-      src="https://img.shields.io/badge/Starred-Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
-      alt="Starred Projects"
-    />
-  </a>
-
-  <a href="https://parsaesmaili038.github.io/">
-    <img
-      src="https://img.shields.io/badge/My-Website-0EA5E9?style=for-the-badge&logo=googlechrome&logoColor=white"
-      alt="My Website"
-    />
-  </a>
 </p>
 
 ---
@@ -75,6 +55,7 @@
 💻 **Developer**
 
 🐍 Python enthusiast • 🌐 Web development • 🖥️ Desktop applications
+
 🛠️ Building useful software • 🧠 Learning how software works • 🚀 Turning ideas into projects
 
 I'm interested in creating useful projects, understanding how software works, improving my programming skills, and turning small ideas into real applications.
@@ -323,7 +304,7 @@ I'm interested in creating useful projects, understanding how software works, im
 <img src="https://skillicons.dev/icons?i=git" width="55" height="55" alt="Git"/>
 </a>
 
-<a href=".">
+<a href="https://parsaesmaili038.github.io/">
 <img src="https://skillicons.dev/icons?i=github" width="55" height="55" alt="GitHub"/>
 </a>
 
@@ -357,10 +338,6 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <a href="https://www.npmjs.com/">
 <img src="https://skillicons.dev/icons?i=npm" width="55" height="55" alt="NPM"/>
-</a>
-
-<a href="https://git-scm.com/">
-<img src="https://skillicons.dev/icons?i=git" width="55" height="55" alt="Git"/>
 </a>
 
 <a href="https://www.jetbrains.com/">
@@ -405,8 +382,8 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-<a href="https://pages.github.com/">
-<img src="https://skillicons.dev/icons?i=github" width="55" height="55" alt="GitHub Pages"/>
+<a href="https://parsaesmaili038.github.io/">
+<img src="https://skillicons.dev/icons?i=github" width="55" height="55" alt="Website"/>
 </a>
 
 <img src="https://img.shields.io/badge/GitHub%20Pages-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages"/>
@@ -429,7 +406,7 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
 
-<img src="https://img.shields.io/badge/API-Integration-7C3AED?style=for-the-badge&logo=api&logoColor=white" alt="API Integration"/>
+<img src="https://img.shields.io/badge/API%20Integration-7C3AED?style=for-the-badge&logo=api&logoColor=white" alt="API Integration"/>
 
 </p>
 
@@ -655,13 +632,12 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
   <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake-dark.svg"
+    />
 
 ```
-<source
-  media="(prefers-color-scheme: dark)"
-  srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake-dark.svg"
-/>
-
 <source
   media="(prefers-color-scheme: light)"
   srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake.svg"
@@ -708,14 +684,12 @@ A lightweight desktop ticket management application built with **Python** and **
 My personal website and project showcase.
 
 <p align="center">
-
-<a href="https://parsaesmaili038.github.io/">
-<img
-  src="https://img.shields.io/badge/🌐%20Visit%20My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-  alt="Personal Website"
-/>
-</a>
-
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/🌐%20Visit%20My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Personal Website"
+    />
+  </a>
 </p>
 
 ---
@@ -756,38 +730,24 @@ My personal website and project showcase.
 
 <p align="center">
 
-<a href=".">
+<a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/🐙%20GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"
-  alt="GitHub Profile"
-/>
-</a>
-
-<a href="./?tab=repositories">
-<img
-  src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
-  alt="Repositories"
+  src="https://img.shields.io/badge/🌐%20Website-Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="Portfolio"
 />
 </a>
 
 <a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/🌐%20Portfolio-Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-  alt="Portfolio"
+  src="https://img.shields.io/badge/🚀%20My-Projects-238636?style=for-the-badge&logo=github&logoColor=white"
+  alt="Projects"
 />
 </a>
 
-<a href="./?tab=projects">
+<a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/📋%20Projects-GitHub-238636?style=for-the-badge&logo=github&logoColor=white"
-  alt="GitHub Projects"
-/>
-</a>
-
-<a href="./?tab=stars">
-<img
-  src="https://img.shields.io/badge/⭐%20Starred-Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
-  alt="Starred Projects"
+  src="https://img.shields.io/badge/📂%20Explore-My%20Work-58A6FF?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="My Work"
 />
 </a>
 
@@ -817,31 +777,31 @@ My personal website and project showcase.
 
 <p align="center">
 
-<a href=".">
+<a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/👤%20Profile-GitHub-181717?style=for-the-badge"
+  src="https://img.shields.io/badge/👤%20Profile-Website-181717?style=for-the-badge"
   alt="Profile"
 />
 </a>
 
-<a href="./?tab=repositories">
+<a href="https://parsaesmaili038.github.io/">
 <img
   src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge"
   alt="Repositories"
 />
 </a>
 
-<a href="./?tab=projects">
+<a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/📋%20Projects-GitHub%20Projects-238636?style=for-the-badge&logo=github&logoColor=white"
+  src="https://img.shields.io/badge/📋%20Projects-Explore-238636?style=for-the-badge"
   alt="Projects"
 />
 </a>
 
-<a href="./?tab=stars">
+<a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/⭐%20Stars-Starred%20Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
-  alt="Starred Projects"
+  src="https://img.shields.io/badge/⭐%20My-Work-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
+  alt="My Work"
 />
 </a>
 
@@ -883,31 +843,24 @@ My personal website and project showcase.
 
 <p align="center">
 
-<a href=".">
+<a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/🐙%20Explore-My%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
-  alt="Explore GitHub"
-/>
-</a>
-
-<a href="./?tab=repositories">
-<img
-  src="https://img.shields.io/badge/📦%20Browse-My%20Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white"
-  alt="Browse Repositories"
-/>
-</a>
-
-<a href="./?tab=projects">
-<img
-  src="https://img.shields.io/badge/📋%20Explore-My%20Projects-238636?style=for-the-badge&logo=github&logoColor=white"
-  alt="Explore Projects"
+  src="https://img.shields.io/badge/🌐%20Explore-My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="Explore Website"
 />
 </a>
 
 <a href="https://parsaesmaili038.github.io/">
 <img
-  src="https://img.shields.io/badge/🌐%20Visit-My%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-  alt="Visit Portfolio"
+  src="https://img.shields.io/badge/📦%20Browse-My%20Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
+  alt="Browse Projects"
+/>
+</a>
+
+<a href="https://parsaesmaili038.github.io/">
+<img
+  src="https://img.shields.io/badge/🚀%20Explore-My%20Work-238636?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="Explore My Work"
 />
 </a>
 
@@ -932,6 +885,15 @@ My personal website and project showcase.
   🚀 Projects
 </p>
 
+<p align="center">
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/🌐%20Visit%20My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Visit My Website"
+    />
+  </a>
+</p>
+
 ---
 
 ## 🌟 Final Words
@@ -949,28 +911,12 @@ My personal website and project showcase.
 </p>
 
 <p align="center">
-
-<a href=".">
-<img
-  src="https://img.shields.io/badge/⭐%20Visit-GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
-  alt="Visit GitHub"
-/>
-</a>
-
-<a href="./?tab=repositories">
-<img
-  src="https://img.shields.io/badge/📦%20View-Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white"
-  alt="View Repositories"
-/>
-</a>
-
-<a href="https://parsaesmaili038.github.io/">
-<img
-  src="https://img.shields.io/badge/🌐%20Visit-Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-  alt="Visit Portfolio"
-/>
-</a>
-
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/🌐%20Visit-My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Visit Website"
+    />
+  </a>
 </p>
 
 <div align="center">
