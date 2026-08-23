@@ -5,6 +5,8 @@ on:
     workflows:
       - Generate GitHub Overview
       - Generate GitHub Languages
+      - Generate GitHub Activity
+      - Generate GitHub Contributions
     types:
       - completed
 
@@ -19,7 +21,11 @@ jobs:
     name: Collect and Publish Dashboard
     runs-on: windows-latest
 
-    # workflow_run را فقط وقتی ادامه بده که اجرای بچه موفق بوده باشد.
+    # --------------------------------------------------
+    # Finalizer فقط با موفقیت اجرا شدن workflow آغازگر
+    # ادامه پیدا می‌کند.
+    # --------------------------------------------------
+
     if: >
       github.event_name == 'workflow_dispatch' ||
       github.event.workflow_run.conclusion == 'success'
@@ -38,7 +44,7 @@ jobs:
 
 
       # --------------------------------------------------
-      # 2. Prepare directories
+      # 2. Prepare temporary directory
       # --------------------------------------------------
 
       - name: Prepare dashboard directory
@@ -55,135 +61,226 @@ jobs:
 
 
       # --------------------------------------------------
-      # 3. Download artifacts
+      # 3. Find latest successful runs
       # --------------------------------------------------
 
-      - name: Download workflow artifacts
-        uses: actions/github-script@v7
+      - name: Find artifact-producing workflow runs
+        id: find-runs
+        uses: actions/github-script@v8
+        env:
+          OVERVIEW_WORKFLOW: "Generate GitHub Overview"
+          LANGUAGES_WORKFLOW: "Generate GitHub Languages"
+          ACTIVITY_WORKFLOW: "Generate GitHub Activity"
+          CONTRIBUTIONS_WORKFLOW: "Generate GitHub Contributions"
         with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const fs = require('fs');
-            const path = require('path');
+            const workflows = [
+              {
+                name: process.env.OVERVIEW_WORKFLOW,
+                artifact: "github-overview"
+              },
+              {
+                name: process.env.LANGUAGES_WORKFLOW,
+                artifact: "github-languages"
+              },
+              {
+                name: process.env.ACTIVITY_WORKFLOW,
+                artifact: "github-activity"
+              },
+              {
+                name: process.env.CONTRIBUTIONS_WORKFLOW,
+                artifact: "github-contributions"
+              }
+            ];
 
-            const runId =
-              context.eventName === 'workflow_run'
-                ? context.payload.workflow_run.id
-                : context.runId;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
 
-            core.info(`Using workflow run: ${runId}`);
+            const result = {};
 
-            const artifacts =
-              await github.paginate(
-                github.rest.actions.listWorkflowRunArtifacts,
-                {
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  run_id: runId,
-                  per_page: 100
-                }
-              );
-
-            if (artifacts.length === 0) {
-              core.setFailed(
-                'No artifacts were found for this workflow run.'
-              );
-              return;
-            }
-
-            core.info(
-              `Found ${artifacts.length} artifact(s).`
-            );
-
-            const outputDirectory =
-              path.join(
-                process.env.GITHUB_WORKSPACE,
-                'final-dashboard'
-              );
-
-            fs.mkdirSync(
-              outputDirectory,
-              { recursive: true }
-            );
-
-            for (const artifact of artifacts) {
+            for (const item of workflows) {
 
               core.info(
-                `Downloading artifact: ${artifact.name}`
+                `Searching workflow: ${item.name}`
               );
 
-              const response =
-                await github.rest.actions.downloadArtifact({
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                  artifact_id: artifact.id,
-                  archive_format: 'zip'
-                });
-
-              const zipPath =
-                path.join(
-                  outputDirectory,
-                  `${artifact.name}.zip`
+              const workflowList =
+                await github.paginate(
+                  github.rest.actions.listRepoWorkflows,
+                  {
+                    owner,
+                    repo,
+                    per_page: 100
+                  }
                 );
 
-              fs.writeFileSync(
-                zipPath,
-                Buffer.from(response.data)
+              const workflow =
+                workflowList.find(
+                  w => w.name === item.name
+                );
+
+              if (!workflow) {
+                core.setFailed(
+                  `Workflow not found: ${item.name}`
+                );
+                return;
+              }
+
+              const runs =
+                await github.paginate(
+                  github.rest.actions.listWorkflowRuns,
+                  {
+                    owner,
+                    repo,
+                    workflow_id: workflow.id,
+                    status: "completed",
+                    per_page: 100
+                  }
+                );
+
+              const successfulRuns =
+                runs.filter(
+                  run => run.conclusion === "success"
+                );
+
+              let selectedRun = null;
+
+              for (const run of successfulRuns) {
+
+                const artifacts =
+                  await github.paginate(
+                    github.rest.actions.listWorkflowRunArtifacts,
+                    {
+                      owner,
+                      repo,
+                      run_id: run.id,
+                      per_page: 100
+                    }
+                  );
+
+                const artifact =
+                  artifacts.find(
+                    a =>
+                      a.name === item.artifact &&
+                      !a.expired
+                  );
+
+                if (artifact) {
+                  selectedRun = {
+                    runId: run.id,
+                    artifactName: artifact.name,
+                    createdAt: run.created_at
+                  };
+
+                  break;
+                }
+              }
+
+              if (!selectedRun) {
+                core.setFailed(
+                  `No successful run with artifact '${item.artifact}' was found for workflow '${item.name}'.`
+                );
+                return;
+              }
+
+              core.info(
+                `Selected ${item.name}: run ${selectedRun.runId}, artifact ${selectedRun.artifactName}`
               );
+
+              result[item.artifact] = selectedRun;
             }
 
+            core.setOutput(
+              "runs",
+              JSON.stringify(result)
+            );
 
-      # --------------------------------------------------
-      # 4. Extract artifacts
-      # --------------------------------------------------
-
-      - name: Extract artifacts
-        shell: pwsh
-        run: |
-          $zipFiles = Get-ChildItem `
-            -Path "final-dashboard" `
-            -Filter "*.zip"
-
-          if ($zipFiles.Count -eq 0) {
-              Write-Error "No artifact ZIP files found."
-              exit 1
-          }
-
-          foreach ($zip in $zipFiles) {
-
-              $destination = Join-Path `
-                "final-dashboard" `
-                $zip.BaseName
-
-              New-Item `
-                -ItemType Directory `
-                -Path $destination `
-                -Force | Out-Null
-
-              Expand-Archive `
-                -Path $zip.FullName `
-                -DestinationPath $destination `
-                -Force
-          }
+            core.info(
+              `Selected runs: ${JSON.stringify(result, null, 2)}`
+            );
 
 
       # --------------------------------------------------
-      # 5. Validate every SVG
+      # 4. Download Overview
+      # --------------------------------------------------
+
+      - name: Download overview artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: github-overview
+          path: final-dashboard/overview
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-overview'].runId }}
+
+
+      # --------------------------------------------------
+      # 5. Download Languages
+      # --------------------------------------------------
+
+      - name: Download languages artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: github-languages
+          path: final-dashboard/languages
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-languages'].runId }}
+
+
+      # --------------------------------------------------
+      # 6. Download Activity
+      # --------------------------------------------------
+
+      - name: Download activity artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: github-activity
+          path: final-dashboard/activity
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-activity'].runId }}
+
+
+      # --------------------------------------------------
+      # 7. Download Contributions
+      # --------------------------------------------------
+
+      - name: Download contributions artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: github-contributions
+          path: final-dashboard/contributions
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-contributions'].runId }}
+
+
+      # --------------------------------------------------
+      # 8. Validate ALL SVG files
       # --------------------------------------------------
 
       - name: Validate dashboard files
         shell: pwsh
         run: |
+
           $requiredFiles = @(
               "overview.svg",
-              "languages.svg"
+              "languages.svg",
+              "activity.svg",
+              "contributions.svg"
           )
 
           foreach ($file in $requiredFiles) {
 
-              $matches = Get-ChildItem `
-                -Path "final-dashboard" `
-                -Recurse `
-                -Filter $file
+              $matches = @(
+                  Get-ChildItem `
+                    -Path "final-dashboard" `
+                    -Recurse `
+                    -Filter $file `
+                    -File
+              )
 
               if ($matches.Count -eq 0) {
 
@@ -193,31 +290,42 @@ jobs:
                   exit 1
               }
 
-              foreach ($match in $matches) {
+              if ($matches.Count -gt 1) {
 
-                  $size = $match.Length
+                  Write-Error `
+                    "Duplicate file '$file' detected."
 
-                  if ($size -le 100) {
-
-                      Write-Error `
-                        "File '$($match.FullName)' is suspiciously small."
-
-                      exit 1
-                  }
-
-                  Write-Host `
-                    "Validated: $($match.FullName) [$size bytes]"
+                  exit 1
               }
+
+              $match = $matches[0]
+
+              $size = $match.Length
+
+              if ($size -le 100) {
+
+                  Write-Error `
+                    "File '$($match.FullName)' is suspiciously small."
+
+                  exit 1
+              }
+
+              Write-Host `
+                "Validated: $($match.FullName) [$size bytes]"
           }
+
+          Write-Host ""
+          Write-Host "All required dashboard files are valid."
 
 
       # --------------------------------------------------
-      # 6. Prepare gh-pages
+      # 9. Checkout gh-pages
       # --------------------------------------------------
 
       - name: Checkout gh-pages
         shell: pwsh
         run: |
+
           git fetch origin gh-pages
 
           git checkout `
@@ -226,74 +334,115 @@ jobs:
 
 
       # --------------------------------------------------
-      # 7. Replace dashboard files
+      # 10. Prepare published directory
+      # --------------------------------------------------
+
+      - name: Prepare published dashboard
+        shell: pwsh
+        run: |
+
+          if (-not (Test-Path "github-stats")) {
+
+              New-Item `
+                -ItemType Directory `
+                -Path "github-stats" `
+                -Force | Out-Null
+          }
+
+
+      # --------------------------------------------------
+      # 11. Publish validated SVG files
       # --------------------------------------------------
 
       - name: Publish dashboard files
         shell: pwsh
         run: |
 
-          $target = "github-stats"
+          $files = @(
+              "overview.svg",
+              "languages.svg",
+              "activity.svg",
+              "contributions.svg"
+          )
 
-          if (Test-Path $target) {
-              Remove-Item `
-                $target `
+          foreach ($file in $files) {
+
+              $source = Get-ChildItem `
+                -Path "final-dashboard" `
                 -Recurse `
-                -Force
-          }
+                -Filter $file `
+                -File |
+                Select-Object -First 1
 
-          New-Item `
-            -ItemType Directory `
-            -Path $target `
-            -Force | Out-Null
+              if (-not $source) {
 
-          $svgFiles = Get-ChildItem `
-            -Path "final-dashboard" `
-            -Recurse `
-            -Filter "*.svg"
+                  Write-Error `
+                    "Cannot publish '$file' because it was not found."
 
-          if ($svgFiles.Count -eq 0) {
-
-              Write-Error `
-                "No SVG files were found."
-
-              exit 1
-          }
-
-          foreach ($svg in $svgFiles) {
+                  exit 1
+              }
 
               Copy-Item `
-                $svg.FullName `
-                (Join-Path $target $svg.Name) `
+                $source.FullName `
+                (Join-Path "github-stats" $file) `
                 -Force
 
               Write-Host `
-                "Published: $($svg.Name)"
+                "Published: $file"
           }
 
 
       # --------------------------------------------------
-      # 8. Show final files
+      # 12. Final verification
       # --------------------------------------------------
 
       - name: Verify gh-pages output
         shell: pwsh
         run: |
-          Write-Host ""
-          Write-Host "Final dashboard files:"
-          Write-Host ""
 
-          Get-ChildItem `
-            -Path "github-stats" `
-            -File |
-            ForEach-Object {
-                Write-Host `
-                  "$($_.Name) - $($_.Length) bytes"
-            }
+          $requiredFiles = @(
+              "overview.svg",
+              "languages.svg",
+              "activity.svg",
+              "contributions.svg"
+          )
+
+          foreach ($file in $requiredFiles) {
+
+              $path = Join-Path `
+                "github-stats" `
+                $file
+
+              if (-not (Test-Path $path)) {
+
+                  Write-Error `
+                    "Published file missing: $file"
+
+                  exit 1
+              }
+
+              $size = (
+                  Get-Item $path
+              ).Length
+
+              if ($size -le 100) {
+
+                  Write-Error `
+                    "Published file is suspiciously small: $file"
+
+                  exit 1
+              }
+
+              Write-Host `
+                "OK: $file [$size bytes]"
+          }
+
+          Write-Host ""
+          Write-Host "Dashboard publication validation passed."
 
 
       # --------------------------------------------------
-      # 9. Commit and push
+      # 13. Commit only if something actually changed
       # --------------------------------------------------
 
       - name: Commit dashboard
@@ -314,13 +463,19 @@ jobs:
 
           if (-not $changes) {
 
-              Write-Host `
-                "No dashboard changes detected."
+              Write-Host ""
+              Write-Host "No dashboard changes detected."
+              Write-Host "Nothing to commit."
 
               exit 0
           }
+
+          Write-Host ""
+          Write-Host "Changes detected:"
+          git status --short
 
           git commit `
             -m "Update GitHub dashboard"
 
           git push origin gh-pages
+:::
