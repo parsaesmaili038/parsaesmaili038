@@ -25,15 +25,45 @@
 <p align="center">
   <a href=".">
     <img
-      src="https://img.shields.io/badge/GitHub-parsaesmaili038-181717?style=for-the-badge&logo=github&logoColor=white"
-      alt="GitHub"
+      src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"
+      alt="GitHub Profile"
+    />
+  </a>
+
+  <a href="./?tab=repositories">
+    <img
+      src="https://img.shields.io/badge/Repositories-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
+      alt="Repositories"
     />
   </a>
 
   <a href="https://parsaesmaili038.github.io/">
     <img
-      src="https://img.shields.io/badge/Portfolio-Visit%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-      alt="Portfolio"
+      src="https://img.shields.io/badge/Portfolio-Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="Portfolio Website"
+    />
+  </a>
+</p>
+
+<p align="center">
+  <a href="./?tab=projects">
+    <img
+      src="https://img.shields.io/badge/Projects-GitHub-238636?style=for-the-badge&logo=github&logoColor=white"
+      alt="GitHub Projects"
+    />
+  </a>
+
+  <a href="./?tab=stars">
+    <img
+      src="https://img.shields.io/badge/Starred-Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
+      alt="Starred Projects"
+    />
+  </a>
+
+  <a href="https://parsaesmaili038.github.io/">
+    <img
+      src="https://img.shields.io/badge/My-Website-0EA5E9?style=for-the-badge&logo=googlechrome&logoColor=white"
+      alt="My Website"
     />
   </a>
 </p>
@@ -44,17 +74,19 @@
 
 💻 **Developer**
 
-🐍 Python enthusiast • 🌐 Web development • 🖥️ Desktop applications • 🛠️ Building useful software
+🐍 Python enthusiast • 🌐 Web development • 🖥️ Desktop applications
+🛠️ Building useful software • 🧠 Learning how software works • 🚀 Turning ideas into projects
 
 I'm interested in creating useful projects, understanding how software works, improving my programming skills, and turning small ideas into real applications.
 
-|                             |                                                       |
-| :-------------------------- | :---------------------------------------------------- |
-| 🔭 **Currently working on** | Web projects and desktop applications                 |
-| 🌱 **Currently learning**   | Python and software development                       |
-| 🎯 **Main interests**       | Python • Web Development • Desktop Applications       |
-| 🛠️ **Favorite tools**      | Git • GitHub • VS Code                                |
-| 💡 **Interested in**        | Open Source • Software Architecture • Problem Solving |
+|                                 |                                                       |
+| :------------------------------ | :---------------------------------------------------- |
+| 🔭 **Currently working on**     | Web projects and desktop applications                 |
+| 🌱 **Currently learning**       | Python and software development                       |
+| 🎯 **Main interests**           | Python • Web Development • Desktop Applications       |
+| 🛠️ **Favorite tools**          | Git • GitHub • VS Code                                |
+| 💡 **Interested in**            | Open Source • Software Architecture • Problem Solving |
+| 🧪 **Enjoy experimenting with** | New technologies and development tools                |
 
 ---
 
@@ -67,6 +99,14 @@ I'm interested in creating useful projects, understanding how software works, im
   />
 </p>
 
+<p align="center">
+  🐍 Python &nbsp;•&nbsp;
+  🌐 Web &nbsp;•&nbsp;
+  🖥️ Desktop &nbsp;•&nbsp;
+  🧠 Learning &nbsp;•&nbsp;
+  🛠️ Building
+</p>
+
 ---
 
 ## 🚀 What I'm Working On
@@ -74,7 +114,10 @@ I'm interested in creating useful projects, understanding how software works, im
 * 🌐 Developing web projects with **HTML, CSS, and JavaScript**
 * 🐍 Building applications with **Python**
 * 🖥️ Creating useful **desktop applications**
+* 🎨 Experimenting with interfaces and UI
 * 📦 Working with **JSON and local data**
+* 🔧 Using **Git and GitHub** for version control
+* ⚙️ Exploring automation with **GitHub Actions**
 * 📚 Improving programming and problem-solving skills
 * 💡 Exploring new technologies and development tools
 
@@ -84,17 +127,28 @@ I'm interested in creating useful projects, understanding how software works, im
 
 **Interesting Python projects, desktop applications, web projects, and beginner-friendly open-source projects.**
 
+🐍 Python • 🌐 Web • 🖥️ Desktop • 🔓 Open Source • 🧪 Experiments
+
 ---
 
 ## 🤝 I'm Looking for Help With
 
 **Writing cleaner and more maintainable code, improving software architecture, and learning how real-world developers build scalable applications.**
 
+🧠 Architecture • 🧹 Clean Code • ⚙️ Engineering • 📐 Design
+
 ---
 
 ## 💬 Ask Me About
 
-**Python 🐍 • CustomTkinter 🖥️ • Git & GitHub 🐙 • HTML/CSS/JavaScript 🌐 • JSON 📦 • Desktop Applications ⚙️**
+🐍 **Python**
+🖥️ **CustomTkinter**
+🐙 **Git & GitHub**
+🌐 **HTML / CSS / JavaScript**
+📦 **JSON**
+⚙️ **Desktop Applications**
+🔧 **GitHub Actions**
+💻 **VS Code**
 
 ---
 
@@ -113,25 +167,33 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://www.python.org/">
-    <img src="https://skillicons.dev/icons?i=python" alt="Python" width="55" height="55"/>
-  </a>
+<a href="https://www.python.org/">
+<img src="https://skillicons.dev/icons?i=python" width="55" height="55" alt="Python"/>
+</a>
 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-    <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" width="55" height="55"/>
-  </a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+<img src="https://skillicons.dev/icons?i=javascript" width="55" height="55" alt="JavaScript"/>
+</a>
 
-  <a href="https://www.java.com/">
-    <img src="https://skillicons.dev/icons?i=java" alt="Java" width="55" height="55"/>
-  </a>
+<a href="https://www.java.com/">
+<img src="https://skillicons.dev/icons?i=java" width="55" height="55" alt="Java"/>
+</a>
 
-  <a href="https://www.php.net/">
-    <img src="https://skillicons.dev/icons?i=php" alt="PHP" width="55" height="55"/>
-  </a>
+<a href="https://www.php.net/">
+<img src="https://skillicons.dev/icons?i=php" width="55" height="55" alt="PHP"/>
+</a>
 
-  <a href="https://www.gnu.org/software/bash/">
-    <img src="https://skillicons.dev/icons?i=bash" alt="Bash" width="55" height="55"/>
-  </a>
+<a href="https://www.gnu.org/software/bash/">
+<img src="https://skillicons.dev/icons?i=bash" width="55" height="55" alt="Bash"/>
+</a>
+
+<a href="https://www.rust-lang.org/">
+<img src="https://skillicons.dev/icons?i=rust" width="55" height="55" alt="Rust"/>
+</a>
+
+<a href="https://www.c-language.org/">
+<img src="https://skillicons.dev/icons?i=c" width="55" height="55" alt="C"/>
+</a>
 
 </p>
 
@@ -141,33 +203,37 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-    <img src="https://skillicons.dev/icons?i=html" alt="HTML5" width="55" height="55"/>
-  </a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+<img src="https://skillicons.dev/icons?i=html" width="55" height="55" alt="HTML5"/>
+</a>
 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-    <img src="https://skillicons.dev/icons?i=css" alt="CSS3" width="55" height="55"/>
-  </a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+<img src="https://skillicons.dev/icons?i=css" width="55" height="55" alt="CSS3"/>
+</a>
 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
-    <img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript" width="55" height="55"/>
-  </a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">
+<img src="https://skillicons.dev/icons?i=javascript" width="55" height="55" alt="JavaScript"/>
+</a>
 
-  <a href="https://react.dev/">
-    <img src="https://skillicons.dev/icons?i=react" alt="React" width="55" height="55"/>
-  </a>
+<a href="https://react.dev/">
+<img src="https://skillicons.dev/icons?i=react" width="55" height="55" alt="React"/>
+</a>
 
-  <a href="https://nextjs.org/">
-    <img src="https://skillicons.dev/icons?i=nextjs" alt="Next.js" width="55" height="55"/>
-  </a>
+<a href="https://nextjs.org/">
+<img src="https://skillicons.dev/icons?i=nextjs" width="55" height="55" alt="Next.js"/>
+</a>
 
-  <a href="https://tailwindcss.com/">
-    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" width="55" height="55"/>
-  </a>
+<a href="https://tailwindcss.com/">
+<img src="https://skillicons.dev/icons?i=tailwind" width="55" height="55" alt="Tailwind CSS"/>
+</a>
 
-  <a href="https://getbootstrap.com/">
-    <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" width="55" height="55"/>
-  </a>
+<a href="https://getbootstrap.com/">
+<img src="https://skillicons.dev/icons?i=bootstrap" width="55" height="55" alt="Bootstrap"/>
+</a>
+
+<a href="https://nodejs.org/">
+<img src="https://skillicons.dev/icons?i=nodejs" width="55" height="55" alt="Node.js"/>
+</a>
 
 </p>
 
@@ -177,24 +243,29 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://www.python.org/">
-    <img src="https://skillicons.dev/icons?i=python" alt="Python" width="55" height="55"/>
-  </a>
+<a href="https://www.python.org/">
+<img src="https://skillicons.dev/icons?i=python" width="55" height="55" alt="Python"/>
+</a>
 
-  <a href="https://customtkinter.tomschimansky.com/">
-    <img
-      src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white"
-      alt="CustomTkinter"
-    />
-  </a>
+<a href="https://customtkinter.tomschimansky.com/">
+<img src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white" alt="CustomTkinter"/>
+</a>
 
-  <a href="https://flask.palletsprojects.com/">
-    <img src="https://skillicons.dev/icons?i=flask" alt="Flask" width="55" height="55"/>
-  </a>
+<a href="https://flask.palletsprojects.com/">
+<img src="https://skillicons.dev/icons?i=flask" width="55" height="55" alt="Flask"/>
+</a>
 
-  <a href="https://www.djangoproject.com/">
-    <img src="https://skillicons.dev/icons?i=django" alt="Django" width="55" height="55"/>
-  </a>
+<a href="https://www.djangoproject.com/">
+<img src="https://skillicons.dev/icons?i=django" width="55" height="55" alt="Django"/>
+</a>
+
+<a href="https://fastapi.tiangolo.com/">
+<img src="https://skillicons.dev/icons?i=fastapi" width="55" height="55" alt="FastAPI"/>
+</a>
+
+<a href="https://pypi.org/">
+<img src="https://skillicons.dev/icons?i=pypi" width="55" height="55" alt="PyPI"/>
+</a>
 
 </p>
 
@@ -204,20 +275,13 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-<img
- src="https://img.shields.io/badge/Python%20GUI-3776AB?style=for-the-badge&logo=python&logoColor=white"
- alt="Python GUI"
-/>
+<img src="https://img.shields.io/badge/Python%20GUI-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python GUI"/>
 
-<img
- src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white"
- alt="CustomTkinter"
-/>
+<img src="https://img.shields.io/badge/CustomTkinter-1F6FEB?style=for-the-badge&logo=python&logoColor=white" alt="CustomTkinter"/>
 
-<img
- src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white"
- alt="Tkinter"
-/>
+<img src="https://img.shields.io/badge/Tkinter-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Tkinter"/>
+
+<img src="https://img.shields.io/badge/Desktop%20Apps-7C3AED?style=for-the-badge&logo=windows&logoColor=white" alt="Desktop Applications"/>
 
 </p>
 
@@ -227,26 +291,25 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://www.sqlite.org/">
-    <img src="https://skillicons.dev/icons?i=sqlite" alt="SQLite" width="55" height="55"/>
-  </a>
+<a href="https://www.sqlite.org/">
+<img src="https://skillicons.dev/icons?i=sqlite" width="55" height="55" alt="SQLite"/>
+</a>
 
-  <a href="https://www.mysql.com/">
-    <img src="https://skillicons.dev/icons?i=mysql" alt="MySQL" width="55" height="55"/>
-  </a>
+<a href="https://www.mysql.com/">
+<img src="https://skillicons.dev/icons?i=mysql" width="55" height="55" alt="MySQL"/>
+</a>
 
-  <a href="https://www.postgresql.org/">
-    <img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL" width="55" height="55"/>
-  </a>
+<a href="https://www.postgresql.org/">
+<img src="https://skillicons.dev/icons?i=postgres" width="55" height="55" alt="PostgreSQL"/>
+</a>
 
-  <a href="https://www.microsoft.com/sql-server">
-    <img src="https://skillicons.dev/icons?i=mssql" alt="Microsoft SQL Server" width="55" height="55"/>
-  </a>
+<a href="https://www.microsoft.com/sql-server">
+<img src="https://skillicons.dev/icons?i=mssql" width="55" height="55" alt="Microsoft SQL Server"/>
+</a>
 
-<img
- src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white"
- alt="JSON"
-/>
+<img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
+
+<img src="https://img.shields.io/badge/Local%20Storage-555555?style=for-the-badge&logo=files&logoColor=white" alt="Local Storage"/>
 
 </p>
 
@@ -256,17 +319,21 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://git-scm.com/">
-    <img src="https://skillicons.dev/icons?i=git" alt="Git" width="55" height="55"/>
-  </a>
+<a href="https://git-scm.com/">
+<img src="https://skillicons.dev/icons?i=git" width="55" height="55" alt="Git"/>
+</a>
 
-  <a href=".">
-    <img src="https://skillicons.dev/icons?i=github" alt="GitHub" width="55" height="55"/>
-  </a>
+<a href=".">
+<img src="https://skillicons.dev/icons?i=github" width="55" height="55" alt="GitHub"/>
+</a>
 
-  <a href="https://github.com/features/actions">
-    <img src="https://skillicons.dev/icons?i=githubactions" alt="GitHub Actions" width="55" height="55"/>
-  </a>
+<a href="https://github.com/features/actions">
+<img src="https://skillicons.dev/icons?i=githubactions" width="55" height="55" alt="GitHub Actions"/>
+</a>
+
+<img src="https://img.shields.io/badge/Git-Workflow-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git Workflow"/>
+
+<img src="https://img.shields.io/badge/Open%20Source-181717?style=for-the-badge&logo=github&logoColor=white" alt="Open Source"/>
 
 </p>
 
@@ -276,21 +343,29 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://code.visualstudio.com/">
-    <img src="https://skillicons.dev/icons?i=vscode" alt="VS Code" width="55" height="55"/>
-  </a>
+<a href="https://code.visualstudio.com/">
+<img src="https://skillicons.dev/icons?i=vscode" width="55" height="55" alt="VS Code"/>
+</a>
 
-  <a href="https://visualstudio.microsoft.com/">
-    <img src="https://skillicons.dev/icons?i=visualstudio" alt="Visual Studio" width="55" height="55"/>
-  </a>
+<a href="https://visualstudio.microsoft.com/">
+<img src="https://skillicons.dev/icons?i=visualstudio" width="55" height="55" alt="Visual Studio"/>
+</a>
 
-  <a href="https://www.postman.com/">
-    <img src="https://skillicons.dev/icons?i=postman" alt="Postman" width="55" height="55"/>
-  </a>
+<a href="https://www.postman.com/">
+<img src="https://skillicons.dev/icons?i=postman" width="55" height="55" alt="Postman"/>
+</a>
 
-  <a href="https://www.npmjs.com/">
-    <img src="https://skillicons.dev/icons?i=npm" alt="NPM" width="55" height="55"/>
-  </a>
+<a href="https://www.npmjs.com/">
+<img src="https://skillicons.dev/icons?i=npm" width="55" height="55" alt="NPM"/>
+</a>
+
+<a href="https://git-scm.com/">
+<img src="https://skillicons.dev/icons?i=git" width="55" height="55" alt="Git"/>
+</a>
+
+<a href="https://www.jetbrains.com/">
+<img src="https://skillicons.dev/icons?i=idea" width="55" height="55" alt="JetBrains"/>
+</a>
 
 </p>
 
@@ -300,25 +375,27 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://www.docker.com/">
-    <img src="https://skillicons.dev/icons?i=docker" alt="Docker" width="55" height="55"/>
-  </a>
+<a href="https://www.docker.com/">
+<img src="https://skillicons.dev/icons?i=docker" width="55" height="55" alt="Docker"/>
+</a>
 
-  <a href="https://nginx.org/">
-    <img src="https://skillicons.dev/icons?i=nginx" alt="Nginx" width="55" height="55"/>
-  </a>
+<a href="https://nginx.org/">
+<img src="https://skillicons.dev/icons?i=nginx" width="55" height="55" alt="Nginx"/>
+</a>
 
-  <a href="https://www.linux.org/">
-    <img src="https://skillicons.dev/icons?i=linux" alt="Linux" width="55" height="55"/>
-  </a>
+<a href="https://www.linux.org/">
+<img src="https://skillicons.dev/icons?i=linux" width="55" height="55" alt="Linux"/>
+</a>
 
-  <a href="https://ubuntu.com/">
-    <img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu" width="55" height="55"/>
-  </a>
+<a href="https://ubuntu.com/">
+<img src="https://skillicons.dev/icons?i=ubuntu" width="55" height="55" alt="Ubuntu"/>
+</a>
 
-  <a href="https://www.gnu.org/software/bash/">
-    <img src="https://skillicons.dev/icons?i=bash" alt="Bash" width="55" height="55"/>
-  </a>
+<a href="https://www.gnu.org/software/bash/">
+<img src="https://skillicons.dev/icons?i=bash" width="55" height="55" alt="Bash"/>
+</a>
+
+<img src="https://img.shields.io/badge/DevOps-Tools-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="DevOps"/>
 
 </p>
 
@@ -328,14 +405,13 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://pages.github.com/">
-    <img src="https://skillicons.dev/icons?i=github" alt="GitHub Pages" width="55" height="55"/>
-  </a>
+<a href="https://pages.github.com/">
+<img src="https://skillicons.dev/icons?i=github" width="55" height="55" alt="GitHub Pages"/>
+</a>
 
-<img
- src="https://img.shields.io/badge/GitHub%20Pages-100000?style=for-the-badge&logo=github&logoColor=white"
- alt="GitHub Pages"
-/>
+<img src="https://img.shields.io/badge/GitHub%20Pages-100000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub Pages"/>
+
+<img src="https://img.shields.io/badge/Static%20Hosting-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white" alt="Static Hosting"/>
 
 </p>
 
@@ -345,20 +421,15 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-<img
- src="https://img.shields.io/badge/REST%20API-02569B?style=for-the-badge&logo=fastapi&logoColor=white"
- alt="REST API"
-/>
+<img src="https://img.shields.io/badge/REST%20API-02569B?style=for-the-badge&logo=fastapi&logoColor=white" alt="REST API"/>
 
-<img
- src="https://img.shields.io/badge/HTTP-005571?style=for-the-badge&logo=http&logoColor=white"
- alt="HTTP"
-/>
+<img src="https://img.shields.io/badge/HTTP-005571?style=for-the-badge&logo=http&logoColor=white" alt="HTTP"/>
 
-<img
- src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white"
- alt="JSON"
-/>
+<img src="https://img.shields.io/badge/HTTPS-005C97?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="HTTPS"/>
+
+<img src="https://img.shields.io/badge/JSON-000000?style=for-the-badge&logo=json&logoColor=white" alt="JSON"/>
+
+<img src="https://img.shields.io/badge/API-Integration-7C3AED?style=for-the-badge&logo=api&logoColor=white" alt="API Integration"/>
 
 </p>
 
@@ -368,17 +439,19 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://www.microsoft.com/windows/windows-11">
-    <img src="https://skillicons.dev/icons?i=windows" alt="Windows" width="55" height="55"/>
-  </a>
+<a href="https://www.microsoft.com/windows/windows-11">
+<img src="https://skillicons.dev/icons?i=windows" width="55" height="55" alt="Windows"/>
+</a>
 
-  <a href="https://www.linux.org/">
-    <img src="https://skillicons.dev/icons?i=linux" alt="Linux" width="55" height="55"/>
-  </a>
+<a href="https://www.linux.org/">
+<img src="https://skillicons.dev/icons?i=linux" width="55" height="55" alt="Linux"/>
+</a>
 
-  <a href="https://ubuntu.com/">
-    <img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu" width="55" height="55"/>
-  </a>
+<a href="https://ubuntu.com/">
+<img src="https://skillicons.dev/icons?i=ubuntu" width="55" height="55" alt="Ubuntu"/>
+</a>
+
+<img src="https://img.shields.io/badge/Windows%2011-0078D4?style=for-the-badge&logo=windows11&logoColor=white" alt="Windows 11"/>
 
 </p>
 
@@ -388,25 +461,27 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
-    <img src="https://skillicons.dev/icons?i=html" alt="HTML" width="55" height="55"/>
-  </a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
+<img src="https://skillicons.dev/icons?i=html" width="55" height="55" alt="HTML"/>
+</a>
 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-    <img src="https://skillicons.dev/icons?i=css" alt="CSS" width="55" height="55"/>
-  </a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
+<img src="https://skillicons.dev/icons?i=css" width="55" height="55" alt="CSS"/>
+</a>
 
-  <a href="https://tailwindcss.com/">
-    <img src="https://skillicons.dev/icons?i=tailwind" alt="Tailwind CSS" width="55" height="55"/>
-  </a>
+<a href="https://tailwindcss.com/">
+<img src="https://skillicons.dev/icons?i=tailwind" width="55" height="55" alt="Tailwind CSS"/>
+</a>
 
-  <a href="https://getbootstrap.com/">
-    <img src="https://skillicons.dev/icons?i=bootstrap" alt="Bootstrap" width="55" height="55"/>
-  </a>
+<a href="https://getbootstrap.com/">
+<img src="https://skillicons.dev/icons?i=bootstrap" width="55" height="55" alt="Bootstrap"/>
+</a>
 
-  <a href="https://react.dev/">
-    <img src="https://skillicons.dev/icons?i=react" alt="React" width="55" height="55"/>
-  </a>
+<a href="https://react.dev/">
+<img src="https://skillicons.dev/icons?i=react" width="55" height="55" alt="React"/>
+</a>
+
+<img src="https://img.shields.io/badge/UI%2FUX-Design-7C3AED?style=for-the-badge&logo=figma&logoColor=white" alt="UI UX"/>
 
 </p>
 
@@ -416,25 +491,15 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-<img
- src="https://img.shields.io/badge/HTTPS-005C97?style=for-the-badge&logo=letsencrypt&logoColor=white"
- alt="HTTPS"
-/>
+<img src="https://img.shields.io/badge/HTTPS-005C97?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="HTTPS"/>
 
-<img
- src="https://img.shields.io/badge/SSL%2FTLS-721412?style=for-the-badge&logo=letsencrypt&logoColor=white"
- alt="SSL TLS"
-/>
+<img src="https://img.shields.io/badge/SSL%2FTLS-721412?style=for-the-badge&logo=letsencrypt&logoColor=white" alt="SSL TLS"/>
 
-<img
- src="https://img.shields.io/badge/DNS-4285F4?style=for-the-badge&logo=google&logoColor=white"
- alt="DNS"
-/>
+<img src="https://img.shields.io/badge/DNS-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="DNS"/>
 
-<img
- src="https://img.shields.io/badge/Networking-00629B?style=for-the-badge&logo=cisco&logoColor=white"
- alt="Networking"
-/>
+<img src="https://img.shields.io/badge/Networking-00629B?style=for-the-badge&logo=cisco&logoColor=white" alt="Networking"/>
+
+<img src="https://img.shields.io/badge/Web%20Security-181717?style=for-the-badge&logo=owasp&logoColor=white" alt="Web Security"/>
 
 </p>
 
@@ -444,20 +509,13 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-<img
- src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white"
- alt="Markdown"
-/>
+<img src="https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown"/>
 
-<img
- src="https://img.shields.io/badge/README-181717?style=for-the-badge&logo=readme&logoColor=white"
- alt="README"
-/>
+<img src="https://img.shields.io/badge/README-181717?style=for-the-badge&logo=readme&logoColor=white" alt="README"/>
 
-<img
- src="https://img.shields.io/badge/Documentation-4285F4?style=for-the-badge&logo=googledocs&logoColor=white"
- alt="Documentation"
-/>
+<img src="https://img.shields.io/badge/Documentation-4285F4?style=for-the-badge&logo=googledocs&logoColor=white" alt="Documentation"/>
+
+<img src="https://img.shields.io/badge/Project%20Planning-7C3AED?style=for-the-badge&logo=githubprojects&logoColor=white" alt="Project Planning"/>
 
 </p>
 
@@ -467,15 +525,11 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-<img
- src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white"
- alt="Pytest"
-/>
+<img src="https://img.shields.io/badge/Pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white" alt="Pytest"/>
 
-<img
- src="https://img.shields.io/badge/Testing-555555?style=for-the-badge&logo=testinglibrary&logoColor=white"
- alt="Testing"
-/>
+<img src="https://img.shields.io/badge/Testing-555555?style=for-the-badge&logo=testinglibrary&logoColor=white" alt="Testing"/>
+
+<img src="https://img.shields.io/badge/Debugging-7C3AED?style=for-the-badge&logo=bugsnag&logoColor=white" alt="Debugging"/>
 
 </p>
 
@@ -485,25 +539,15 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
 
-<img
- src="https://img.shields.io/badge/Docker-Exploring-2496ED?style=for-the-badge&logo=docker&logoColor=white"
- alt="Docker"
-/>
+<img src="https://img.shields.io/badge/Docker-Exploring-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker"/>
 
-<img
- src="https://img.shields.io/badge/Linux-Exploring-FCC624?style=for-the-badge&logo=linux&logoColor=black"
- alt="Linux"
-/>
+<img src="https://img.shields.io/badge/Linux-Exploring-FCC624?style=for-the-badge&logo=linux&logoColor=black" alt="Linux"/>
 
-<img
- src="https://img.shields.io/badge/React-Exploring-61DAFB?style=for-the-badge&logo=react&logoColor=black"
- alt="React"
-/>
+<img src="https://img.shields.io/badge/React-Exploring-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React"/>
 
-<img
- src="https://img.shields.io/badge/Cloud-Exploring-4285F4?style=for-the-badge&logo=icloud&logoColor=white"
- alt="Cloud"
-/>
+<img src="https://img.shields.io/badge/Cloud-Exploring-4285F4?style=for-the-badge&logo=icloud&logoColor=white" alt="Cloud"/>
+
+<img src="https://img.shields.io/badge/APIs-Exploring-7C3AED?style=for-the-badge&logo=fastapi&logoColor=white" alt="APIs"/>
 
 </p>
 
@@ -611,12 +655,13 @@ I'm interested in creating useful projects, understanding how software works, im
 
 <p align="center">
   <picture>
-    <source
-      media="(prefers-color-scheme: dark)"
-      srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake-dark.svg"
-    />
 
 ```
+<source
+  media="(prefers-color-scheme: dark)"
+  srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake-dark.svg"
+/>
+
 <source
   media="(prefers-color-scheme: light)"
   srcset="https://parsaesmaili038.github.io/github-stats/github-contribution-grid-snake.svg"
@@ -651,6 +696,8 @@ A lightweight desktop ticket management application built with **Python** and **
 * 📊 Ticket statuses
 * 💾 Local JSON data storage
 * 🌙 Dark GUI
+* ⚡ Fast local operation
+* 🖥️ Desktop interface
 
 > ⚠️ Designed as a **LOCAL, SINGLE-USER** application and is **NOT intended as a multi-user or server-based ticketing platform**.
 
@@ -661,12 +708,14 @@ A lightweight desktop ticket management application built with **Python** and **
 My personal website and project showcase.
 
 <p align="center">
-  <a href="https://parsaesmaili038.github.io/">
-    <img
-      src="https://img.shields.io/badge/Visit%20My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-      alt="Personal Website"
-    />
-  </a>
+
+<a href="https://parsaesmaili038.github.io/">
+<img
+  src="https://img.shields.io/badge/🌐%20Visit%20My%20Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="Personal Website"
+/>
+</a>
+
 </p>
 
 ---
@@ -674,49 +723,74 @@ My personal website and project showcase.
 # 🧠 Currently Learning
 
 ```text
-Python
-├── GUI Development
-├── CustomTkinter
-├── JSON
-├── Data Management
-└── Application Architecture
+🐍 Python
+├── 🖥️ GUI Development
+├── 🎨 CustomTkinter
+├── 📦 JSON
+├── 🗃️ Data Management
+└── 🏗️ Application Architecture
 
-Web Development
+🌐 Web Development
 ├── HTML
 ├── CSS
-└── JavaScript
+├── JavaScript
+└── ⚛️ React
 
-Development Tools
+🔧 Development Tools
 ├── Git
 ├── GitHub
-├── GitHub Actions
+├── ⚙️ GitHub Actions
 ├── VS Code
-└── Windows
+└── 🪟 Windows
+
+🚀 Exploring
+├── 🐳 Docker
+├── 🐧 Linux
+├── ☁️ Cloud
+└── 🔌 APIs
 ```
 
-# Connect With Me
+---
+
+# 🔗 Connect With Me
 
 <p align="center">
-  <a href=".">
-    <img
-      src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"
-      alt="GitHub Profile"
-    />
-  </a>
 
-  <a href="https://parsaesmaili038.github.io/">
-    <img
-      src="https://img.shields.io/badge/Portfolio-Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-      alt="Portfolio"
-    />
-  </a>
+<a href=".">
+<img
+  src="https://img.shields.io/badge/🐙%20GitHub-Profile-181717?style=for-the-badge&logo=github&logoColor=white"
+  alt="GitHub Profile"
+/>
+</a>
 
-  <a href="./?tab=repositories">
-    <img
-      src="https://img.shields.io/badge/GitHub-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
-      alt="Repositories"
-    />
-  </a>
+<a href="./?tab=repositories">
+<img
+  src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge&logo=github&logoColor=white"
+  alt="Repositories"
+/>
+</a>
+
+<a href="https://parsaesmaili038.github.io/">
+<img
+  src="https://img.shields.io/badge/🌐%20Portfolio-Website-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="Portfolio"
+/>
+</a>
+
+<a href="./?tab=projects">
+<img
+  src="https://img.shields.io/badge/📋%20Projects-GitHub-238636?style=for-the-badge&logo=github&logoColor=white"
+  alt="GitHub Projects"
+/>
+</a>
+
+<a href="./?tab=stars">
+<img
+  src="https://img.shields.io/badge/⭐%20Starred-Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
+  alt="Starred Projects"
+/>
+</a>
+
 </p>
 
 <p align="center">
@@ -739,45 +813,45 @@ Development Tools
 
 ---
 
-## 🔗 Quick Navigation
+# 🔗 Quick Navigation
 
 <p align="center">
-  <a href=".">
-    <img
-      src="https://img.shields.io/badge/👤%20Profile-GitHub-181717?style=for-the-badge"
-      alt="Profile"
-    />
-  </a>
 
-  <a href="./?tab=repositories">
-    <img
-      src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge"
-      alt="Repositories"
-    />
-  </a>
+<a href=".">
+<img
+  src="https://img.shields.io/badge/👤%20Profile-GitHub-181717?style=for-the-badge"
+  alt="Profile"
+/>
+</a>
 
-  <a href="https://parsaesmaili038.github.io/">
-    <img
-      src="https://img.shields.io/badge/🌐%20Website-Portfolio-7C3AED?style=for-the-badge"
-      alt="Portfolio"
-    />
-  </a>
-</p>
+<a href="./?tab=repositories">
+<img
+  src="https://img.shields.io/badge/📦%20Repositories-Projects-58A6FF?style=for-the-badge"
+  alt="Repositories"
+/>
+</a>
 
-<p align="center">
-  <a href="./?tab=projects">
-    <img
-      src="https://img.shields.io/badge/📋%20Projects-GitHub%20Projects-238636?style=for-the-badge&logo=github&logoColor=white"
-      alt="GitHub Projects"
-    />
-  </a>
+<a href="./?tab=projects">
+<img
+  src="https://img.shields.io/badge/📋%20Projects-GitHub%20Projects-238636?style=for-the-badge&logo=github&logoColor=white"
+  alt="Projects"
+/>
+</a>
 
-  <a href="./?tab=stars">
-    <img
-      src="https://img.shields.io/badge/⭐%20Stars-Starred%20Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
-      alt="Starred Projects"
-    />
-  </a>
+<a href="./?tab=stars">
+<img
+  src="https://img.shields.io/badge/⭐%20Stars-Starred%20Projects-F7DF1E?style=for-the-badge&logo=github&logoColor=black"
+  alt="Starred Projects"
+/>
+</a>
+
+<a href="https://parsaesmaili038.github.io/">
+<img
+  src="https://img.shields.io/badge/🌐%20Website-Portfolio-7C3AED?style=for-the-badge"
+  alt="Website"
+/>
+</a>
+
 </p>
 
 ---
@@ -792,15 +866,15 @@ Development Tools
 </p>
 
 <p align="center">
-  💡 <b>Think.</b>
+  💡 <b>Think</b>
   &nbsp;→&nbsp;
-  🧠 <b>Learn.</b>
+  🧠 <b>Learn</b>
   &nbsp;→&nbsp;
-  💻 <b>Build.</b>
+  💻 <b>Build</b>
   &nbsp;→&nbsp;
-  🐛 <b>Debug.</b>
+  🐛 <b>Debug</b>
   &nbsp;→&nbsp;
-  🚀 <b>Improve.</b>
+  🚀 <b>Improve</b>
 </p>
 
 ---
@@ -808,26 +882,35 @@ Development Tools
 ## 📡 Find My Work
 
 <p align="center">
-  <a href=".">
-    <img
-      src="https://img.shields.io/badge/Explore%20My-GitHub%20Profile-181717?style=for-the-badge&logo=github&logoColor=white"
-      alt="Explore GitHub"
-    />
-  </a>
 
-  <a href="./?tab=repositories">
-    <img
-      src="https://img.shields.io/badge/Browse-My%20Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white"
-      alt="Browse Repositories"
-    />
-  </a>
+<a href=".">
+<img
+  src="https://img.shields.io/badge/🐙%20Explore-My%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+  alt="Explore GitHub"
+/>
+</a>
 
-  <a href="https://parsaesmaili038.github.io/">
-    <img
-      src="https://img.shields.io/badge/Visit-My%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-      alt="Visit Portfolio"
-    />
-  </a>
+<a href="./?tab=repositories">
+<img
+  src="https://img.shields.io/badge/📦%20Browse-My%20Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white"
+  alt="Browse Repositories"
+/>
+</a>
+
+<a href="./?tab=projects">
+<img
+  src="https://img.shields.io/badge/📋%20Explore-My%20Projects-238636?style=for-the-badge&logo=github&logoColor=white"
+  alt="Explore Projects"
+/>
+</a>
+
+<a href="https://parsaesmaili038.github.io/">
+<img
+  src="https://img.shields.io/badge/🌐%20Visit-My%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="Visit Portfolio"
+/>
+</a>
+
 </p>
 
 ---
@@ -841,12 +924,20 @@ Development Tools
   />
 </p>
 
+<p align="center">
+  🐍 Python &nbsp;•&nbsp;
+  🌐 Web &nbsp;•&nbsp;
+  🖥️ Desktop &nbsp;•&nbsp;
+  🔓 Open Source &nbsp;•&nbsp;
+  🚀 Projects
+</p>
+
 ---
 
 ## 🌟 Final Words
 
 <p align="center">
-  <b>Code • Learn • Build • Experiment • Improve</b>
+  <b>💻 Code • 🧠 Learn • 🚀 Build • 🧪 Experiment • 🔧 Improve</b>
 </p>
 
 <p align="center">
@@ -858,19 +949,28 @@ Development Tools
 </p>
 
 <p align="center">
-  <a href=".">
-    <img
-      src="https://img.shields.io/badge/⭐%20Visit%20GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
-      alt="Visit GitHub"
-    />
-  </a>
 
-  <a href="https://parsaesmaili038.github.io/">
-    <img
-      src="https://img.shields.io/badge/🌐%20Visit%20Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
-      alt="Visit Portfolio"
-    />
-  </a>
+<a href=".">
+<img
+  src="https://img.shields.io/badge/⭐%20Visit-GitHub-181717?style=for-the-badge&logo=github&logoColor=white"
+  alt="Visit GitHub"
+/>
+</a>
+
+<a href="./?tab=repositories">
+<img
+  src="https://img.shields.io/badge/📦%20View-Repositories-58A6FF?style=for-the-badge&logo=github&logoColor=white"
+  alt="View Repositories"
+/>
+</a>
+
+<a href="https://parsaesmaili038.github.io/">
+<img
+  src="https://img.shields.io/badge/🌐%20Visit-Portfolio-7C3AED?style=for-the-badge&logo=googlechrome&logoColor=white"
+  alt="Visit Portfolio"
+/>
+</a>
+
 </p>
 
 <div align="center">
