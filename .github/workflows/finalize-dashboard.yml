@@ -478,4 +478,4 @@ jobs:
             -m "Update GitHub dashboard"
 
           git push origin gh-pages
-:::
+
