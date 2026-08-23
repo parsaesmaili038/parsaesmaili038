@@ -1,4 +1,4 @@
-name: Finalize GitHub Dashboard
+name : Finalize GitHub Dashboard
 
 on:
   workflow_run:
