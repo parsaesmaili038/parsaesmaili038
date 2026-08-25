@@ -82,7 +82,7 @@ No external statistics or analytics services are used.
 
 <p align="center">
   <img
-    src="https://parsaesmaili038.github.io/github-stats/overview.svg"
+    src="https://parsaesmaili038.github.io/parsaesmaili038/github-stats/overview.svg"
     width="100%"
     alt="GitHub Overview"
   />
@@ -92,7 +92,7 @@ No external statistics or analytics services are used.
 
 <p align="center">
   <img
-    src="https://parsaesmaili038.github.io/github-stats/activity.svg"
+    src="https://parsaesmaili038.github.io/parsaesmaili038/github-stats/activity.svg"
     width="100%"
     alt="GitHub Activity"
   />
@@ -102,7 +102,7 @@ No external statistics or analytics services are used.
 
 <p align="center">
   <img
-    src="https://parsaesmaili038.github.io/github-stats/languages.svg"
+    src="https://parsaesmaili038.github.io/parsaesmaili038/github-stats/languages.svg"
     width="100%"
     alt="Programming Languages"
   />
@@ -112,14 +112,13 @@ No external statistics or analytics services are used.
 
 <p align="center">
   <img
-    src="https://parsaesmaili038.github.io/github-stats/repositories.svg"
+    src="https://parsaesmaili038.github.io/parsaesmaili038/github-stats/repositories.svg"
     width="100%"
     alt="Repositories"
   />
 </p>
 
 > ⚙️ The dashboard is automatically regenerated and published by GitHub Actions whenever the corresponding workflows complete successfully.
-
 ---
 
 # 🛠️ Languages & Technologies
