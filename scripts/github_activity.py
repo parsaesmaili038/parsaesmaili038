@@ -4,21 +4,18 @@ from datetime import datetime, timezone
 import requests
 
 
+# =========================
+# Configuration
+# =========================
+
 USERNAME = os.getenv(
     "GITHUB_USERNAME",
-    "parsaesmaili038",
+    "the-par3a",
 )
 
 TOKEN = os.getenv("GITHUB_TOKEN")
 
 API = "https://api.github.com"
-
-
-if not TOKEN:
-    raise RuntimeError(
-        "GITHUB_TOKEN is not available"
-    )
-
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
@@ -27,31 +24,59 @@ HEADERS = {
 }
 
 
-def github_get(url, params=None):
-    response = requests.get(
-        url,
-        headers=HEADERS,
-        params=params,
-        timeout=30,
+# =========================
+# HTTP Client
+# =========================
+
+if not TOKEN:
+    raise RuntimeError(
+        "GITHUB_TOKEN is not available. "
+        "Please set the GITHUB_TOKEN environment variable."
     )
 
-    response.raise_for_status()
+
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
+
+
+def github_get(url, params=None):
+    """Send a GET request to the GitHub API."""
+
+    try:
+        response = SESSION.get(
+            url,
+            params=params,
+            timeout=30,
+        )
+
+        response.raise_for_status()
+
+    except requests.RequestException as error:
+        raise RuntimeError(
+            f"GitHub API request failed: {error}"
+        ) from error
 
     return response.json()
 
 
+# =========================
+# GitHub API
+# =========================
+
 def get_user():
+    """Fetch the GitHub profile."""
+
     return github_get(
         f"{API}/users/{USERNAME}"
     )
 
 
 def get_events():
+    """Fetch recent public GitHub events."""
+
     events = []
 
-    page = 1
-
-    while page <= 3:
+    for page in range(1, 4):
         data = github_get(
             f"{API}/users/{USERNAME}/events/public",
             params={
@@ -68,44 +93,17 @@ def get_events():
         if len(data) < 100:
             break
 
-        page += 1
-
     return events
 
 
+# =========================
+# Statistics
+# =========================
+
 def calculate_activity(user, events):
-    push_events = 0
-    pull_requests = 0
-    issues = 0
-    stars = 0
-    forks = 0
-    watches = 0
+    """Calculate activity statistics."""
 
-    for event in events:
-        event_type = event.get(
-            "type",
-            "",
-        )
-
-        if event_type == "PushEvent":
-            push_events += 1
-
-        elif event_type == "PullRequestEvent":
-            pull_requests += 1
-
-        elif event_type == "IssuesEvent":
-            issues += 1
-
-        elif event_type == "WatchEvent":
-            stars += 1
-
-        elif event_type == "ForkEvent":
-            forks += 1
-
-        elif event_type == "CreateEvent":
-            watches += 1
-
-    return {
+    stats = {
         "public_repositories": user.get(
             "public_repos",
             0,
@@ -118,16 +116,43 @@ def calculate_activity(user, events):
             "following",
             0,
         ),
-        "push_events": push_events,
-        "pull_requests": pull_requests,
-        "issues": issues,
-        "stars": stars,
-        "forks": forks,
-        "events": len(events),
+        "push_events": 0,
+        "pull_requests": 0,
+        "issues": 0,
+        "stars": 0,
+        "forks": 0,
     }
 
+    for event in events:
+        event_type = event.get("type", "")
+
+        if event_type == "PushEvent":
+            stats["push_events"] += 1
+
+        elif event_type == "PullRequestEvent":
+            stats["pull_requests"] += 1
+
+        elif event_type == "IssuesEvent":
+            stats["issues"] += 1
+
+        elif event_type == "WatchEvent":
+            stats["stars"] += 1
+
+        elif event_type == "ForkEvent":
+            stats["forks"] += 1
+
+    stats["events"] = len(events)
+
+    return stats
+
+
+# =========================
+# SVG Utilities
+# =========================
 
 def escape_xml(value):
+    """Escape text for safe use inside SVG/XML."""
+
     return (
         str(value)
         .replace("&", "&amp;")
@@ -139,6 +164,8 @@ def escape_xml(value):
 
 
 def create_svg(stats):
+    """Generate the GitHub activity SVG."""
+
     width = 1100
     height = 620
 
@@ -230,7 +257,6 @@ def create_svg(stats):
 
 </defs>
 
-
 <rect
     x="0"
     y="0"
@@ -239,7 +265,6 @@ def create_svg(stats):
     rx="28"
     fill="url(#background)"
 />
-
 
 <rect
     x="2"
@@ -252,7 +277,6 @@ def create_svg(stats):
     stroke-width="2"
 />
 
-
 <text
     x="550"
     y="68"
@@ -264,7 +288,6 @@ def create_svg(stats):
 >
     ⚡ PARSA ESMAILI — ACTIVITY ANALYTICS
 </text>
-
 
 <rect
     x="180"
@@ -281,10 +304,8 @@ def create_svg(stats):
         label,
         value,
         accent,
-    ), (x, y) in zip(
-        cards,
-        positions,
-    ):
+    ), (x, y) in zip(cards, positions):
+
         svg += f"""
 
 <rect
@@ -298,7 +319,6 @@ def create_svg(stats):
     stroke-width="1"
 />
 
-
 <text
     x="{x + 150}"
     y="{y + 42}"
@@ -310,7 +330,6 @@ def create_svg(stats):
 >
     {escape_xml(icon)} {escape_xml(label)}
 </text>
-
 
 <text
     x="{x + 150}"
@@ -338,7 +357,6 @@ def create_svg(stats):
     RECENT PUBLIC ACTIVITY • GENERATED AUTOMATICALLY
 </text>
 
-
 <text
     x="550"
     y="570"
@@ -356,8 +374,14 @@ def create_svg(stats):
     return svg
 
 
+# =========================
+# Main
+# =========================
+
 def main():
-    print("Fetching GitHub profile...")
+    print(
+        f"Fetching GitHub profile for @{USERNAME}..."
+    )
 
     user = get_user()
 
