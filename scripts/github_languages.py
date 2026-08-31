@@ -4,14 +4,18 @@ from datetime import datetime, timezone
 import requests
 
 
-USERNAME = os.getenv("GITHUB_USERNAME", "parsaesmaili038")
+# =========================
+# Configuration
+# =========================
+
+USERNAME = os.getenv(
+    "GITHUB_USERNAME",
+    "the-par3a",
+)
+
 TOKEN = os.getenv("GITHUB_TOKEN")
 
 API = "https://api.github.com"
-
-if not TOKEN:
-    raise RuntimeError("GITHUB_TOKEN is not available")
-
 
 HEADERS = {
     "Accept": "application/vnd.github+json",
@@ -20,24 +24,51 @@ HEADERS = {
 }
 
 
-def github_get(url, params=None):
-    response = requests.get(
-        url,
-        headers=HEADERS,
-        params=params,
-        timeout=30,
+# =========================
+# HTTP Client
+# =========================
+
+if not TOKEN:
+    raise RuntimeError(
+        "GITHUB_TOKEN is not available. "
+        "Please set the GITHUB_TOKEN environment variable."
     )
 
-    response.raise_for_status()
+
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
+
+
+def github_get(url, params=None):
+    """Send a GET request to the GitHub API."""
+
+    try:
+        response = SESSION.get(
+            url,
+            params=params,
+            timeout=30,
+        )
+
+        response.raise_for_status()
+
+    except requests.RequestException as error:
+        raise RuntimeError(
+            f"GitHub API request failed: {error}"
+        ) from error
+
     return response.json()
 
 
+# =========================
+# GitHub API
+# =========================
+
 def get_repositories():
+    """Fetch all repositories owned by the user."""
+
     repositories = []
 
-    page = 1
-
-    while True:
+    for page in range(1, 100):
         data = github_get(
             f"{API}/users/{USERNAME}/repos",
             params={
@@ -55,18 +86,20 @@ def get_repositories():
         if len(data) < 100:
             break
 
-        page += 1
-
     return repositories
 
 
 def get_language_bytes(repository):
+    """Fetch language byte counts for a repository."""
+
     return github_get(
         f"{API}/repos/{USERNAME}/{repository}/languages"
     )
 
 
 def collect_languages(repositories):
+    """Collect language byte counts from all repositories."""
+
     totals = {}
 
     for repository in repositories:
@@ -79,7 +112,8 @@ def collect_languages(repositories):
 
         try:
             languages = get_language_bytes(name)
-        except requests.HTTPError as error:
+
+        except RuntimeError as error:
             print(
                 f"Skipping {name}: {error}"
             )
@@ -94,7 +128,13 @@ def collect_languages(repositories):
     return totals
 
 
+# =========================
+# Statistics
+# =========================
+
 def calculate_percentages(totals):
+    """Convert language byte counts into percentages."""
+
     total_bytes = sum(totals.values())
 
     if total_bytes == 0:
@@ -123,7 +163,13 @@ def calculate_percentages(totals):
     return languages
 
 
+# =========================
+# SVG Utilities
+# =========================
+
 def escape_xml(value):
+    """Escape text for safe use inside SVG/XML."""
+
     return (
         str(value)
         .replace("&", "&amp;")
@@ -135,6 +181,8 @@ def escape_xml(value):
 
 
 def create_svg(languages):
+    """Generate the language analytics SVG."""
+
     width = 1100
     height = 620
 
@@ -351,8 +399,14 @@ def create_svg(languages):
     return svg
 
 
+# =========================
+# Main
+# =========================
+
 def main():
-    print("Fetching GitHub repositories...")
+    print(
+        f"Fetching GitHub repositories for @{USERNAME}..."
+    )
 
     repositories = get_repositories()
 
@@ -360,7 +414,9 @@ def main():
         f"Found {len(repositories)} repositories."
     )
 
-    print("Collecting language statistics...")
+    print(
+        "Collecting language statistics..."
+    )
 
     totals = collect_languages(
         repositories
@@ -381,7 +437,8 @@ def main():
     svg = create_svg(languages)
 
     output = (
-        "dist/github-stats/languages.svg"
+        "dist/github-stats/"
+        "languages.svg"
     )
 
     os.makedirs(
