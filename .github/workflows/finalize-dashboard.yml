@@ -12,6 +12,11 @@ on:
 
   workflow_dispatch:
 
+# جلوگیری از اجرای همزمان چند Finalize
+concurrency:
+  group: github-dashboard-finalize
+  cancel-in-progress: true
+
 permissions:
   actions: read
   contents: write
@@ -19,6 +24,7 @@ permissions:
 jobs:
   finalize:
     name: Collect and Publish Dashboard
+
     runs-on: windows-latest
 
     if: >
@@ -27,26 +33,18 @@ jobs:
 
     steps:
 
-      # --------------------------------------------------
-      # 1. Checkout main
-      # --------------------------------------------------
-
-      - name: Checkout main branch
-        uses: actions/checkout@v4
-        with:
-          ref: main
-          fetch-depth: 0
-
-
-      # --------------------------------------------------
-      # 2. Prepare temporary directory
-      # --------------------------------------------------
+      # ==================================================
+      # 1. Prepare temporary directory
+      # ==================================================
 
       - name: Prepare dashboard directory
         shell: pwsh
         run: |
           if (Test-Path "final-dashboard") {
-              Remove-Item "final-dashboard" -Recurse -Force
+              Remove-Item `
+                "final-dashboard" `
+                -Recurse `
+                -Force
           }
 
           New-Item `
@@ -54,10 +52,9 @@ jobs:
             -Path "final-dashboard" `
             -Force | Out-Null
 
-
-      # --------------------------------------------------
-      # 3. Find latest successful runs and artifacts
-      # --------------------------------------------------
+      # ==================================================
+      # 2. Find matching successful workflow runs
+      # ==================================================
 
       - name: Find artifact-producing workflow runs
         id: find-runs
@@ -69,6 +66,7 @@ jobs:
           REPOSITORIES_WORKFLOW: "Generate GitHub Repositories"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+
           script: |
             const workflows = [
               {
@@ -92,21 +90,35 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
+            /*
+             * When triggered by workflow_run, try to keep all
+             * artifacts tied to the same commit.
+             */
+            const targetSha =
+              context.payload.workflow_run?.head_sha ?? null;
+
+            core.info(
+              `Target commit SHA: ${targetSha ?? "not available"}`
+            );
+
+            /*
+             * Fetch the repository workflows only once.
+             */
+            const workflowList =
+              await github.paginate(
+                github.rest.actions.listRepoWorkflows,
+                {
+                  owner,
+                  repo,
+                  per_page: 100
+                }
+              );
+
             const result = {};
 
             for (const item of workflows) {
-
+              core.info("");
               core.info(`Searching workflow: ${item.name}`);
-
-              const workflowList =
-                await github.paginate(
-                  github.rest.actions.listRepoWorkflows,
-                  {
-                    owner,
-                    repo,
-                    per_page: 100
-                  }
-                );
 
               const workflow =
                 workflowList.find(
@@ -121,29 +133,67 @@ jobs:
               }
 
               core.info(
-                `Found workflow: ${item.name} (ID: ${workflow.id})`
+                `Found workflow ID: ${workflow.id}`
               );
 
-              const runs =
-                await github.paginate(
-                  github.rest.actions.listWorkflowRuns,
-                  {
-                    owner,
-                    repo,
-                    workflow_id: workflow.id,
-                    status: "completed",
-                    per_page: 100
-                  }
-                );
+              /*
+               * Fetch recent completed runs only.
+               * 20 is enough for normal operation and avoids
+               * unnecessarily scanning hundreds of runs.
+               */
+              const runsResponse =
+                await github.rest.actions.listWorkflowRuns({
+                  owner,
+                  repo,
+                  workflow_id: workflow.id,
+                  status: "completed",
+                  per_page: 20
+                });
 
-              const successfulRuns =
-                runs.filter(
-                  run => run.conclusion === "success"
+              const runs =
+                runsResponse.data.workflow_runs;
+
+              /*
+               * Prefer successful runs from the same commit.
+               * This prevents mixing a fresh SVG with an older SVG.
+               */
+              const candidateRuns = runs.filter(
+                run =>
+                  run.conclusion === "success" &&
+                  (!targetSha || run.head_sha === targetSha)
+              );
+
+              /*
+               * If no same-SHA run exists during manual dispatch,
+               * fall back to the latest successful run.
+               */
+              const fallbackRuns = runs.filter(
+                run =>
+                  run.conclusion === "success"
+              );
+
+              const runsToCheck =
+                candidateRuns.length > 0
+                  ? candidateRuns
+                  : fallbackRuns;
+
+              if (runsToCheck.length === 0) {
+                core.setFailed(
+                  `No successful runs found for workflow '${item.name}'.`
                 );
+                return;
+              }
 
               let selectedRun = null;
 
-              for (const run of successfulRuns) {
+              /*
+               * Search recent successful runs until the expected
+               * artifact is found.
+               */
+              for (const run of runsToCheck) {
+                core.info(
+                  `Checking run ${run.id} (${run.head_sha})`
+                );
 
                 const artifacts =
                   await github.paginate(
@@ -163,29 +213,46 @@ jobs:
                       !a.expired
                   );
 
-                if (artifact) {
-
-                  selectedRun = {
-                    runId: run.id,
-                    artifactName: artifact.name,
-                    createdAt: run.created_at
-                  };
-
-                  break;
+                if (!artifact) {
+                  continue;
                 }
+
+                selectedRun = {
+                  runId: run.id,
+                  artifactName: artifact.name,
+                  createdAt: run.created_at,
+                  updatedAt: run.updated_at,
+                  headSha: run.head_sha
+                };
+
+                break;
               }
 
               if (!selectedRun) {
-
                 core.setFailed(
-                  `No successful run with artifact '${item.artifact}' was found for workflow '${item.name}'.`
+                  `No valid artifact '${item.artifact}' found for workflow '${item.name}'.`
                 );
-
                 return;
               }
 
               core.info(
-                `Selected ${item.name}: run ${selectedRun.runId}, artifact ${selectedRun.artifactName}`
+                `Selected ${item.name}:`
+              );
+
+              core.info(
+                `  Run ID: ${selectedRun.runId}`
+              );
+
+              core.info(
+                `  Artifact: ${selectedRun.artifactName}`
+              );
+
+              core.info(
+                `  Commit: ${selectedRun.headSha}`
+              );
+
+              core.info(
+                `  Created: ${selectedRun.createdAt}`
               );
 
               result[item.artifact] = selectedRun;
@@ -196,14 +263,22 @@ jobs:
               JSON.stringify(result)
             );
 
+            core.info("");
             core.info(
-              `Selected runs:\n${JSON.stringify(result, null, 2)}`
+              "Selected artifact-producing runs:"
             );
 
+            core.info(
+              JSON.stringify(
+                result,
+                null,
+                2
+              )
+            );
 
-      # --------------------------------------------------
-      # 4. Download Overview
-      # --------------------------------------------------
+      # ==================================================
+      # 3. Download Overview
+      # ==================================================
 
       - name: Download overview artifact
         uses: actions/download-artifact@v5
@@ -214,10 +289,9 @@ jobs:
           repository: ${{ github.repository }}
           run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-overview'].runId }}
 
-
-      # --------------------------------------------------
-      # 5. Download Languages
-      # --------------------------------------------------
+      # ==================================================
+      # 4. Download Languages
+      # ==================================================
 
       - name: Download languages artifact
         uses: actions/download-artifact@v5
@@ -228,10 +302,9 @@ jobs:
           repository: ${{ github.repository }}
           run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-languages'].runId }}
 
-
-      # --------------------------------------------------
-      # 6. Download Activity
-      # --------------------------------------------------
+      # ==================================================
+      # 5. Download Activity
+      # ==================================================
 
       - name: Download activity artifact
         uses: actions/download-artifact@v5
@@ -242,10 +315,9 @@ jobs:
           repository: ${{ github.repository }}
           run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-activity'].runId }}
 
-
-      # --------------------------------------------------
-      # 7. Download Repositories
-      # --------------------------------------------------
+      # ==================================================
+      # 6. Download Repositories
+      # ==================================================
 
       - name: Download repositories artifact
         uses: actions/download-artifact@v5
@@ -256,10 +328,9 @@ jobs:
           repository: ${{ github.repository }}
           run-id: ${{ fromJSON(steps.find-runs.outputs.runs)['github-repositories'].runId }}
 
-
-      # --------------------------------------------------
-      # 8. Validate ALL SVG files
-      # --------------------------------------------------
+      # ==================================================
+      # 7. Validate dashboard files
+      # ==================================================
 
       - name: Validate dashboard files
         shell: pwsh
@@ -271,6 +342,8 @@ jobs:
               "activity.svg",
               "repositories.svg"
           )
+
+          $errors = @()
 
           foreach ($file in $requiredFiles) {
 
@@ -284,18 +357,18 @@ jobs:
 
               if ($matches.Count -eq 0) {
 
-                  Write-Error `
-                    "Required file '$file' was not found."
+                  $errors += `
+                    "Missing required file: $file"
 
-                  exit 1
+                  continue
               }
 
               if ($matches.Count -gt 1) {
 
-                  Write-Error `
-                    "Duplicate file '$file' detected."
+                  $errors += `
+                    "Duplicate file detected: $file"
 
-                  exit 1
+                  continue
               }
 
               $match = $matches[0]
@@ -304,60 +377,68 @@ jobs:
 
               if ($size -le 100) {
 
-                  Write-Error `
-                    "File '$($match.FullName)' is suspiciously small."
+                  $errors += `
+                    "Suspiciously small file: $file ($size bytes)"
 
-                  exit 1
+                  continue
               }
 
               Write-Host `
                 "Validated: $($match.FullName) [$size bytes]"
           }
 
+          if ($errors.Count -gt 0) {
+
+              Write-Host ""
+              Write-Host "Validation errors:"
+
+              foreach ($error in $errors) {
+                  Write-Host " - $error"
+              }
+
+              exit 1
+          }
+
           Write-Host ""
-          Write-Host "All required dashboard files are valid."
+          Write-Host "All dashboard files are valid."
 
-
-      # --------------------------------------------------
-      # 9. Checkout gh-pages
-      # --------------------------------------------------
+      # ==================================================
+      # 8. Checkout gh-pages
+      # ==================================================
 
       - name: Checkout gh-pages
-        shell: pwsh
-        run: |
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages
+          fetch-depth: 1
 
-          git fetch origin gh-pages
-
-          git checkout `
-            -B gh-pages `
-            origin/gh-pages
-
-
-      # --------------------------------------------------
-      # 10. Prepare published directory
-      # --------------------------------------------------
+      # ==================================================
+      # 9. Prepare published directory
+      # ==================================================
 
       - name: Prepare published dashboard
         shell: pwsh
         run: |
 
-          if (Test-Path "github-stats") {
+          $publishPath = "gh-pages/github-stats"
+
+          if (Test-Path $publishPath) {
 
               Remove-Item `
-                "github-stats" `
+                $publishPath `
                 -Recurse `
                 -Force
           }
 
           New-Item `
             -ItemType Directory `
-            -Path "github-stats" `
+            -Path $publishPath `
             -Force | Out-Null
 
-
-      # --------------------------------------------------
-      # 11. Publish validated SVG files
-      # --------------------------------------------------
+      # ==================================================
+      # 10. Publish dashboard
+      # ==================================================
 
       - name: Publish dashboard files
         shell: pwsh
@@ -382,24 +463,27 @@ jobs:
               if (-not $source) {
 
                   Write-Error `
-                    "Cannot publish '$file' because it was not found."
+                    "Cannot publish '$file'. File not found."
 
                   exit 1
               }
 
+              $destination = Join-Path `
+                "gh-pages/github-stats" `
+                $file
+
               Copy-Item `
                 $source.FullName `
-                (Join-Path "github-stats" $file) `
+                $destination `
                 -Force
 
               Write-Host `
                 "Published: $file"
           }
 
-
-      # --------------------------------------------------
-      # 12. Final verification
-      # --------------------------------------------------
+      # ==================================================
+      # 11. Final verification
+      # ==================================================
 
       - name: Verify gh-pages output
         shell: pwsh
@@ -415,7 +499,7 @@ jobs:
           foreach ($file in $requiredFiles) {
 
               $path = Join-Path `
-                "github-stats" `
+                "gh-pages/github-stats" `
                 $file
 
               if (-not (Test-Path $path)) {
@@ -445,14 +529,18 @@ jobs:
           Write-Host ""
           Write-Host "Dashboard publication validation passed."
 
-
-      # --------------------------------------------------
-      # 13. Commit only if something changed
-      # --------------------------------------------------
+      # ==================================================
+      # 12. Commit and push
+      # ==================================================
 
       - name: Commit dashboard
         shell: pwsh
+        env:
+          REPOSITORY: ${{ github.repository }}
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
         run: |
+
+          Set-Location "gh-pages"
 
           git config `
             user.name `
@@ -476,10 +564,26 @@ jobs:
           }
 
           Write-Host ""
-          Write-Host "Changes detected:"
+          Write-Host "Dashboard changes detected:"
           git status --short
 
+          $commitSubject =
+            "📊 chore(dashboard): update GitHub analytics"
+
+          $commitBody = @"
+Automated GitHub dashboard synchronization.
+
+Generated-By: github-actions[bot]
+Workflow: Finalize GitHub Dashboard
+Repository: $env:REPOSITORY
+Run-ID: $env:WORKFLOW_RUN_ID
+"@
+
           git commit `
-            -m "Update GitHub dashboard"
+            -m $commitSubject `
+            -m $commitBody
 
           git push origin gh-pages
+
+          Write-Host ""
+          Write-Host "Dashboard successfully published."
