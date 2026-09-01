@@ -21,7 +21,7 @@ API = "https://api.github.com"
 
 # Delay between expensive per-repository API requests.
 # Set to 0 to disable the delay.
-REQUEST_DELAY = 20
+REQUEST_DELAY = 2
 
 
 # =========================================================
