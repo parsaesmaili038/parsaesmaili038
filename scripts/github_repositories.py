@@ -1,22 +1,34 @@
 import os
+import time
 from datetime import datetime, timezone
 
 import requests
 
 
+# =========================
+# Configuration
+# =========================
+
 USERNAME = os.getenv(
     "GITHUB_USERNAME",
-    "parsaesmaili038",
+    "the-pa3a",
 )
 
 TOKEN = os.getenv("GITHUB_TOKEN")
 
 API = "https://api.github.com"
 
+REQUEST_DELAY = 20
+
+
+# =========================
+# HTTP Client
+# =========================
 
 if not TOKEN:
     raise RuntimeError(
-        "GITHUB_TOKEN is not available"
+        "GITHUB_TOKEN is not available. "
+        "Please set the GITHUB_TOKEN environment variable."
     )
 
 
@@ -27,31 +39,52 @@ HEADERS = {
 }
 
 
-def github_get(url, params=None):
-    response = requests.get(
-        url,
-        headers=HEADERS,
-        params=params,
-        timeout=30,
-    )
+SESSION = requests.Session()
+SESSION.headers.update(HEADERS)
 
-    response.raise_for_status()
+
+def github_get(url, params=None):
+    """Send a GET request to the GitHub API."""
+
+    try:
+        response = SESSION.get(
+            url,
+            params=params,
+            timeout=30,
+        )
+
+        response.raise_for_status()
+
+    except requests.RequestException as error:
+        raise RuntimeError(
+            f"GitHub API request failed: {error}"
+        ) from error
 
     return response.json()
 
 
+# =========================
+# GitHub API
+# =========================
+
 def get_user():
+    """Fetch the GitHub user profile."""
+
     return github_get(
         f"{API}/users/{USERNAME}"
     )
 
 
-def get_repositories():
+def get_repository_list():
+    """
+    Fetch the list of repositories owned by the user.
+
+    This request is only used to discover repositories.
+    """
+
     repositories = []
 
-    page = 1
-
-    while True:
+    for page in range(1, 100):
         data = github_get(
             f"{API}/users/{USERNAME}/repos",
             params={
@@ -70,12 +103,91 @@ def get_repositories():
         if len(data) < 100:
             break
 
-        page += 1
+    return repositories
+
+
+def get_repository_details(repository_name):
+    """Fetch detailed information for one repository."""
+
+    return github_get(
+        f"{API}/repos/{USERNAME}/{repository_name}"
+    )
+
+
+def get_repositories():
+    """
+    Fetch detailed repository information.
+
+    Exactly one API request is made for each repository,
+    with a 20-second delay between repository requests.
+    """
+
+    repository_list = get_repository_list()
+
+    repositories = []
+
+    total = len(repository_list)
+
+    print(
+        f"Found {total} repositories."
+    )
+
+    print(
+        f"Fetching repository details "
+        f"with a {REQUEST_DELAY}-second delay..."
+    )
+
+    for index, repository in enumerate(
+        repository_list,
+        start=1,
+    ):
+        name = repository.get("name")
+
+        if not name:
+            continue
+
+        print(
+            f"[{index}/{total}] "
+            f"Requesting repository: {name}"
+        )
+
+        try:
+            details = get_repository_details(
+                name
+            )
+
+        except RuntimeError as error:
+            print(
+                f"Skipping {name}: {error}"
+            )
+            continue
+
+        repositories.append(details)
+
+        print(
+            "  → Repository received successfully."
+        )
+
+        if index < total:
+            print(
+                f"  → Waiting {REQUEST_DELAY} seconds "
+                "before the next request..."
+            )
+
+            time.sleep(
+                REQUEST_DELAY
+            )
 
     return repositories
 
 
+# =========================
+# Statistics
+# =========================
+
 def calculate_statistics(user, repositories):
+    """Calculate detailed repository statistics."""
+
     total_stars = sum(
         repo.get("stargazers_count", 0)
         for repo in repositories
@@ -83,6 +195,26 @@ def calculate_statistics(user, repositories):
 
     total_forks = sum(
         repo.get("forks_count", 0)
+        for repo in repositories
+    )
+
+    total_watchers = sum(
+        repo.get("watchers_count", 0)
+        for repo in repositories
+    )
+
+    total_open_issues = sum(
+        repo.get("open_issues_count", 0)
+        for repo in repositories
+    )
+
+    total_size_kb = sum(
+        repo.get("size", 0)
+        for repo in repositories
+    )
+
+    total_topics = sum(
+        len(repo.get("topics", []))
         for repo in repositories
     )
 
@@ -97,11 +229,6 @@ def calculate_statistics(user, repositories):
             )
 
     language_count = len(languages)
-
-    public_repositories = user.get(
-        "public_repos",
-        0,
-    )
 
     archived = sum(
         1
@@ -119,17 +246,46 @@ def calculate_statistics(user, repositories):
         len(repositories) - forks
     )
 
+    repositories_with_description = sum(
+        1
+        for repo in repositories
+        if repo.get("description")
+    )
+
+    repositories_with_website = sum(
+        1
+        for repo in repositories
+        if repo.get("homepage")
+    )
+
+    total_size_mb = total_size_kb / 1024
+
     return {
-        "repositories": public_repositories,
+        "repositories": user.get(
+            "public_repos",
+            0,
+        ),
         "stars": total_stars,
         "forks": total_forks,
+        "watchers": total_watchers,
+        "open_issues": total_open_issues,
         "languages": language_count,
-        "archived": archived,
         "original": original_repositories,
+        "archived": archived,
+        "size_mb": total_size_mb,
+        "descriptions": repositories_with_description,
+        "websites": repositories_with_website,
+        "topics": total_topics,
     }
 
 
+# =========================
+# SVG Utilities
+# =========================
+
 def escape_xml(value):
+    """Escape text for safe use inside SVG/XML."""
+
     return (
         str(value)
         .replace("&", "&amp;")
@@ -141,8 +297,10 @@ def escape_xml(value):
 
 
 def create_svg(stats):
+    """Generate the GitHub repository analytics SVG."""
+
     width = 1100
-    height = 620
+    height = 760
 
     updated = datetime.now(
         timezone.utc
@@ -168,6 +326,18 @@ def create_svg(stats):
             "#7C3AED",
         ),
         (
+            "👀",
+            "WATCHERS",
+            stats["watchers"],
+            "#58A6FF",
+        ),
+        (
+            "🐛",
+            "OPEN ISSUES",
+            stats["open_issues"],
+            "#F78166",
+        ),
+        (
             "💻",
             "LANGUAGES",
             stats["languages"],
@@ -185,15 +355,45 @@ def create_svg(stats):
             stats["archived"],
             "#8B949E",
         ),
+        (
+            "💾",
+            "TOTAL SIZE",
+            f'{stats["size_mb"]:.1f} MB',
+            "#58A6FF",
+        ),
+        (
+            "📝",
+            "DESCRIPTIONS",
+            stats["descriptions"],
+            "#7C3AED",
+        ),
+        (
+            "🌐",
+            "WEBSITES",
+            stats["websites"],
+            "#58A6FF",
+        ),
+        (
+            "🏷️",
+            "TOPICS",
+            stats["topics"],
+            "#7C3AED",
+        ),
     ]
 
     positions = [
-        (60, 145),
-        (400, 145),
-        (740, 145),
-        (60, 330),
-        (400, 330),
-        (740, 330),
+        (60, 140),
+        (400, 140),
+        (740, 140),
+        (60, 310),
+        (400, 310),
+        (740, 310),
+        (60, 480),
+        (400, 480),
+        (740, 480),
+        (60, 650),
+        (400, 650),
+        (740, 650),
     ]
 
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -214,9 +414,20 @@ def create_svg(stats):
         x2="1"
         y2="1"
     >
-        <stop offset="0%" stop-color="#0D1117"/>
-        <stop offset="55%" stop-color="#111827"/>
-        <stop offset="100%" stop-color="#17113A"/>
+        <stop
+            offset="0%"
+            stop-color="#0D1117"
+        />
+
+        <stop
+            offset="55%"
+            stop-color="#111827"
+        />
+
+        <stop
+            offset="100%"
+            stop-color="#17113A"
+        />
     </linearGradient>
 
     <linearGradient
@@ -226,8 +437,15 @@ def create_svg(stats):
         x2="1"
         y2="0"
     >
-        <stop offset="0%" stop-color="#58A6FF"/>
-        <stop offset="100%" stop-color="#7C3AED"/>
+        <stop
+            offset="0%"
+            stop-color="#58A6FF"
+        />
+
+        <stop
+            offset="100%"
+            stop-color="#7C3AED"
+        />
     </linearGradient>
 
 </defs>
@@ -283,17 +501,18 @@ def create_svg(stats):
         label,
         value,
         accent,
-    ), (x, y) in zip(
-        cards,
-        positions,
-    ):
+    ), (
+        x,
+        y,
+    ) in zip(cards, positions):
+
         svg += f"""
 
 <rect
     x="{x}"
     y="{y}"
     width="300"
-    height="145"
+    height="135"
     rx="20"
     fill="#161B22"
     stroke="#30363D"
@@ -303,11 +522,11 @@ def create_svg(stats):
 
 <text
     x="{x + 150}"
-    y="{y + 42}"
+    y="{y + 40}"
     text-anchor="middle"
     fill="{accent}"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
+    font-size="17"
     font-weight="700"
 >
     {escape_xml(icon)} {escape_xml(label)}
@@ -316,11 +535,11 @@ def create_svg(stats):
 
 <text
     x="{x + 150}"
-    y="{y + 103}"
+    y="{y + 100}"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
+    font-size="38"
     font-weight="700"
 >
     {escape_xml(value)}
@@ -331,7 +550,7 @@ def create_svg(stats):
 
 <text
     x="550"
-    y="535"
+    y="730"
     text-anchor="middle"
     fill="#8B949E"
     font-family="Arial, Helvetica, sans-serif"
@@ -343,11 +562,11 @@ def create_svg(stats):
 
 <text
     x="550"
-    y="570"
+    y="752"
     text-anchor="middle"
     fill="#58A6FF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="14"
+    font-size="13"
 >
     LAST UPDATED: {escape_xml(updated)} UTC
 </text>
@@ -358,17 +577,26 @@ def create_svg(stats):
     return svg
 
 
+# =========================
+# Main
+# =========================
+
 def main():
-    print("Fetching GitHub profile...")
+    print(
+        f"Fetching GitHub profile for @{USERNAME}..."
+    )
 
     user = get_user()
 
-    print("Fetching repositories...")
+    print(
+        "Fetching repository list..."
+    )
 
     repositories = get_repositories()
 
     print(
-        f"Found {len(repositories)} repositories."
+        f"Successfully fetched details for "
+        f"{len(repositories)} repositories."
     )
 
     stats = calculate_statistics(
@@ -379,7 +607,9 @@ def main():
     print("Repository statistics:")
 
     for key, value in stats.items():
-        print(f"{key}: {value}")
+        print(
+            f"{key}: {value}"
+        )
 
     svg = create_svg(stats)
 
