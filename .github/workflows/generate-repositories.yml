@@ -42,7 +42,7 @@ jobs:
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: the-pa3a
+          GITHUB_USERNAME: the-par3a
         run: |
           python scripts/github_repositories.py
 
