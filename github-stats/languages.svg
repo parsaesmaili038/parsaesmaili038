@@ -117,7 +117,7 @@
 <rect
     x="230"
     y="159"
-    width="670.52"
+    width="670.54"
     height="20"
     rx="10"
     fill="url(#accent)"
@@ -162,7 +162,7 @@
 <rect
     x="230"
     y="201"
-    width="35.34"
+    width="35.32"
     height="20"
     rx="10"
     fill="url(#accent)"
@@ -472,7 +472,7 @@
     font-family="Arial, Helvetica, sans-serif"
     font-size="14"
 >
-    LAST UPDATED: 2026-08-31 UTC
+    LAST UPDATED: 2026-09-01 UTC
 </text>
 
 </svg>
