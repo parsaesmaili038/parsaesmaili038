@@ -15,6 +15,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
+
       - name: Checkout repository
         uses: actions/checkout@v4
 
@@ -33,7 +34,7 @@ jobs:
         shell: pwsh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_USERNAME: parsaesmaili038
+          GITHUB_USERNAME: the-pa3a
         run: |
           python scripts/github_overview.py
 
