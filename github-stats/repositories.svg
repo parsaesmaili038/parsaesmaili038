@@ -3,8 +3,8 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
     width="1100"
-    height="620"
-    viewBox="0 0 1100 620"
+    height="1270"
+    viewBox="0 0 1100 1270"
 >
 
 <defs>
@@ -16,9 +16,20 @@
         x2="1"
         y2="1"
     >
-        <stop offset="0%" stop-color="#0D1117"/>
-        <stop offset="55%" stop-color="#111827"/>
-        <stop offset="100%" stop-color="#17113A"/>
+        <stop
+            offset="0%"
+            stop-color="#0D1117"
+        />
+
+        <stop
+            offset="55%"
+            stop-color="#111827"
+        />
+
+        <stop
+            offset="100%"
+            stop-color="#17113A"
+        />
     </linearGradient>
 
     <linearGradient
@@ -28,34 +39,38 @@
         x2="1"
         y2="0"
     >
-        <stop offset="0%" stop-color="#58A6FF"/>
-        <stop offset="100%" stop-color="#7C3AED"/>
+        <stop
+            offset="0%"
+            stop-color="#58A6FF"
+        />
+
+        <stop
+            offset="100%"
+            stop-color="#7C3AED"
+        />
     </linearGradient>
 
 </defs>
-
 
 <rect
     x="0"
     y="0"
     width="1100"
-    height="620"
+    height="1270"
     rx="28"
     fill="url(#background)"
 />
-
 
 <rect
     x="2"
     y="2"
     width="1096"
-    height="616"
+    height="1266"
     rx="28"
     fill="none"
     stroke="#30363D"
     stroke-width="2"
 />
-
 
 <text
     x="550"
@@ -66,9 +81,8 @@
     font-size="28"
     font-weight="700"
 >
-    📦 PARSA ESMAILI — REPOSITORY ANALYTICS
+    📊 PARSA ESMAILI — GITHUB ANALYTICS
 </text>
-
 
 <rect
     x="180"
@@ -79,238 +93,780 @@
     fill="url(#accent)"
 />
 
-
 <rect
     x="60"
-    y="145"
+    y="140"
     width="300"
-    height="145"
+    height="135"
     rx="20"
     fill="#161B22"
     stroke="#30363D"
     stroke-width="1"
 />
 
-
 <text
     x="210"
-    y="187"
+    y="180"
     text-anchor="middle"
     fill="#58A6FF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
+    font-size="17"
     font-weight="700"
 >
     📦 REPOSITORIES
 </text>
 
-
 <text
     x="210"
-    y="248"
+    y="240"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
+    font-size="36"
     font-weight="700"
 >
-    8
+    9
 </text>
-
 
 <rect
     x="400"
-    y="145"
+    y="140"
     width="300"
-    height="145"
+    height="135"
     rx="20"
     fill="#161B22"
     stroke="#30363D"
     stroke-width="1"
 />
 
-
 <text
     x="550"
-    y="187"
+    y="180"
     text-anchor="middle"
     fill="#F7DF1E"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
+    font-size="17"
     font-weight="700"
 >
     ⭐ TOTAL STARS
 </text>
 
-
 <text
     x="550"
-    y="248"
+    y="240"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
+    font-size="36"
     font-weight="700"
 >
     8
 </text>
 
-
 <rect
     x="740"
-    y="145"
+    y="140"
     width="300"
-    height="145"
+    height="135"
     rx="20"
     fill="#161B22"
     stroke="#30363D"
     stroke-width="1"
 />
 
-
 <text
     x="890"
-    y="187"
+    y="180"
     text-anchor="middle"
     fill="#7C3AED"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
+    font-size="17"
     font-weight="700"
 >
     🔀 TOTAL FORKS
 </text>
 
-
 <text
     x="890"
-    y="248"
+    y="240"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
+    font-size="36"
     font-weight="700"
 >
     0
 </text>
 
-
 <rect
     x="60"
-    y="330"
+    y="295"
     width="300"
-    height="145"
+    height="135"
     rx="20"
     fill="#161B22"
     stroke="#30363D"
     stroke-width="1"
 />
 
-
 <text
     x="210"
-    y="372"
+    y="335"
     text-anchor="middle"
     fill="#58A6FF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
+    font-size="17"
     font-weight="700"
 >
-    💻 LANGUAGES
+    👀 WATCHERS
 </text>
-
 
 <text
     x="210"
-    y="433"
+    y="395"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
+    font-size="36"
+    font-weight="700"
+>
+    8
+</text>
+
+<rect
+    x="400"
+    y="295"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="550"
+    y="335"
+    text-anchor="middle"
+    fill="#3FB950"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    📝 COMMITS
+</text>
+
+<text
+    x="550"
+    y="395"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    562
+</text>
+
+<rect
+    x="740"
+    y="295"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="890"
+    y="335"
+    text-anchor="middle"
+    fill="#A371F7"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    🔀 PULL REQUESTS
+</text>
+
+<text
+    x="890"
+    y="395"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    16
+</text>
+
+<rect
+    x="60"
+    y="450"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="210"
+    y="490"
+    text-anchor="middle"
+    fill="#F0883E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    📦 RELEASES
+</text>
+
+<text
+    x="210"
+    y="550"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
     font-weight="700"
 >
     2
 </text>
 
-
 <rect
     x="400"
-    y="330"
+    y="450"
     width="300"
-    height="145"
+    height="135"
     rx="20"
     fill="#161B22"
     stroke="#30363D"
     stroke-width="1"
 />
 
-
 <text
     x="550"
-    y="372"
+    y="490"
     text-anchor="middle"
-    fill="#7C3AED"
+    fill="#F78166"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
+    font-size="17"
     font-weight="700"
 >
-    🧩 ORIGINAL
+    🐛 OPEN ISSUES
 </text>
-
 
 <text
     x="550"
-    y="433"
+    y="550"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
+    font-size="36"
     font-weight="700"
 >
     4
 </text>
 
-
 <rect
     x="740"
-    y="330"
+    y="450"
     width="300"
-    height="145"
+    height="135"
     rx="20"
     fill="#161B22"
     stroke="#30363D"
     stroke-width="1"
 />
 
+<text
+    x="890"
+    y="490"
+    text-anchor="middle"
+    fill="#3FB950"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    ✅ CLOSED ISSUES
+</text>
 
 <text
     x="890"
-    y="372"
+    y="550"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    3
+</text>
+
+<rect
+    x="60"
+    y="605"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="210"
+    y="645"
+    text-anchor="middle"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    💻 LANGUAGES
+</text>
+
+<text
+    x="210"
+    y="705"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    2
+</text>
+
+<rect
+    x="400"
+    y="605"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="550"
+    y="645"
+    text-anchor="middle"
+    fill="#7C3AED"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    🧩 ORIGINAL
+</text>
+
+<text
+    x="550"
+    y="705"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    4
+</text>
+
+<rect
+    x="740"
+    y="605"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="890"
+    y="645"
+    text-anchor="middle"
+    fill="#A371F7"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    🌿 FORKED REPOS
+</text>
+
+<text
+    x="890"
+    y="705"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    5
+</text>
+
+<rect
+    x="60"
+    y="760"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="210"
+    y="800"
+    text-anchor="middle"
+    fill="#F0883E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    📈 FORK PERCENTAGE
+</text>
+
+<text
+    x="210"
+    y="860"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    55.6%
+</text>
+
+<rect
+    x="400"
+    y="760"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="550"
+    y="800"
     text-anchor="middle"
     fill="#8B949E"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="18"
+    font-size="17"
     font-weight="700"
 >
     📁 ARCHIVED
 </text>
 
-
 <text
-    x="890"
-    y="433"
+    x="550"
+    y="860"
     text-anchor="middle"
     fill="#FFFFFF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="42"
+    font-size="36"
     font-weight="700"
 >
     0
 </text>
 
+<rect
+    x="740"
+    y="760"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="890"
+    y="800"
+    text-anchor="middle"
+    fill="#3FB950"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    📜 WITH LICENSE
+</text>
+
+<text
+    x="890"
+    y="860"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    3
+</text>
+
+<rect
+    x="60"
+    y="915"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="210"
+    y="955"
+    text-anchor="middle"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    🌐 PUBLIC
+</text>
+
+<text
+    x="210"
+    y="1015"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    9
+</text>
+
+<rect
+    x="400"
+    y="915"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
 
 <text
     x="550"
-    y="535"
+    y="955"
+    text-anchor="middle"
+    fill="#F78166"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    🔒 PRIVATE
+</text>
+
+<text
+    x="550"
+    y="1015"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    0
+</text>
+
+<rect
+    x="740"
+    y="915"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="890"
+    y="955"
+    text-anchor="middle"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    💾 TOTAL SIZE
+</text>
+
+<text
+    x="890"
+    y="1015"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    49.6 MB
+</text>
+
+<rect
+    x="60"
+    y="1070"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="210"
+    y="1110"
+    text-anchor="middle"
+    fill="#7C3AED"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    🏷️ TOPICS
+</text>
+
+<text
+    x="210"
+    y="1170"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    14
+</text>
+
+<rect
+    x="400"
+    y="1070"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="550"
+    y="1110"
+    text-anchor="middle"
+    fill="#A371F7"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    📝 DESCRIPTIONS
+</text>
+
+<text
+    x="550"
+    y="1170"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    5
+</text>
+
+<rect
+    x="740"
+    y="1070"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="890"
+    y="1110"
+    text-anchor="middle"
+    fill="#58A6FF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    🌍 WEBSITES
+</text>
+
+<text
+    x="890"
+    y="1170"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    3
+</text>
+
+<rect
+    x="60"
+    y="1225"
+    width="300"
+    height="135"
+    rx="20"
+    fill="#161B22"
+    stroke="#30363D"
+    stroke-width="1"
+/>
+
+<text
+    x="210"
+    y="1265"
+    text-anchor="middle"
+    fill="#F0883E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="17"
+    font-weight="700"
+>
+    📊 TOTAL ISSUES
+</text>
+
+<text
+    x="210"
+    y="1325"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="36"
+    font-weight="700"
+>
+    7
+</text>
+
+
+<text
+    x="550"
+    y="1400"
     text-anchor="middle"
     fill="#8B949E"
     font-family="Arial, Helvetica, sans-serif"
@@ -319,16 +875,39 @@
     LIVE DATA • GENERATED AUTOMATICALLY
 </text>
 
-
 <text
     x="550"
-    y="570"
+    y="1425"
     text-anchor="middle"
     fill="#58A6FF"
     font-family="Arial, Helvetica, sans-serif"
-    font-size="14"
+    font-size="13"
 >
-    LAST UPDATED: 2026-08-31 UTC
+    LAST UPDATED: 2026-09-01 14:11 UTC
+</text>
+
+<text
+    x="550"
+    y="1455"
+    text-anchor="middle"
+    fill="#8B949E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="12"
+>
+    Latest push: the-par3a
+</text>
+
+<text
+    x="550"
+    y="1478"
+    text-anchor="middle"
+    fill="#8B949E"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="12"
+>
+    Oldest repository: the-par3a.github.io
+    •
+    Newest repository: steven
 </text>
 
 </svg>
