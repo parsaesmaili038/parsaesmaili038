@@ -12,7 +12,7 @@ on:
 
   workflow_dispatch:
 
-# جلوگیری از اجرای همزمان چند Finalize
+# Prevent multiple Finalize runs from executing at the same time.
 concurrency:
   group: github-dashboard-finalize
   cancel-in-progress: true
@@ -571,13 +571,13 @@ jobs:
             "📊 chore(dashboard): update GitHub analytics"
 
           $commitBody = @"
-Automated GitHub dashboard synchronization.
-
-Generated-By: github-actions[bot]
-Workflow: Finalize GitHub Dashboard
-Repository: $env:REPOSITORY
-Run-ID: $env:WORKFLOW_RUN_ID
-"@
+          Automated GitHub dashboard synchronization.
+          
+          Generated-By: github-actions[bot]
+          Workflow: Finalize GitHub Dashboard
+          Repository: $env:REPOSITORY
+          Run-ID: $env:WORKFLOW_RUN_ID
+          "@
 
           git commit `
             -m $commitSubject `
