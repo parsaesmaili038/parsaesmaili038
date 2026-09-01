@@ -990,23 +990,23 @@ jobs:
 
 
               $metadata = @"
-<metadata>
-  <dashboard>
-    <name>$(Escape-Xml "GitHub Dashboard")</name>
-    <repository>$(Escape-Xml $env:REPOSITORY)</repository>
-    <file>$(Escape-Xml $relativePath)</file>
-    <generated-at-utc>$(Escape-Xml $generatedAt)</generated-at-utc>
-    <workflow>$(Escape-Xml $env:WORKFLOW_NAME)</workflow>
-    <workflow-run-id>$(Escape-Xml $env:WORKFLOW_RUN_ID)</workflow-run-id>
-    <workflow-run-number>$(Escape-Xml $env:WORKFLOW_RUN_NUMBER)</workflow-run-number>
-    <workflow-attempt>$(Escape-Xml $env:WORKFLOW_ATTEMPT)</workflow-attempt>
-    <event>$(Escape-Xml $env:EVENT_NAME)</event>
-    <actor>$(Escape-Xml $env:ACTOR)</actor>
-    <ref>$(Escape-Xml $env:REF_NAME)</ref>
-    <commit-sha>$(Escape-Xml $env:SHA)</commit-sha>
-  </dashboard>
-</metadata>
-"@
+          <metadata>
+            <dashboard>
+              <name>$(Escape-Xml "GitHub Dashboard")</name>
+              <repository>$(Escape-Xml $env:REPOSITORY)</repository>
+              <file>$(Escape-Xml $relativePath)</file>
+              <generated-at-utc>$(Escape-Xml $generatedAt)</generated-at-utc>
+              <workflow>$(Escape-Xml $env:WORKFLOW_NAME)</workflow>
+              <workflow-run-id>$(Escape-Xml $env:WORKFLOW_RUN_ID)</workflow-run-id>
+              <workflow-run-number>$(Escape-Xml $env:WORKFLOW_RUN_NUMBER)</workflow-run-number>
+              <workflow-attempt>$(Escape-Xml $env:WORKFLOW_ATTEMPT)</workflow-attempt>
+              <event>$(Escape-Xml $env:EVENT_NAME)</event>
+              <actor>$(Escape-Xml $env:ACTOR)</actor>
+              <ref>$(Escape-Xml $env:REF_NAME)</ref>
+              <commit-sha>$(Escape-Xml $env:SHA)</commit-sha>
+            </dashboard>
+          </metadata>
+          "@
 
 
               if ($content -match '<metadata\b') {
