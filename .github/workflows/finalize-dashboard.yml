@@ -51,14 +51,6 @@ name: "📊 Finalize GitHub Dashboard"
 # They are NOT encryption and do not hide file contents.
 #
 # ================================================================
-# ================================================================
-# 📝 METADATA CONTROL
-# ================================================================
-#
-# Change ONLY this value:
-#
-#   "1" = Metadata ENABLED
-#   "0" = Metadata DISABLED
 
 env:
   ENABLE_METADATA: "0"
@@ -113,11 +105,6 @@ on:
 
 # ================================================================
 # 🛡️ CONCURRENCY PROTECTION
-# ================================================================
-#
-# Prevents multiple finalizers from writing to gh-pages
-# simultaneously.
-#
 # ================================================================
 
 concurrency:
@@ -1638,14 +1625,14 @@ jobs:
 
 
           $commitBody = @"
-Automated GitHub dashboard synchronization.
-
-Generated-By: github-actions[bot]
-Repository: $env:REPOSITORY
-Workflow-Run-ID: $env:WORKFLOW_RUN_ID
-Workflow-Run-Number: $env:WORKFLOW_RUN_NUMBER
-Workflow-Attempt: $env:WORKFLOW_ATTEMPT
-Source-Commit: $env:COMMIT_SHA
+            Automated GitHub dashboard synchronization.
+            
+            Generated-By: github-actions[bot]
+            Repository: $env:REPOSITORY
+            Workflow-Run-ID: $env:WORKFLOW_RUN_ID
+            Workflow-Run-Number: $env:WORKFLOW_RUN_NUMBER
+            Workflow-Attempt: $env:WORKFLOW_ATTEMPT
+            Source-Commit: $env:COMMIT_SHA
 
 Metadata-Enabled: $env:ENABLE_METADATA
 
@@ -1654,11 +1641,11 @@ Integrity:
 - SHA-512
 
 Note:
-Cryptographic hashes provide file integrity verification.
-They are not encryption and do not hide file contents.
-"@
-
-
+  Cryptographic hashes provide file integrity verification.
+  They are not encryption and do not hide file contents.
+  "@
+  
+  
           git commit `
             -m $commitSubject `
             -m $commitBody
@@ -1717,7 +1704,6 @@ They are not encryption and do not hide file contents.
 
               git push origin gh-pages
 
-
           }
           finally {
 
@@ -1747,4 +1733,3 @@ They are not encryption and do not hide file contents.
 
           Write-Host ""
           Write-Host "🎉 Dashboard successfully published."
-
