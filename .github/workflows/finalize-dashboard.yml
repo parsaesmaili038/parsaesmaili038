@@ -541,32 +541,32 @@ jobs:
                           ''
               }
 
-              $metadata = @"
-            <metadata>
-              <dashboard>
-                <name>$(Escape-Xml "GitHub Dashboard")</name>
-                <repository>$(Escape-Xml $env:REPOSITORY)</repository>
-                <file>$(Escape-Xml $relativePath)</file>
-                <generated-at-utc>$(Escape-Xml $generatedAt)</generated-at-utc>
-                <workflow>$(Escape-Xml $env:WORKFLOW_NAME)</workflow>
-                <workflow-run-id>$(Escape-Xml $env:WORKFLOW_RUN_ID)</workflow-run-id>
-                <workflow-run-number>$(Escape-Xml $env:WORKFLOW_RUN_NUMBER)</workflow-run-number>
-                <workflow-attempt>$(Escape-Xml $env:WORKFLOW_ATTEMPT)</workflow-attempt>
-                <event>$(Escape-Xml $env:EVENT_NAME)</event>
-                <actor>$(Escape-Xml $env:ACTOR)</actor>
-                <ref>$(Escape-Xml $env:REF_NAME)</ref>
-                <commit-sha>$(Escape-Xml $env:SHA)</commit-sha>
-              </dashboard>
-            </metadata>
-"@
-
-              $newContent =
-                  $content -replace `
-                      '(<svg\b[^>]*>)',
-                      "`$1`n$metadata"
-
-              if ($newContent -eq $content) {
-                  Write-Error `
+           $metadata = @"
+          <metadata>
+            <dashboard>
+              <name>$(Escape-Xml "GitHub Dashboard")</name>
+              <repository>$(Escape-Xml $env:REPOSITORY)</repository>
+              <file>$(Escape-Xml $relativePath)</file>
+              <generated-at-utc>$(Escape-Xml $generatedAt)</generated-at-utc>
+              <workflow>$(Escape-Xml $env:WORKFLOW_NAME)</workflow>
+              <workflow-run-id>$(Escape-Xml $env:WORKFLOW_RUN_ID)</workflow-run-id>
+              <workflow-run-number>$(Escape-Xml $env:WORKFLOW_RUN_NUMBER)</workflow-run-number>
+              <workflow-attempt>$(Escape-Xml $env:WORKFLOW_ATTEMPT)</workflow-attempt>
+              <event>$(Escape-Xml $env:EVENT_NAME)</event>
+              <actor>$(Escape-Xml $env:ACTOR)</actor>
+              <ref>$(Escape-Xml $env:REF_NAME)</ref>
+              <commit-sha>$(Escape-Xml $env:SHA)</commit-sha>
+            </dashboard>
+          </metadata>
+          "@
+          
+          $newContent =
+              $content -replace `
+                  '(<svg\b[^>]*>)',
+                  "`$1`n$metadata"
+          
+                        if ($newContent -eq $content) {
+                            Write-Error `
                       "❌ Failed to inject metadata into $($file.Name)"
 
                   exit 1
@@ -952,88 +952,88 @@ jobs:
               "📊 chore(dashboard): update GitHub analytics"
 
           $commitBody = @"
-Automated GitHub dashboard synchronization.
+           Automated GitHub dashboard synchronization.
 
-Generated-By: github-actions[bot]
-Repository: $env:REPOSITORY
-Workflow-Run-ID: $env:WORKFLOW_RUN_ID
-Workflow-Run-Number: $env:WORKFLOW_RUN_NUMBER
-Workflow-Attempt: $env:WORKFLOW_ATTEMPT
-Source-Commit: $env:COMMIT_SHA
-
-Metadata-Enabled: $env:ENABLE_METADATA
-
-Integrity:
-- SHA-256
-- SHA-512
-
-Note:
-Cryptographic hashes provide file integrity verification.
-They are not encryption and do not hide file contents.
-"@
-
-          git commit `
-              -m $commitSubject `
-              -m $commitBody
-
-          if ($LASTEXITCODE -ne 0) {
-              throw "Git commit failed."
-          }
-
-          $askPass =
-              Join-Path `
-                  $env:RUNNER_TEMP `
-                  "github-token-askpass.ps1"
-
-          @'
-param(
-    [string]$Prompt
-)
-
-if ($Prompt -match "Username") {
-    Write-Output "x-access-token"
-    exit 0
-}
-
-if ($Prompt -match "Password") {
-    Write-Output $env:GH_TOKEN
-    exit 0
-}
-
-exit 1
-'@ |
-              Set-Content `
-                  -Path $askPass `
-                  -Encoding UTF8
-
-          try {
-              $env:GIT_ASKPASS = $askPass
-              $env:GIT_TERMINAL_PROMPT = "0"
-
-              git push origin gh-pages
-
-              if ($LASTEXITCODE -ne 0) {
-                  throw "Git push failed."
-              }
-
-              Write-Host ""
-              Write-Host "🎉 Dashboard successfully published."
-          }
-          finally {
-              Remove-Item `
-                  -Path $askPass `
-                  -Force `
-                  -ErrorAction SilentlyContinue
-
-              Remove-Item `
-                  Env:\GIT_ASKPASS `
-                  -ErrorAction SilentlyContinue
-
-              Remove-Item `
-                  Env:\GIT_TERMINAL_PROMPT `
-                  -ErrorAction SilentlyContinue
-
-              Remove-Item `
-                  Env:\GH_TOKEN `
-                  -ErrorAction SilentlyContinue
-          }
+          Generated-By: github-actions[bot]
+          Repository: $env:REPOSITORY
+          Workflow-Run-ID: $env:WORKFLOW_RUN_ID
+          Workflow-Run-Number: $env:WORKFLOW_RUN_NUMBER
+          Workflow-Attempt: $env:WORKFLOW_ATTEMPT
+          Source-Commit: $env:COMMIT_SHA
+          
+          Metadata-Enabled: $env:ENABLE_METADATA
+          
+          Integrity:
+          - SHA-256
+          - SHA-512
+          
+          Note:
+              Cryptographic hashes provide file integrity verification.
+              They are not encryption and do not hide file contents.
+              "@
+              
+                                  git commit `
+                                      -m $commitSubject `
+                                      -m $commitBody
+                                                            
+                                  if ($LASTEXITCODE -ne 0) {
+                                      throw "Git commit failed."
+                                  }
+                        
+                                  $askPass =
+                                      Join-Path `
+                                          $env:RUNNER_TEMP `
+                                          "github-token-askpass.ps1"
+                        
+                                  @'
+                        param(
+                            [string]$Prompt
+                        )
+                        
+                        if ($Prompt -match "Username") {
+                            Write-Output "x-access-token"
+                            exit 0
+                        }
+                        
+                        if ($Prompt -match "Password") {
+                            Write-Output $env:GH_TOKEN
+                            exit 0
+                        }
+                        
+                        exit 1
+                        '@ |
+                                      Set-Content `
+                                          -Path $askPass `
+                                          -Encoding UTF8
+                        
+                                  try {
+                                      $env:GIT_ASKPASS = $askPass
+                                      $env:GIT_TERMINAL_PROMPT = "0"
+                        
+                                      git push origin gh-pages
+                        
+                                      if ($LASTEXITCODE -ne 0) {
+                                          throw "Git push failed."
+                                      }
+                        
+                                      Write-Host ""
+                                      Write-Host "🎉 Dashboard successfully published."
+                                  }
+                                  finally {
+                                      Remove-Item `
+                                          -Path $askPass `
+                                          -Force `
+                                          -ErrorAction SilentlyContinue
+                        
+                                      Remove-Item `
+                                          Env:\GIT_ASKPASS `
+                                          -ErrorAction SilentlyContinue
+                        
+                                      Remove-Item `
+                                          Env:\GIT_TERMINAL_PROMPT `
+                                          -ErrorAction SilentlyContinue
+                        
+                                      Remove-Item `
+                                          Env:\GH_TOKEN `
+                                          -ErrorAction SilentlyContinue
+                                  }
