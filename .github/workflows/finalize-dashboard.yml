@@ -24,66 +24,25 @@ name: "📊 Finalize GitHub Dashboard"
 #   8. 🛡️ Verifies the published files.
 #
 # ================================================================
-# 📝 METADATA CONTROL
+
 # ================================================================
-#
-# Change ONLY this value:
-#
-#   "1" = Metadata ENABLED
-#   "0" = Metadata DISABLED
-#
-# When disabled:
-#   • No metadata.json
-#   • No final-metadata.json
-#   • No XML metadata injection
-#   • No manifest.json
-#
-# When enabled:
-#   • metadata.json
-#   • final-metadata.json
-#   • manifest.json
-#   • XML metadata inside SVG files
-#   • SHA-256 + SHA-512 hashes
-#
-# ⚠️ IMPORTANT
-# -------------
-# SHA-256 and SHA-512 are integrity mechanisms.
-# They are NOT encryption and do not hide file contents.
-#
+# 📝 METADATA CONTROL
 # ================================================================
 
 env:
   ENABLE_METADATA: "0"
 
-
 # ================================================================
 # 🔐 SECURITY MODEL
 # ================================================================
 #
-# This workflow follows GitHub Actions least-privilege principles.
-#
-# The automatically generated GitHub Actions token is:
-#
-#   • Short-lived
-#   • Scoped to this repository
-#   • Restricted by the permissions below
-#   • Never written to files intentionally
-#   • Never printed intentionally
-#
 # Required permissions:
 #
-#   actions:  read
+#   actions: read
 #       Needed to locate workflow runs and download artifacts.
 #
 #   contents: write
-#       Needed ONLY because the dashboard must be pushed to
-#       the gh-pages branch.
-#
-# Everything else is intentionally disabled by omission.
-#
-# 🔒 NEVER put a Personal Access Token directly in this file.
-# 🔒 NEVER echo ${{ secrets.GITHUB_TOKEN }}.
-# 🔒 NEVER store authentication credentials inside generated files.
+#       Needed to push the dashboard to gh-pages.
 #
 # ================================================================
 
@@ -102,7 +61,6 @@ on:
 
   workflow_dispatch:
 
-
 # ================================================================
 # 🛡️ CONCURRENCY PROTECTION
 # ================================================================
@@ -113,7 +71,6 @@ concurrency:
 
   cancel-in-progress: true
 
-
 # ================================================================
 # 🔐 MINIMAL WORKFLOW PERMISSIONS
 # ================================================================
@@ -123,7 +80,6 @@ permissions:
   actions: read
 
   contents: write
-
 
 # ================================================================
 # 🚀 JOBS
@@ -145,7 +101,6 @@ jobs:
       github.event_name == 'workflow_dispatch' ||
       github.event.workflow_run.conclusion == 'success'
 
-
     steps:
 
       # ============================================================
@@ -153,13 +108,12 @@ jobs:
       # ============================================================
 
       - name: "🧹 Prepare temporary directories"
-
         shell: pwsh
 
         run: |
 
           $directories = @(
-              "final-dashboard",
+              "final-dashboard"
               "dashboard-metadata"
           )
 
@@ -171,7 +125,6 @@ jobs:
                     -Path $directory `
                     -Recurse `
                     -Force
-
               }
 
               New-Item `
@@ -193,34 +146,25 @@ jobs:
 
               Write-Host "🚫 Metadata processing: DISABLED"
               Write-Host "📦 SVG files will remain unchanged."
-
           }
-
 
       # ============================================================
       # 2️⃣ Find artifact-producing workflow runs
       # ============================================================
 
       - name: "🔎 Find artifact-producing workflow runs"
-
         id: find-runs
-
         uses: actions/github-script@v8
 
         env:
 
           OVERVIEW_WORKFLOW: "Generate GitHub Overview"
-
           LANGUAGES_WORKFLOW: "Generate GitHub Languages"
-
           ACTIVITY_WORKFLOW: "Generate GitHub Activity"
-
           REPOSITORIES_WORKFLOW: "Generate GitHub Repositories"
 
         with:
 
-          # 🔐 Token is supplied only to this action.
-          # It is NOT copied into a global environment variable.
           github-token: ${{ github.token }}
 
           script: |
@@ -249,19 +193,15 @@ jobs:
 
             ];
 
-
             const owner = context.repo.owner;
             const repo = context.repo.repo;
-
 
             const targetSha =
               context.payload.workflow_run?.head_sha ?? null;
 
-
             core.info(
               `🎯 Target commit SHA: ${targetSha ?? "manual dispatch"}`
             );
-
 
             const workflowList =
               await github.paginate(
@@ -273,22 +213,18 @@ jobs:
                 }
               );
 
-
             const result = {};
-
 
             for (const item of workflows) {
 
               core.info("");
               core.info(`🔎 Searching workflow: ${item.name}`);
 
-
               const workflow =
                 workflowList.find(
                   workflow =>
                     workflow.name === item.name
                 );
-
 
               if (!workflow) {
 
@@ -299,30 +235,23 @@ jobs:
                 return;
               }
 
-
               core.info(
                 `🆔 Workflow ID: ${workflow.id}`
               );
-
 
               const runsResponse =
                 await github.rest.actions.listWorkflowRuns({
 
                   owner,
                   repo,
-
                   workflow_id: workflow.id,
-
                   status: "completed",
-
                   per_page: 30
 
                 });
 
-
               const runs =
                 runsResponse.data.workflow_runs;
-
 
               const sameShaRuns =
                 runs.filter(
@@ -332,19 +261,16 @@ jobs:
                      run.head_sha === targetSha)
                 );
 
-
               const successfulRuns =
                 runs.filter(
                   run =>
                     run.conclusion === "success"
                 );
 
-
               const runsToCheck =
                 sameShaRuns.length > 0
                   ? sameShaRuns
                   : successfulRuns;
-
 
               if (runsToCheck.length === 0) {
 
@@ -355,16 +281,13 @@ jobs:
                 return;
               }
 
-
               let selectedRun = null;
-
 
               for (const run of runsToCheck) {
 
                 core.info(
                   `📦 Checking run ${run.id} (${run.head_sha})`
                 );
-
 
                 const artifacts =
                   await github.paginate(
@@ -377,7 +300,6 @@ jobs:
                     }
                   );
 
-
                 const artifact =
                   artifacts.find(
                     artifact =>
@@ -385,56 +307,31 @@ jobs:
                       !artifact.expired
                   );
 
-
                 if (!artifact) {
                   continue;
                 }
 
-
                 selectedRun = {
 
                   workflowName: item.name,
-
                   workflowId: workflow.id,
-
                   runId: run.id,
-
                   runNumber: run.run_number,
-
                   artifactId: artifact.id,
-
                   artifactName: artifact.name,
-
-                  artifactSize:
-                    artifact.size_in_bytes,
-
-                  createdAt:
-                    run.created_at,
-
-                  updatedAt:
-                    run.updated_at,
-
-                  runAttempt:
-                    run.run_attempt,
-
-                  headSha:
-                    run.head_sha,
-
-                  headBranch:
-                    run.head_branch,
-
-                  event:
-                    run.event,
-
-                  actor:
-                    run.actor?.login ?? null
+                  artifactSize: artifact.size_in_bytes,
+                  createdAt: run.created_at,
+                  updatedAt: run.updated_at,
+                  runAttempt: run.run_attempt,
+                  headSha: run.head_sha,
+                  headBranch: run.head_branch,
+                  event: run.event,
+                  actor: run.actor?.login ?? null
 
                 };
 
-
                 break;
               }
-
 
               if (!selectedRun) {
 
@@ -445,22 +342,17 @@ jobs:
                 return;
               }
 
-
               result[item.artifact] = selectedRun;
-
 
               core.info(
                 `✅ Selected artifact: ${item.artifact}`
               );
-
             }
-
 
             core.setOutput(
               "runs",
               JSON.stringify(result)
             );
-
 
             core.info("");
             core.info("📋 Selected artifact-producing runs:");
@@ -468,13 +360,11 @@ jobs:
               JSON.stringify(result, null, 2)
             );
 
-
       # ============================================================
       # 3️⃣ Download Overview
       # ============================================================
 
       - name: "📥 Download Overview artifact"
-
         uses: actions/download-artifact@v5
 
         with:
@@ -483,7 +373,6 @@ jobs:
 
           path: final-dashboard/overview
 
-          # 🔐 Token is scoped to this action only.
           github-token: ${{ github.token }}
 
           repository: ${{ github.repository }}
@@ -491,13 +380,11 @@ jobs:
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-overview'].runId }}
 
-
       # ============================================================
       # 4️⃣ Download Languages
       # ============================================================
 
       - name: "📥 Download Languages artifact"
-
         uses: actions/download-artifact@v5
 
         with:
@@ -513,13 +400,11 @@ jobs:
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-languages'].runId }}
 
-
       # ============================================================
       # 5️⃣ Download Activity
       # ============================================================
 
       - name: "📥 Download Activity artifact"
-
         uses: actions/download-artifact@v5
 
         with:
@@ -535,13 +420,11 @@ jobs:
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-activity'].runId }}
 
-
       # ============================================================
       # 6️⃣ Download Repositories
       # ============================================================
 
       - name: "📥 Download Repositories artifact"
-
         uses: actions/download-artifact@v5
 
         with:
@@ -557,13 +440,11 @@ jobs:
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-repositories'].runId }}
 
-
       # ============================================================
       # 7️⃣ Validate dashboard files
       # ============================================================
 
       - name: "🧪 Validate dashboard files"
-
         shell: pwsh
 
         run: |
@@ -575,9 +456,7 @@ jobs:
               "repositories.svg"
           )
 
-
           $errors = @()
-
 
           foreach ($file in $requiredFiles) {
 
@@ -589,7 +468,6 @@ jobs:
                     -File
               )
 
-
               if ($matches.Count -eq 0) {
 
                   $errors +=
@@ -597,7 +475,6 @@ jobs:
 
                   continue
               }
-
 
               if ($matches.Count -gt 1) {
 
@@ -607,9 +484,7 @@ jobs:
                   continue
               }
 
-
               $match = $matches[0]
-
 
               if ($match.Length -le 100) {
 
@@ -619,14 +494,11 @@ jobs:
                   continue
               }
 
-
-              # Basic SVG signature validation.
               $header =
                 Get-Content `
                   -Path $match.FullName `
                   -Raw `
                   -Encoding UTF8
-
 
               if ($header -notmatch '<svg\b') {
 
@@ -636,84 +508,52 @@ jobs:
                   continue
               }
 
-
               Write-Host `
                 "✅ Validated: $file [$($match.Length) bytes]"
-
           }
-
 
           if ($errors.Count -gt 0) {
 
               Write-Host ""
               Write-Host "🚨 Validation errors:"
 
-
               foreach ($error in $errors) {
 
                   Write-Host " - $error"
-
               }
-
 
               exit 1
           }
 
-
           Write-Host ""
           Write-Host "🎉 All dashboard files are valid."
-
 
       # ============================================================
       # 8️⃣ Collect dashboard metadata
       # ============================================================
 
       - name: "📝 Collect dashboard metadata"
-
         id: metadata
-
         if: env.ENABLE_METADATA == '1'
-
         shell: pwsh
 
         env:
 
-          SELECTED_RUNS:
-            ${{ steps.find-runs.outputs.runs }}
-
-          REPOSITORY:
-            ${{ github.repository }}
-
-          WORKFLOW_NAME:
-            ${{ github.workflow }}
-
-          WORKFLOW_RUN_ID:
-            ${{ github.run_id }}
-
-          WORKFLOW_RUN_NUMBER:
-            ${{ github.run_number }}
-
-          WORKFLOW_ATTEMPT:
-            ${{ github.run_attempt }}
-
-          EVENT_NAME:
-            ${{ github.event_name }}
-
-          ACTOR:
-            ${{ github.actor }}
-
-          REF_NAME:
-            ${{ github.ref_name }}
-
-          SHA:
-            ${{ github.sha }}
-
+          SELECTED_RUNS: ${{ steps.find-runs.outputs.runs }}
+          REPOSITORY: ${{ github.repository }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_RUN_NUMBER: ${{ github.run_number }}
+          WORKFLOW_ATTEMPT: ${{ github.run_attempt }}
+          EVENT_NAME: ${{ github.event_name }}
+          ACTOR: ${{ github.actor }}
+          REF_NAME: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
 
         run: |
 
           $generatedAt =
             (Get-Date).ToUniversalTime().ToString("o")
-
 
           $files =
             Get-ChildItem `
@@ -722,9 +562,7 @@ jobs:
               -Filter "*.svg" `
               -File
 
-
           $fileMetadata = @()
-
 
           foreach ($file in $files) {
 
@@ -735,7 +573,6 @@ jobs:
                     -Algorithm SHA256
                 ).Hash
 
-
               $sha512 =
                 (
                   Get-FileHash `
@@ -743,25 +580,20 @@ jobs:
                     -Algorithm SHA512
                 ).Hash
 
-
               $relativePath =
                 $file.FullName.Substring(
                     (Resolve-Path "final-dashboard").Path.Length + 1
                 ).Replace("\", "/")
 
-
               $fileMetadata += [ordered]@{
 
                   name = $file.Name
-
                   path = $relativePath
-
                   size_bytes = $file.Length
 
                   hashes = [ordered]@{
 
                       sha256 = $sha256
-
                       sha512 = $sha512
 
                   }
@@ -773,22 +605,17 @@ jobs:
 
                   last_write_time_utc =
                     $file.LastWriteTimeUtc.ToString("o")
-
               }
-
           }
-
 
           $selectedRuns =
             $env:SELECTED_RUNS |
             ConvertFrom-Json
 
-
           $metadata = [ordered]@{
 
               schema =
                 "github-dashboard-metadata/v2"
-
 
               dashboard = [ordered]@{
 
@@ -800,9 +627,7 @@ jobs:
 
                   generated_at_utc =
                     $generatedAt
-
               }
-
 
               integrity = [ordered]@{
 
@@ -816,9 +641,7 @@ jobs:
 
                   encryption =
                     $false
-
               }
-
 
               workflow = [ordered]@{
 
@@ -845,9 +668,7 @@ jobs:
 
                   commit_sha =
                     $env:SHA
-
               }
-
 
               runner = [ordered]@{
 
@@ -859,19 +680,14 @@ jobs:
 
                   name =
                     $env:RUNNER_NAME
-
               }
-
 
               source_workflows =
                 $selectedRuns
 
-
               files =
                 $fileMetadata
-
           }
-
 
           $metadata |
             ConvertTo-Json -Depth 20 |
@@ -879,56 +695,33 @@ jobs:
               -Path "dashboard-metadata/metadata.json" `
               -Encoding UTF8
 
-
           Write-Host ""
           Write-Host "📝 Metadata generated successfully."
-
 
       # ============================================================
       # 9️⃣ Inject XML metadata into SVG files
       # ============================================================
 
       - name: "🧩 Inject SVG metadata"
-
         if: env.ENABLE_METADATA == '1'
-
         shell: pwsh
 
         env:
 
-          REPOSITORY:
-            ${{ github.repository }}
-
-          WORKFLOW_NAME:
-            ${{ github.workflow }}
-
-          WORKFLOW_RUN_ID:
-            ${{ github.run_id }}
-
-          WORKFLOW_RUN_NUMBER:
-            ${{ github.run_number }}
-
-          WORKFLOW_ATTEMPT:
-            ${{ github.run_attempt }}
-
-          EVENT_NAME:
-            ${{ github.event_name }}
-
-          ACTOR:
-            ${{ github.actor }}
-
-          REF_NAME:
-            ${{ github.ref_name }}
-
-          SHA:
-            ${{ github.sha }}
-
+          REPOSITORY: ${{ github.repository }}
+          WORKFLOW_NAME: ${{ github.workflow }}
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
+          WORKFLOW_RUN_NUMBER: ${{ github.run_number }}
+          WORKFLOW_ATTEMPT: ${{ github.run_attempt }}
+          EVENT_NAME: ${{ github.event_name }}
+          ACTOR: ${{ github.actor }}
+          REF_NAME: ${{ github.ref_name }}
+          SHA: ${{ github.sha }}
 
         run: |
 
           $generatedAt =
             (Get-Date).ToUniversalTime().ToString("o")
-
 
           function Escape-Xml {
 
@@ -937,11 +730,9 @@ jobs:
                   [string]$Value
               )
 
-
               if ($null -eq $Value) {
                   return ""
               }
-
 
               return $Value `
                 .Replace("&", "&amp;") `
@@ -949,9 +740,7 @@ jobs:
                 .Replace(">", "&gt;") `
                 .Replace('"', "&quot;") `
                 .Replace("'", "&apos;")
-
           }
-
 
           $svgFiles =
             Get-ChildItem `
@@ -959,7 +748,6 @@ jobs:
               -Recurse `
               -Filter "*.svg" `
               -File
-
 
           foreach ($file in $svgFiles) {
 
@@ -969,52 +757,44 @@ jobs:
                   -Raw `
                   -Encoding UTF8
 
-
               $relativePath =
                 $file.FullName.Substring(
                     (Resolve-Path "final-dashboard").Path.Length + 1
                 ).Replace("\", "/")
 
-
               $metadata = @"
-          <metadata>
-            <dashboard>
-              <name>$(Escape-Xml "GitHub Dashboard")</name>
-              <repository>$(Escape-Xml $env:REPOSITORY)</repository>
-              <file>$(Escape-Xml $relativePath)</file>
-              <generated-at-utc>$(Escape-Xml $generatedAt)</generated-at-utc>
-              <workflow>$(Escape-Xml $env:WORKFLOW_NAME)</workflow>
-              <workflow-run-id>$(Escape-Xml $env:WORKFLOW_RUN_ID)</workflow-run-id>
-              <workflow-run-number>$(Escape-Xml $env:WORKFLOW_RUN_NUMBER)</workflow-run-number>
-              <workflow-attempt>$(Escape-Xml $env:WORKFLOW_ATTEMPT)</workflow-attempt>
-              <event>$(Escape-Xml $env:EVENT_NAME)</event>
-              <actor>$(Escape-Xml $env:ACTOR)</actor>
-              <ref>$(Escape-Xml $env:REF_NAME)</ref>
-              <commit-sha>$(Escape-Xml $env:SHA)</commit-sha>
-            </dashboard>
-          </metadata>
-          "@
-
-
-              if ($content -match '<metadata\b') {
-
-                  Write-Host `
+            <metadata>
+              <dashboard>
+                <name>$(Escape-Xml "GitHub Dashboard")</name>
+                <repository>$(Escape-Xml $env:REPOSITORY)</repository>
+                <file>$(Escape-Xml $relativePath)</file>
+                <generated-at-utc>$(Escape-Xml $generatedAt)</generated-at-utc>
+                <workflow>$(Escape-Xml $env:WORKFLOW_NAME)</workflow>
+                <workflow-run-id>$(Escape-Xml $env:WORKFLOW_RUN_ID)</workflow-run-id>
+                <workflow-run-number>$(Escape-Xml $env:WORKFLOW_RUN_NUMBER)</workflow-run-number>
+                <workflow-attempt>$(Escape-Xml $env:WORKFLOW_ATTEMPT)</workflow-attempt>
+                <event>$(Escape-Xml $env:EVENT_NAME)</event>
+                <actor>$(Escape-Xml $env:ACTOR)</actor>
+                <ref>$(Escape-Xml $env:REF_NAME)</ref>
+                <commit-sha>$(Escape-Xml $env:SHA)</commit-sha>
+              </dashboard>
+            </metadata>
+            if ($content -match '<metadata\b') {
+            
+                Write-Host `
                     "🔄 Existing metadata detected in $($file.Name)."
-
+            }
 
                   $content =
                     $content -replace `
                       '(?s)<metadata\b[^>]*>.*?</metadata>',
                       ''
-
               }
-
 
               $newContent =
                 $content -replace `
                   '(<svg\b[^>]*>)',
                   "`$1`n$metadata"
-
 
               if ($newContent -eq $content) {
 
@@ -1022,43 +802,36 @@ jobs:
                     "❌ Failed to inject metadata into $($file.Name)"
 
                   exit 1
-
               }
-
 
               Set-Content `
                 -Path $file.FullName `
                 -Value $newContent `
                 -Encoding UTF8
 
-
               Write-Host `
                 "✅ Metadata injected: $($file.Name)"
-
           }
-
 
       # ============================================================
       # 🔟 Calculate final cryptographic hashes
       # ============================================================
 
       - name: "🔐 Calculate final file hashes"
-
         if: env.ENABLE_METADATA == '1'
-
         shell: pwsh
 
         run: |
 
           $finalFiles = @()
 
-
-          foreach ($file in Get-ChildItem `
-              -Path "final-dashboard" `
-              -Recurse `
-              -Filter "*.svg" `
-              -File) {
-
+          foreach (
+              $file in Get-ChildItem `
+                -Path "final-dashboard" `
+                -Recurse `
+                -Filter "*.svg" `
+                -File
+          ) {
 
               $sha256 =
                 (
@@ -1067,7 +840,6 @@ jobs:
                     -Algorithm SHA256
                 ).Hash
 
-
               $sha512 =
                 (
                   Get-FileHash `
@@ -1075,25 +847,20 @@ jobs:
                     -Algorithm SHA512
                 ).Hash
 
-
               $relativePath =
                 $file.FullName.Substring(
                     (Resolve-Path "final-dashboard").Path.Length + 1
                 ).Replace("\", "/")
 
-
               $finalFiles += [ordered]@{
 
                   name = $file.Name
-
                   path = $relativePath
-
                   size_bytes = $file.Length
 
                   hashes = [ordered]@{
 
                       sha256 = $sha256
-
                       sha512 = $sha512
 
                   }
@@ -1102,17 +869,13 @@ jobs:
                       "SHA-256"
                       "SHA-512"
                   )
-
               }
-
           }
-
 
           $finalMetadata = [ordered]@{
 
               schema =
                 "github-dashboard-metadata/v2"
-
 
               integrity = [ordered]@{
 
@@ -1126,17 +889,13 @@ jobs:
 
                   encryption =
                     $false
-
               }
-
 
               generated_at_utc =
                 (Get-Date).ToUniversalTime().ToString("o")
 
-
               repository =
                 "${{ github.repository }}"
-
 
               workflow = [ordered]@{
 
@@ -1151,19 +910,14 @@ jobs:
 
                   attempt =
                     "${{ github.run_attempt }}"
-
               }
-
 
               source_commit =
                 "${{ github.sha }}"
 
-
               files =
                 $finalFiles
-
           }
-
 
           $finalMetadata |
             ConvertTo-Json -Depth 20 |
@@ -1171,38 +925,28 @@ jobs:
               -Path "dashboard-metadata/final-metadata.json" `
               -Encoding UTF8
 
-
           Write-Host ""
           Write-Host "🔐 Final cryptographic hashes generated."
-
 
       # ============================================================
       # 1️⃣1️⃣ Checkout gh-pages
       # ============================================================
 
       - name: "📥 Checkout gh-pages"
-
         uses: actions/checkout@v4
 
         with:
 
           ref: gh-pages
-
           path: gh-pages
-
           fetch-depth: 1
-
-          # 🛡️ Do NOT persist the authentication token inside
-          # the local Git configuration.
           persist-credentials: false
-
 
       # ============================================================
       # 1️⃣2️⃣ Prepare published dashboard
       # ============================================================
 
       - name: "🧹 Prepare published dashboard"
-
         shell: pwsh
 
         run: |
@@ -1210,16 +954,13 @@ jobs:
           $publishPath =
             "gh-pages/github-stats"
 
-
           if (Test-Path $publishPath) {
 
               Remove-Item `
                 -Path $publishPath `
                 -Recurse `
                 -Force
-
           }
-
 
           New-Item `
             -ItemType Directory `
@@ -1227,17 +968,14 @@ jobs:
             -Force |
             Out-Null
 
-
           Write-Host `
             "✅ Publication directory prepared."
-
 
       # ============================================================
       # 1️⃣3️⃣ Publish dashboard files
       # ============================================================
 
       - name: "🚀 Publish dashboard files"
-
         shell: pwsh
 
         run: |
@@ -1249,7 +987,6 @@ jobs:
               "repositories.svg"
           )
 
-
           foreach ($file in $files) {
 
               $source =
@@ -1260,43 +997,34 @@ jobs:
                   -File |
                 Select-Object -First 1
 
-
               if (-not $source) {
 
                   Write-Error `
                     "❌ Cannot publish '$file'."
 
                   exit 1
-
               }
-
 
               $destination =
                 Join-Path `
                   "gh-pages/github-stats" `
                   $file
 
-
               Copy-Item `
                 -Path $source.FullName `
                 -Destination $destination `
                 -Force
 
-
               Write-Host `
                 "📊 Published: $file"
-
           }
-
 
       # ============================================================
       # 1️⃣4️⃣ Publish metadata
       # ============================================================
 
       - name: "📝 Publish metadata"
-
         if: env.ENABLE_METADATA == '1'
-
         shell: pwsh
 
         run: |
@@ -1306,24 +1034,19 @@ jobs:
             "gh-pages/github-stats/metadata.json" `
             -Force
 
-
           Copy-Item `
             "dashboard-metadata/final-metadata.json" `
             "gh-pages/github-stats/final-metadata.json" `
             -Force
 
-
           Write-Host "📝 Metadata files published."
-
 
       # ============================================================
       # 1️⃣5️⃣ Generate publication manifest
       # ============================================================
 
       - name: "🔐 Generate publication integrity manifest"
-
         if: env.ENABLE_METADATA == '1'
-
         shell: pwsh
 
         run: |
@@ -1333,9 +1056,7 @@ jobs:
               -Path "gh-pages/github-stats" `
               -File
 
-
           $manifest = @()
-
 
           foreach ($file in $publishedFiles) {
 
@@ -1346,14 +1067,12 @@ jobs:
                     -Algorithm SHA256
                 ).Hash
 
-
               $sha512 =
                 (
                   Get-FileHash `
                     -Path $file.FullName `
                     -Algorithm SHA512
                 ).Hash
-
 
               $manifest += [ordered]@{
 
@@ -1364,7 +1083,6 @@ jobs:
                   hashes = [ordered]@{
 
                       sha256 = $sha256
-
                       sha512 = $sha512
 
                   }
@@ -1373,49 +1091,37 @@ jobs:
                       "SHA-256"
                       "SHA-512"
                   )
-
               }
-
           }
-
 
           $manifestData = [ordered]@{
 
               schema =
                 "github-dashboard-publication-manifest/v2"
 
-
               purpose =
                 "Publication integrity verification"
-
 
               generated_at_utc =
                 (Get-Date).ToUniversalTime().ToString("o")
 
-
               repository =
                 "${{ github.repository }}"
-
 
               branch =
                 "gh-pages"
 
-
               directory =
                 "github-stats"
-
 
               workflow =
                 "${{ github.workflow }}"
 
-
               workflow_run_id =
                 "${{ github.run_id }}"
 
-
               commit_sha =
                 "${{ github.sha }}"
-
 
               integrity = [ordered]@{
 
@@ -1426,15 +1132,11 @@ jobs:
 
                   encryption =
                     $false
-
               }
-
 
               files =
                 $manifest
-
           }
-
 
           $manifestData |
             ConvertTo-Json -Depth 20 |
@@ -1442,16 +1144,13 @@ jobs:
               "gh-pages/github-stats/manifest.json" `
               -Encoding UTF8
 
-
           Write-Host "🔐 Publication manifest generated."
-
 
       # ============================================================
       # 1️⃣6️⃣ Final verification
       # ============================================================
 
       - name: "🧪 Verify published dashboard"
-
         shell: pwsh
 
         run: |
@@ -1463,7 +1162,6 @@ jobs:
               "repositories.svg"
           )
 
-
           if ($env:ENABLE_METADATA -eq "1") {
 
               $requiredFiles += @(
@@ -1471,12 +1169,9 @@ jobs:
                   "final-metadata.json"
                   "manifest.json"
               )
-
           }
 
-
           $errors = @()
-
 
           foreach ($file in $requiredFiles) {
 
@@ -1485,20 +1180,16 @@ jobs:
                   "gh-pages/github-stats" `
                   $file
 
-
               if (-not (Test-Path $path)) {
 
                   $errors +=
                     "❌ Published file missing: $file"
 
                   continue
-
               }
-
 
               $size =
                 (Get-Item $path).Length
-
 
               if ($size -le 50) {
 
@@ -1506,37 +1197,27 @@ jobs:
                     "⚠️ Suspiciously small file: $file ($size bytes)"
 
                   continue
-
               }
-
 
               Write-Host `
                 "✅ OK: $file [$size bytes]"
-
           }
-
 
           if ($errors.Count -gt 0) {
 
               Write-Host ""
               Write-Host "🚨 Publication verification failed:"
 
-
               foreach ($error in $errors) {
 
                   Write-Host " - $error"
-
               }
 
-
               exit 1
-
           }
-
 
           Write-Host ""
           Write-Host "🎉 Dashboard publication verification passed."
-
 
           if ($env:ENABLE_METADATA -eq "1") {
 
@@ -1547,62 +1228,63 @@ jobs:
           else {
 
               Write-Host "🚫 Metadata: DISABLED"
-
           }
-
 
       # ============================================================
       # 1️⃣7️⃣ Commit and push
       # ============================================================
 
       - name: "🚀 Commit and push dashboard"
-
         shell: pwsh
 
         env:
 
           # 🔐 Token is exposed ONLY to this final publishing step.
           # It is not stored in repository files or Git config.
-          GH_TOKEN:
-            ${{ github.token }}
+          GH_TOKEN: ${{ github.token }}
 
-          REPOSITORY:
-            ${{ github.repository }}
+          REPOSITORY: ${{ github.repository }}
 
-          WORKFLOW_RUN_ID:
-            ${{ github.run_id }}
+          WORKFLOW_RUN_ID: ${{ github.run_id }}
 
-          WORKFLOW_RUN_NUMBER:
-            ${{ github.run_number }}
+          WORKFLOW_RUN_NUMBER: ${{ github.run_number }}
 
-          WORKFLOW_ATTEMPT:
-            ${{ github.run_attempt }}
+          WORKFLOW_ATTEMPT: ${{ github.run_attempt }}
 
-          COMMIT_SHA:
-            ${{ github.sha }}
-
+          COMMIT_SHA: ${{ github.sha }}
 
         run: |
 
+          # ============================================================
+          # 📂 Enter gh-pages working directory
+          # ============================================================
+
           Set-Location "gh-pages"
 
+          # ============================================================
+          # 🤖 Configure Git identity
+          # ============================================================
 
           git config `
             user.name `
             "github-actions[bot]"
 
-
           git config `
             user.email `
             "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # ============================================================
+          # 📦 Stage dashboard files
+          # ============================================================
 
           git add github-stats/
 
+          # ============================================================
+          # 🔎 Check whether anything actually changed
+          # ============================================================
 
           $changes =
             git status --porcelain
-
 
           if (-not $changes) {
 
@@ -1611,28 +1293,28 @@ jobs:
               Write-Host "Nothing to commit."
 
               exit 0
-
           }
-
 
           Write-Host ""
           Write-Host "📊 Dashboard changes detected:"
           git status --short
 
+          # ============================================================
+          # 📝 Build commit message
+          # ============================================================
 
           $commitSubject =
             "📊 chore(dashboard): update GitHub analytics"
 
-
           $commitBody = @"
             Automated GitHub dashboard synchronization.
-            
-            Generated-By: github-actions[bot]
-            Repository: $env:REPOSITORY
-            Workflow-Run-ID: $env:WORKFLOW_RUN_ID
-            Workflow-Run-Number: $env:WORKFLOW_RUN_NUMBER
-            Workflow-Attempt: $env:WORKFLOW_ATTEMPT
-            Source-Commit: $env:COMMIT_SHA
+      
+      Generated-By: github-actions[bot]
+      Repository: $env:REPOSITORY
+      Workflow-Run-ID: $env:WORKFLOW_RUN_ID
+      Workflow-Run-Number: $env:WORKFLOW_RUN_NUMBER
+      Workflow-Attempt: $env:WORKFLOW_ATTEMPT
+      Source-Commit: $env:COMMIT_SHA
 
 Metadata-Enabled: $env:ENABLE_METADATA
 
@@ -1641,95 +1323,73 @@ Integrity:
 - SHA-512
 
 Note:
-  Cryptographic hashes provide file integrity verification.
-  They are not encryption and do not hide file contents.
-  "@
-  
-  
-          git commit `
-            -m $commitSubject `
-            -m $commitBody
+    Cryptographic hashes provide file integrity verification.
+    They are not encryption and do not hide file contents.
+    "@
+    
+              git commit `
+                -m $commitSubject `
+                -m $commitBody
 
 
-          # ========================================================
-          # 🔐 SECURITY NOTE
-          # ========================================================
-          #
-          # The token is supplied through an environment variable
-          # only for this command.
-          #
-          # It is NOT:
-          #   • written to .git/config
-          #   • committed to the repository
-          #   • echoed to the workflow log
-          #
-          # GIT_ASKPASS provides Git with the token without putting
-          # the credential into the remote URL.
-          #
-          # ========================================================
 
-                $askPass =
-                  Join-Path `
-                    $env:RUNNER_TEMP `
-                    "github-token-askpass.ps1"
+          $askPass = Join-Path `
+            $env:RUNNER_TEMP `
+            "github-token-askpass.ps1"
+
+          @'
+    param(
+        [string]$Prompt
+    )
+    
+    if ($Prompt -match "Username") {
+        Write-Output "x-access-token"
+        exit 0
+    }
+    
+    if ($Prompt -match "Password") {
+        Write-Output $env:GH_TOKEN
+        exit 0
+    }
+    
+    exit 1
+    '@ |
+                Set-Content `
+                  -Path $askPass `
+                  -Encoding UTF8
+
+      
+          try {
+
+              $env:GIT_ASKPASS = $askPass
+              $env:GIT_TERMINAL_PROMPT = "0"
+
+              git push origin gh-pages
+
+          }
+      finally {
                 
-                
-                    @'
-                                                              param(
-                                                                  [string]$Prompt
-                                                              )
-                                                              
-                                                              if ($Prompt -match "Username") {
-                                                                  Write-Output "x-access-token"
-                                                                  exit 0
-                                                              }
-                                                              
-                                                              if ($Prompt -match "Password") {
-                                                                  Write-Output $env:GH_TOKEN
-                                                                  exit 0
-                                                              }
-                                                              
-                                                              exit 1
-                                                              '@ |
-                                                                Set-Content `
-                                                                  -Path $askPass `
-                                                                  -Encoding UTF8
-                                                              
-                                                              
-                                                              try {
-                                                              
-                                                                  $env:GIT_ASKPASS = $askPass
-                                                                  $env:GIT_TERMINAL_PROMPT = "0"
-                                                              
-                                                              
-                                                                  git push origin gh-pages
-                                                              
-                                                              }
-                                                              finally {
-                
-                    # 🧹 Remove temporary authentication helper immediately.
-                    Remove-Item `
-                      -Path $askPass `
-                      -Force `
-                      -ErrorAction SilentlyContinue
-                
+                    
                 
                     Remove-Item `
-                      Env:\GIT_ASKPASS `
-                      -ErrorAction SilentlyContinue
-                
-                
-                    Remove-Item `
-                      Env:\GIT_TERMINAL_PROMPT `
-                      -ErrorAction SilentlyContinue
-                
+                        -Path $askPass `
+                        -Force `
+                        -ErrorAction SilentlyContinue
                 
                     Remove-Item `
-                      Env:\GH_TOKEN `
-                      -ErrorAction SilentlyContinue
+                        Env:\GIT_ASKPASS `
+                        -ErrorAction SilentlyContinue
                 
+                    Remove-Item `
+                        Env:\GIT_TERMINAL_PROMPT `
+                        -ErrorAction SilentlyContinue
+                
+                    Remove-Item `
+                        Env:\GH_TOKEN `
+                        -ErrorAction SilentlyContinue
                 }
-                
-                
-                Write-Host ""
-                Write-Host "🎉 Dashboard successfully published."
+
+         
+
+    Write-Host ""
+      Write-Host "🎉 Dashboard successfully published."
