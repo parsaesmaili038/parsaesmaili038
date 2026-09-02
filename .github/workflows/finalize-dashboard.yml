@@ -103,9 +103,9 @@ jobs:
 
     steps:
 
-      # ============================================================
-      # 1️⃣ Prepare temporary directories
-      # ============================================================
+# ============================================================
+# 1️⃣ Prepare temporary directories
+# ============================================================
 
       - name: "🧹 Prepare temporary directories"
         shell: pwsh
@@ -148,9 +148,9 @@ jobs:
               Write-Host "📦 SVG files will remain unchanged."
           }
 
-      # ============================================================
-      # 2️⃣ Find artifact-producing workflow runs
-      # ============================================================
+# ============================================================
+# 2️⃣ Find artifact-producing workflow runs
+# ============================================================
 
       - name: "🔎 Find artifact-producing workflow runs"
         id: find-runs
@@ -360,9 +360,9 @@ jobs:
               JSON.stringify(result, null, 2)
             );
 
-      # ============================================================
-      # 3️⃣ Download Overview
-      # ============================================================
+# ============================================================
+# 3️⃣ Download Overview
+# ============================================================
 
       - name: "📥 Download Overview artifact"
         uses: actions/download-artifact@v5
@@ -380,9 +380,9 @@ jobs:
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-overview'].runId }}
 
-      # ============================================================
-      # 4️⃣ Download Languages
-      # ============================================================
+# ============================================================
+# 4️⃣ Download Languages
+# ============================================================
 
       - name: "📥 Download Languages artifact"
         uses: actions/download-artifact@v5
@@ -400,9 +400,9 @@ jobs:
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-languages'].runId }}
 
-      # ============================================================
-      # 5️⃣ Download Activity
-      # ============================================================
+# ============================================================
+# 5️⃣ Download Activity
+# ============================================================
 
       - name: "📥 Download Activity artifact"
         uses: actions/download-artifact@v5
@@ -419,10 +419,9 @@ jobs:
 
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-activity'].runId }}
-
-      # ============================================================
-      # 6️⃣ Download Repositories
-      # ============================================================
+# ============================================================
+# 6️⃣ Download Repositories
+# ============================================================
 
       - name: "📥 Download Repositories artifact"
         uses: actions/download-artifact@v5
@@ -440,9 +439,9 @@ jobs:
           run-id: >-
             ${{ fromJSON(steps.find-runs.outputs.runs)['github-repositories'].runId }}
 
-      # ============================================================
-      # 7️⃣ Validate dashboard files
-      # ============================================================
+# ============================================================
+# 7️⃣ Validate dashboard files
+# ============================================================
 
       - name: "🧪 Validate dashboard files"
         shell: pwsh
