@@ -1056,5 +1056,4 @@ jobs:
                   Env:\GIT_TERMINAL_PROMPT `
                   -ErrorAction SilentlyContinue
           }
-                      -ErrorAction SilentlyContinue
-              }
+
