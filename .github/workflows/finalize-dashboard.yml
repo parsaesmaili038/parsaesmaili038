@@ -1,7 +1,7 @@
 name: "📊 Finalize GitHub Dashboard"
 
 env:
-  ENABLE_METADATA: "0"
+  ENABLE_METADATA: "1"
 
 on:
   workflow_run:
