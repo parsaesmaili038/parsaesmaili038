@@ -103,9 +103,7 @@ jobs:
 
     steps:
 
-# ============================================================
-# 1️⃣ Prepare temporary directories
-# ============================================================
+
       - name: "🧹 Prepare temporary directories"
         shell: pwsh
 
