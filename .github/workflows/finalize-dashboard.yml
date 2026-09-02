@@ -928,21 +928,20 @@ jobs:
 
           Set-Location "gh-pages"
 
-          git config user.name "github-actions[bot]"
+          git config `
+              user.name `
+              "github-actions[bot]"
+
           if ($LASTEXITCODE -ne 0) {
               throw "❌ Failed to configure Git username."
           }
 
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config `
+              user.email `
+              "41898282+github-actions[bot]@users.noreply.github.com"
+
           if ($LASTEXITCODE -ne 0) {
               throw "❌ Failed to configure Git email."
-          }
-
-          Write-Host "🔎 Git remote:"
-          git remote -v
-
-          if ($LASTEXITCODE -ne 0) {
-              throw "❌ Failed to read Git remote."
           }
 
           git add github-stats/
@@ -1000,60 +999,22 @@ jobs:
           }
 
           Write-Host "✅ Commit created successfully."
+          Write-Host "🚀 Pushing dashboard to gh-pages..."
 
-          $askPass =
-              Join-Path `
-                  $env:RUNNER_TEMP `
-                  "github-token-askpass.ps1"
+          $authHeader =
+              "AUTHORIZATION: basic " +
+              [Convert]::ToBase64String(
+                  [Text.Encoding]::ASCII.GetBytes(
+                      "x-access-token:$env:GH_TOKEN"
+                  )
+              )
 
-          $askPassContent = @(
-              'param([string]$Prompt)'
-              ''
-              'if ($Prompt -match "Username") {'
-              '    Write-Output "x-access-token"'
-              '    exit 0'
-              '}'
-              ''
-              'if ($Prompt -match "Password") {'
-              '    Write-Output $env:GH_TOKEN'
-              '    exit 0'
-              '}'
-              ''
-              'exit 1'
-          ) -join "`n"
+          git -c "http.https://github.com/.extraheader=$authHeader" `
+              push origin gh-pages
 
-          Set-Content `
-              -Path $askPass `
-              -Value $askPassContent `
-              -Encoding UTF8
-
-          try {
-              $env:GIT_ASKPASS = $askPass
-              $env:GIT_TERMINAL_PROMPT = "0"
-
-              Write-Host "🚀 Pushing dashboard to gh-pages..."
-
-              git push origin gh-pages
-
-              if ($LASTEXITCODE -ne 0) {
-                  throw "❌ Git push failed."
-              }
-
-              Write-Host ""
-              Write-Host "🎉 Dashboard successfully published."
-          }
-          finally {
-              Remove-Item `
-                  -Path $askPass `
-                  -Force `
-                  -ErrorAction SilentlyContinue
-
-              Remove-Item `
-                  Env:\GIT_ASKPASS `
-                  -ErrorAction SilentlyContinue
-
-              Remove-Item `
-                  Env:\GIT_TERMINAL_PROMPT `
-                  -ErrorAction SilentlyContinue
+          if ($LASTEXITCODE -ne 0) {
+              throw "❌ Git push failed."
           }
 
+          Write-Host ""
+          Write-Host "🎉 Dashboard successfully published."
