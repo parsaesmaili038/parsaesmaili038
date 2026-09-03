@@ -3,11 +3,9 @@ name: Generate GitHub Repositories
 on:
   workflow_dispatch:
 
-  workflow_run:
-    workflows:
-      - Generate GitHub Languages
-    types:
-      - completed
+  schedule:
+    # Every day between 00:00 and 01:00 UTC
+    - cron: "0 0 * * *"
 
 permissions:
   contents: read
@@ -15,15 +13,9 @@ permissions:
 jobs:
   generate-repositories:
     name: Generate Repositories SVG
-
-    if: >
-      github.event_name == 'workflow_dispatch' ||
-      github.event.workflow_run.conclusion == 'success'
-
     runs-on: windows-latest
 
     steps:
-
       - name: Checkout repository
         uses: actions/checkout@v4
 
