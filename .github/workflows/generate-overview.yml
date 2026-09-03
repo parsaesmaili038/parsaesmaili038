@@ -4,7 +4,9 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: "30 0 * * *"
+    # Start once at 00:00 UTC, then wait for a random time
+    # between 00:00 and 01:00 before generating the overview.
+    - cron: "0 0 * * *"
 
 permissions:
   contents: read
@@ -15,6 +17,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
+
+      - name: Wait for random time
+        shell: pwsh
+        run: |
+          $delay = Get-Random -Minimum 0 -Maximum 3600
+          Write-Host "Waiting $delay seconds before generating the overview..."
+          Start-Sleep -Seconds $delay
 
       - name: Checkout repository
         uses: actions/checkout@v4
